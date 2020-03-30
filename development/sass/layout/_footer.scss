@@ -1,0 +1,169 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+%map-style {
+    overflow: hidden;
+    width: 100%;
+    height: $height-map;
+}
+%copyright-font {
+    @include setFont(13px, #fff, $font-text);
+}
+
+
+#footer {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+    
+    .ft-top{
+        background-color: $bg-footer;
+    }
+    .ft-flex {
+        @include boxstyle($display: flex, $justify-content: space-between);
+        padding: 38px 0;
+        .ft-logo { 
+            a{
+                img{
+                    
+                }
+            }
+        }
+        .ft-info {
+            position: relative;
+            width: percentage(500/1190);
+        }
+
+        .ft-bando {
+        }
+
+        .ft-fanpage {
+            width: percentage(270/1190);
+            .fanpageplace {
+                height: 200px;
+                overflow: hidden;
+            }
+        }
+
+        .ft-dknt{
+        }
+
+        .ft-baiviet {
+            width: percentage(340/1190);
+            ul {
+                list-style-type: none;
+
+                li {
+                    margin-bottom: 10px;
+                    @include setTagAHover(#fff, #ff0);
+                    a {
+                        font-size: 14px;
+                        position: relative;
+                        
+                        @include boxstyle($display: flex, $align-items: flex-start);
+                        &::before {
+                            // content: "\f009";
+                            content: "";
+                            margin: 8px 7px 0 0;
+                            @include setFont(7px, #fff, 700, $font-awesome);
+                            @include box(4px, 4px);
+                            background-color: #fff;
+                        }
+                    }
+                    &+li{
+                    }
+                }
+            }
+        }
+    }
+
+    .ft-company {
+        text-transform: uppercase;
+        @include setFont(em(24), #fff, 400, $font-SFUFuturaHeavy );
+        a {
+            color: #fff;
+        }
+    }
+
+    .ft-tit {
+        position: relative;
+        margin: 7px 0;
+
+        strong, span {
+            @include setFont(16px, #fff, 700);
+            &::after {
+                // content: "";
+                // @include box(40px, 3px);
+                // @include absolute($bottom: -10px);
+                // background-color: #fff;
+            }
+        }
+
+        &::after {
+            //content: "";
+            // @include box(152px, 1px);
+            // @include absolute($left: 0, $bottom: -11px);
+            // border-bottom: 1px dashed #fff;
+        }
+    }
+
+    .ft-logo{
+        // @include boxstyle($display: flex, $align-items: center);
+        // width: 28.8%;
+        // margin-bottom: 1em;
+        // a{
+        //     display: block;
+        //     img{
+        //         max-width: 400px;
+        //     }
+        // }
+        
+    }
+
+    .copyright {
+        position: relative;
+        background: $bg-copyright; 
+        .ft-wrap {
+            min-height: 54px;
+            @include boxstyle($display: flex, $justify-content: center, $align-items: center);
+            
+            .text {
+                @extend %copyright-font;
+                margin: 5px 0;
+            }
+
+            ul.ft-thongke {
+                list-style-type: none;
+                margin-bottom: 0;
+
+                @include boxstyle($display: flex);
+                li {
+                    @extend %copyright-font;
+
+                    @include boxstyle($display: flex, $align-items: center);
+                    position: relative;
+                    margin: 5px 0;
+
+                    span {
+                        margin-left: 4px;
+                    }
+
+                    & + li {
+                        margin-left: 2em;
+
+                        &::before {
+                            content: "";
+                            background-color: #fff;
+                            @include box(1px, 12px);
+                            @include absolute($left: -1em);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.codebando, .codebando iframe{
+    // @extend %map-style;
+}
+/*end footer*/
