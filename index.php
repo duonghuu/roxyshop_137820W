@@ -45,7 +45,7 @@ $_SESSION['dong'] = lay_banner('dong');
             <?php 
             include _template."layout/header.php";
             include _template."layout/valak_menu.php";
-            // include _template."layout/slider.php";
+            include _template."layout/slider.php";
             if($source != "index") echo $bread->display();
             ?>
             <div class="main_content <?php if($source!="index") echo 'container';  ?>">

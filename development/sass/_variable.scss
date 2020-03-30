@@ -4,7 +4,7 @@
 
 /// Container's maximum width
 /// @type Length
-$max-width: 1220px !default;
+$max-width: 1330px !default;
 $browser-context: 16;
 /* ======================== FONTS ======================== */
 $font-SFUSchadowBTBlackCondensed        : 'SFUSchadowBTBlackCondensed';
@@ -12,6 +12,7 @@ $font-UTMHelvetIns                      : 'UTMHelvetIns';
 $font-UTMImpact                         : 'UTMImpact';
 $font-SFUFuturaBook                     : 'SFUFuturaBook';
 $font-SFUFuturaHeavy                    : 'SFUFuturaHeavy';
+$font-SFUBelleRegular                    : 'SFUBelleRegular';
 $font-roboto-mono                       : 'Roboto Mono', monospace;
 $font-open-sans                         : 'Open Sans', sans-serif;
 $font-roboto-condensed                  : 'Roboto Condensed', sans-serif;
@@ -22,24 +23,24 @@ $font-muli                              : 'Muli', sans-serif;
 $font-oswald                            : 'Oswald', sans-serif;
 $font-nunito                            : 'Nunito', sans-serif;
 
-$font-title             : $font-SFUFuturaHeavy;
-$font-text              : $font-nunito;
+$font-title             : $font-muli;
+$font-text              : $font-muli;
 $font-awesome           : 'Font Awesome 5 Free';
 $font-second            : 'Arial';
 /* ======================== HEADER ======================== */
-$bg-header-top          : #212121;
+$bg-header-top          : #000000;
 $bg-header              : #fff;
 $bg-breadcrumb           : #f7f6f6;
 /* ======================== MENU ======================== */
-$font-menu              : $font-nunito;
-$color-menu-hover       : #ff8400;
+$font-menu              : $font-muli;
+$color-menu-hover       : #f00;
 $bg-menu                : #fff;
 $bg-menu-item           : transparent;
 $bg-menu-item-hover     : transparent;
 /* ======================== FOOTER ======================== */
-$bg-copyright       : #b96104;
-$bg-footer          : #ff8400;
-$theme-color        : #ff8400;
+$bg-copyright       : #0f0f0f;
+$bg-footer          : #131313;
+$theme-color        : #000000;
 $height-map         : 485px;
 /* ======================== URL ======================== */
 $font-url           : 'css/fonts/';

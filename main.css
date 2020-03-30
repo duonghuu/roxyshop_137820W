@@ -6,129 +6,79 @@
 /* ======================== FOOTER ======================== */
 /* ======================== URL ======================== */
 /* ======================== FONTS ======================== */
-/* nunito-regular - vietnamese_latin */
+/* muli-300 - latin_vietnamese */
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Muli';
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+  src: url("css/fonts/muli-v20-latin_vietnamese-300.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("css/fonts/muli-v20-latin_vietnamese-300.eot?#iefix") format("embedded-opentype"), url("css/fonts/muli-v20-latin_vietnamese-300.woff2") format("woff2"), url("css/fonts/muli-v20-latin_vietnamese-300.woff") format("woff"), url("css/fonts/muli-v20-latin_vietnamese-300.ttf") format("truetype"), url("css/fonts/muli-v20-latin_vietnamese-300.svg#Muli") format("svg");
+  /* Legacy iOS */ }
+
+/* muli-regular - latin_vietnamese */
+@font-face {
+  font-family: 'Muli';
   font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-regular.eot");
+  src: url("css/fonts/muli-v20-latin_vietnamese-regular.eot");
   /* IE9 Compat Modes */
-  src: local("Nunito Regular"), local("Nunito-Regular"), url("css/fonts/nunito-v12-vietnamese_latin-regular.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-regular.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-regular.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-regular.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-regular.svg#Nunito") format("svg");
+  src: local(""), url("css/fonts/muli-v20-latin_vietnamese-regular.eot?#iefix") format("embedded-opentype"), url("css/fonts/muli-v20-latin_vietnamese-regular.woff2") format("woff2"), url("css/fonts/muli-v20-latin_vietnamese-regular.woff") format("woff"), url("css/fonts/muli-v20-latin_vietnamese-regular.ttf") format("truetype"), url("css/fonts/muli-v20-latin_vietnamese-regular.svg#Muli") format("svg");
   /* Legacy iOS */ }
 
-/* nunito-italic - vietnamese_latin */
+/* muli-700 - latin_vietnamese */
 @font-face {
-  font-family: 'Nunito';
-  font-display: swap;
-  font-style: italic;
-  font-weight: 400;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-italic.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito Italic"), local("Nunito-Italic"), url("css/fonts/nunito-v12-vietnamese_latin-italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-italic.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-italic.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-italic.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-italic.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
-
-/* nunito-600italic - vietnamese_latin */
-@font-face {
-  font-family: 'Nunito';
-  font-display: swap;
-  font-style: italic;
-  font-weight: 600;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-600italic.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito SemiBold Italic"), local("Nunito-SemiBoldItalic"), url("css/fonts/nunito-v12-vietnamese_latin-600italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-600italic.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-600italic.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-600italic.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-600italic.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
-
-/* nunito-600 - vietnamese_latin */
-@font-face {
-  font-family: 'Nunito';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 600;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-600.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito SemiBold"), local("Nunito-SemiBold"), url("css/fonts/nunito-v12-vietnamese_latin-600.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-600.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-600.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-600.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-600.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
-
-/* nunito-700 - vietnamese_latin */
-@font-face {
-  font-family: 'Nunito';
+  font-family: 'Muli';
   font-display: swap;
   font-style: normal;
   font-weight: 700;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-700.eot");
+  src: url("css/fonts/muli-v20-latin_vietnamese-700.eot");
   /* IE9 Compat Modes */
-  src: local("Nunito Bold"), local("Nunito-Bold"), url("css/fonts/nunito-v12-vietnamese_latin-700.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-700.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-700.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-700.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-700.svg#Nunito") format("svg");
+  src: local(""), url("css/fonts/muli-v20-latin_vietnamese-700.eot?#iefix") format("embedded-opentype"), url("css/fonts/muli-v20-latin_vietnamese-700.woff2") format("woff2"), url("css/fonts/muli-v20-latin_vietnamese-700.woff") format("woff"), url("css/fonts/muli-v20-latin_vietnamese-700.ttf") format("truetype"), url("css/fonts/muli-v20-latin_vietnamese-700.svg#Muli") format("svg");
   /* Legacy iOS */ }
 
-/* nunito-700italic - vietnamese_latin */
+/* muli-300italic - latin_vietnamese */
 @font-face {
-  font-family: 'Nunito';
+  font-family: 'Muli';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 300;
+  src: url("css/fonts/muli-v20-latin_vietnamese-300italic.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("css/fonts/muli-v20-latin_vietnamese-300italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/muli-v20-latin_vietnamese-300italic.woff2") format("woff2"), url("css/fonts/muli-v20-latin_vietnamese-300italic.woff") format("woff"), url("css/fonts/muli-v20-latin_vietnamese-300italic.ttf") format("truetype"), url("css/fonts/muli-v20-latin_vietnamese-300italic.svg#Muli") format("svg");
+  /* Legacy iOS */ }
+
+/* muli-italic - latin_vietnamese */
+@font-face {
+  font-family: 'Muli';
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+  src: url("css/fonts/muli-v20-latin_vietnamese-italic.eot");
+  /* IE9 Compat Modes */
+  src: local(""), url("css/fonts/muli-v20-latin_vietnamese-italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/muli-v20-latin_vietnamese-italic.woff2") format("woff2"), url("css/fonts/muli-v20-latin_vietnamese-italic.woff") format("woff"), url("css/fonts/muli-v20-latin_vietnamese-italic.ttf") format("truetype"), url("css/fonts/muli-v20-latin_vietnamese-italic.svg#Muli") format("svg");
+  /* Legacy iOS */ }
+
+/* muli-700italic - latin_vietnamese */
+@font-face {
+  font-family: 'Muli';
   font-display: swap;
   font-style: italic;
   font-weight: 700;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-700italic.eot");
+  src: url("css/fonts/muli-v20-latin_vietnamese-700italic.eot");
   /* IE9 Compat Modes */
-  src: local("Nunito Bold Italic"), local("Nunito-BoldItalic"), url("css/fonts/nunito-v12-vietnamese_latin-700italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-700italic.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-700italic.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-700italic.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-700italic.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
-
-/* nunito-900 - vietnamese_latin */
-@font-face {
-  font-family: 'Nunito';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 900;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-900.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito Black"), local("Nunito-Black"), url("css/fonts/nunito-v12-vietnamese_latin-900.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-900.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-900.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-900.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-900.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
-
-/* nunito-900italic - vietnamese_latin */
-@font-face {
-  font-family: 'Nunito';
-  font-display: swap;
-  font-style: italic;
-  font-weight: 900;
-  src: url("css/fonts/nunito-v12-vietnamese_latin-900italic.eot");
-  /* IE9 Compat Modes */
-  src: local("Nunito Black Italic"), local("Nunito-BlackItalic"), url("css/fonts/nunito-v12-vietnamese_latin-900italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/nunito-v12-vietnamese_latin-900italic.woff2") format("woff2"), url("css/fonts/nunito-v12-vietnamese_latin-900italic.woff") format("woff"), url("css/fonts/nunito-v12-vietnamese_latin-900italic.ttf") format("truetype"), url("css/fonts/nunito-v12-vietnamese_latin-900italic.svg#Nunito") format("svg");
-  /* Legacy iOS */ }
-
-/* barlow-semi-condensed-600italic - vietnamese_latin */
-@font-face {
-  font-family: 'Barlow Semi Condensed';
-  font-style: italic;
-  font-weight: 600;
-  src: url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600italic.eot");
-  /* IE9 Compat Modes */
-  src: local("Barlow Semi Condensed SemiBold Italic"), local("BarlowSemiCondensed-SemiBoldItalic"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600italic.woff2") format("woff2"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600italic.woff") format("woff"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600italic.ttf") format("truetype"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600italic.svg#BarlowSemiCondensed") format("svg");
-  /* Legacy iOS */ }
-
-/* barlow-semi-condensed-600 - vietnamese_latin */
-@font-face {
-  font-family: 'Barlow Semi Condensed';
-  font-style: normal;
-  font-weight: 600;
-  src: url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600.eot");
-  /* IE9 Compat Modes */
-  src: local("Barlow Semi Condensed SemiBold"), local("BarlowSemiCondensed-SemiBold"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600.eot?#iefix") format("embedded-opentype"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600.woff2") format("woff2"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600.woff") format("woff"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600.ttf") format("truetype"), url("css/fonts/barlow-semi-condensed-v5-vietnamese_latin-600.svg#BarlowSemiCondensed") format("svg");
+  src: local(""), url("css/fonts/muli-v20-latin_vietnamese-700italic.eot?#iefix") format("embedded-opentype"), url("css/fonts/muli-v20-latin_vietnamese-700italic.woff2") format("woff2"), url("css/fonts/muli-v20-latin_vietnamese-700italic.woff") format("woff"), url("css/fonts/muli-v20-latin_vietnamese-700italic.ttf") format("truetype"), url("css/fonts/muli-v20-latin_vietnamese-700italic.svg#Muli") format("svg");
   /* Legacy iOS */ }
 
 @font-face {
-  font-family: 'SFUFuturaBook';
+  font-family: 'SFUBelleRegular';
   font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("css/fonts/SFUFuturaBook.eot");
-  src: url("css/fonts/SFUFuturaBook.eot") format("embedded-opentype"), url("css/fonts/SFUFuturaBook.woff2") format("woff2"), url("css/fonts/SFUFuturaBook.woff") format("woff"), url("css/fonts/SFUFuturaBook.ttf") format("truetype"), url("css/fonts/SFUFuturaBook.svg#SFUFuturaBook") format("svg"); }
-
-@font-face {
-  font-family: 'SFUFuturaHeavy';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 400;
-  src: url("css/fonts/SFUFuturaHeavy.eot");
-  src: url("css/fonts/SFUFuturaHeavy.eot") format("embedded-opentype"), url("css/fonts/SFUFuturaHeavy.woff2") format("woff2"), url("css/fonts/SFUFuturaHeavy.woff") format("woff"), url("css/fonts/SFUFuturaHeavy.ttf") format("truetype"), url("css/fonts/SFUFuturaHeavy.svg#SFUFuturaHeavy") format("svg"); }
+  src: url("css/fonts/SFUBelleRegular.eot");
+  src: url("css/fonts/SFUBelleRegular.eot") format("embedded-opentype"), url("css/fonts/SFUBelleRegular.woff2") format("woff2"), url("css/fonts/SFUBelleRegular.woff") format("woff"), url("css/fonts/SFUBelleRegular.ttf") format("truetype"), url("css/fonts/SFUBelleRegular.svg#SFUBelleRegular") format("svg"); }
 
 /* ==================== BORDER RADIUS ==================== */
 /* Ref: 
@@ -9049,7 +8999,7 @@ div.map iframe {
 body {
   font-size: 16px;
   font-size: 1rem;
-  font-family: "Nunito", sans-serif; }
+  font-family: "Muli", sans-serif; }
 
 div#wapper {
   margin: 0 auto;
@@ -9320,7 +9270,7 @@ form#frm_dknt {
     color: #fff;
     font-size: 14px;
     line-height: 35px;
-    background: #b96104;
+    background: #0f0f0f;
     text-transform: uppercase;
     padding: 0 7px;
     border-radius: 7px; }
@@ -9404,7 +9354,7 @@ div.wap_item {
   font-size: 18px; }
 
 .container {
-  max-width: 1220px;
+  max-width: 1330px;
   position: relative;
   z-index: 1; }
 
@@ -9574,7 +9524,7 @@ div.wap_item {
         color: #6d6d6d; }
 
 .main-nav > ul > li:hover > a, .main-nav > ul > li.active > a {
-  color: #ff8400; }
+  color: #f00; }
 
 @-webkit-keyframes dropInDown {
   0% {
@@ -9707,7 +9657,7 @@ div.wap_item {
         color: #212121;
         font-size: 15px;
         font-weight: 600;
-        font-family: "Nunito", sans-serif; }
+        font-family: "Muli", sans-serif; }
       .main-nav > ul > li:hover > ul {
         display: block; }
 
@@ -9720,7 +9670,7 @@ div.wap_item {
       color: #212121;
       font-size: 14px;
       font-weight: 400;
-      font-family: "Nunito", sans-serif;
+      font-family: "Muli", sans-serif;
       text-decoration: none;
       line-height: 34px;
       padding: 0 10px;
@@ -9736,7 +9686,7 @@ div.wap_item {
     .main-nav ul.sub-menu li a {
       color: #212121; }
       .main-nav ul.sub-menu li a:hover {
-        color: #ff8400; }
+        color: #000000; }
     .main-nav ul.sub-menu li:hover > ul {
       display: block; }
     .main-nav ul.sub-menu li ul {
@@ -9814,7 +9764,7 @@ div.wap_item {
           color: #333;
           font-size: 14px;
           font-weight: 400;
-          font-family: "Nunito", sans-serif;
+          font-family: "Muli", sans-serif;
           text-decoration: none;
           padding: 5px 10px;
           white-space: nowrap;
@@ -9922,7 +9872,7 @@ div.wap_item {
     color: #b41414;
     font-size: 25px;
     font-weight: 700;
-    font-family: "SFUFuturaHeavy";
+    font-family: "Muli", sans-serif;
     display: block;
     line-height: 1; }
 
@@ -9933,16 +9883,16 @@ div.wap_item {
   left: 0; }
 
 .hd-top {
-  background-color: #212121;
+  background-color: #000000;
   position: relative; }
   .hd-top:before {
     content: "";
-    background-color: #ff8400;
+    background-color: #000000;
     width: 25%;
     height: 100%;
     position: absolute; }
   .hd-top .hd-top-left {
-    background-color: #ff8400;
+    background-color: #000000;
     background-image: url("images/hd-pattern.jpg");
     background-repeat: no-repeat;
     background-position: right center;
@@ -10006,14 +9956,14 @@ div.wap_item {
 #footer .copyright .ft-wrap .text, #footer .copyright .ft-wrap ul.ft-thongke li {
   color: #fff;
   font-size: 13px;
-  font-weight: "Nunito", sans-serif; }
+  font-weight: "Muli", sans-serif; }
 
 #footer {
   position: relative;
   width: 100%;
   z-index: 5; }
   #footer .ft-top {
-    background-color: #ff8400; }
+    background-color: #131313; }
   #footer .ft-flex {
     padding: 38px 0; }
     #footer .ft-flex .ft-info {
@@ -10064,7 +10014,7 @@ div.wap_item {
       font-weight: 700; }
   #footer .copyright {
     position: relative;
-    background: #b96104; }
+    background: #0f0f0f; }
     #footer .copyright .ft-wrap {
       min-height: 54px; }
       #footer .copyright .ft-wrap .text {
@@ -10176,7 +10126,7 @@ div#tags {
       font-size: 16px;
       font-weight: 600;
       font-family: "Barlow Semi Condensed", sans-serif;
-      background-color: #ff8400;
+      background-color: #000000;
       cursor: pointer;
       line-height: 45px;
       padding: 0 18px; }
@@ -10313,7 +10263,7 @@ div.mxhft {
 .idx-tit {
   margin-bottom: 37px; }
   .idx-tit h4 {
-    color: #ff8400;
+    color: #000000;
     font-size: 30px;
     font-weight: 400;
     font-family: "SFUFuturaHeavy";
@@ -10321,7 +10271,7 @@ div.mxhft {
     text-align: center;
     margin: 0; }
     .idx-tit h4 span, .idx-tit h4 a {
-      color: #ff8400;
+      color: #000000;
       display: inline-block;
       position: relative; }
       .idx-tit h4 span::after, .idx-tit h4 a::after {
@@ -10357,7 +10307,7 @@ div.mxhft {
     .product-danhmuc h2 a {
       color: #212121; }
       .product-danhmuc h2 a:hover {
-        color: #ff8400; }
+        color: #000000; }
 
 .diachi-cuahang {
   color: #212121;
@@ -11286,7 +11236,7 @@ background: #fff;
   justify-content: center;
   align-items: center;
   padding: 7px 0;
-  background-color: #212121;
+  background-color: #000000;
   width: 100%;
   font-size: 20px;
   color: #fff;

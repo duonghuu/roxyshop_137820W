@@ -346,7 +346,7 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 				$giaspgiam.'</a> 
 			<div class="info">
 			<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
-			<p>Giá: '.$s_gia.'</p>
+			<p>'.$s_gia.'</p>
 			</div>
 		</article></div>'.$slickenddiv;
 	}

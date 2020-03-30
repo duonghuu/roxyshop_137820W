@@ -16,13 +16,13 @@ switch($type){
 	case 'san-pham':
 	switch($act){
 		case 'danhmuc':
-		$config['type'] = array('ten','seo');
+		$config['type'] = array('ten','seo','noibat','hinhanh');
 		$config['title'] = array('noibat'=>"Nổi bật",'tieubieu'=>"Hiện menu",'hinhanh2'=>"Icon");
-		@define ( _width_thumb , 360 );
-		@define ( _height_thumb , 360 );
+		@define ( _width_thumb , 685 );
+		@define ( _height_thumb , 710 );
 		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 360 );
-		@define ( _height_thumb2 , 360 );
+		@define ( _width_thumb2 , 685 );
+		@define ( _height_thumb2 , 710 );
 		@define ( _widthhinhanh_thumb , 40 );
 		@define ( _heighthinhanh_thumb , 40 );
 		@define ( _stylehinhanh_thumb , 2 );
@@ -48,16 +48,17 @@ switch($type){
 		break;
 
 		default:
-		$config['type'] = array('seo','ten','mota','gia','giakm','noibat','danhmuc','list','hinhanh','hinhthem','noidung','spmoi');
+		$config['type'] = array('seo','ten','mota','gia','giakm','noibat','danhmuc','list','hinhanh','hinhthem','noidung','spmoi',
+	'tieubieu');
 		$config['ck'] = array('mota2');
-		$config['title'] = array('tieubieu'=>"Sản phẩm chính",'noibat'=>"Nổi bật",
+		$config['title'] = array('tieubieu'=>"Sản phẩm hot",'noibat'=>"Nổi bật",
 			'spmoi'=>"Mới",'spbanchay'=>"Bán chạy","mota"=>"Mô tả","toado"=>"Iframe google map",
 			"mota2"=>"Mô tả",'mattien'=>"Số người","dientich"=>"Giá","thuonghieu"=>"Thương hiệu",
 			"vitri"=>"Vị trí");
-		@define ( _width_thumb , 275 );
-		@define ( _height_thumb , 360 );
+		@define ( _width_thumb , 300 );
+		@define ( _height_thumb , 400 );
 		@define ( _style_thumb , 2 );
-		@define ( _width_thumb2 , 460 );
+		@define ( _width_thumb2 , 450 );
 		@define ( _height_thumb2 , 600 );
 		break;
 	}
@@ -130,55 +131,7 @@ switch($type){
 		break;
 	}
 	break;
-	case 'thongtin':
-	switch($act){
-		default:
-		$config['type'] = array('seo','ten','mota','noidung','hinhanh');
-		@define ( _width_thumb , 400 );
-		@define ( _height_thumb , 400 );
-		@define ( _style_thumb , 2 );
-		@define ( _width_thumb2 , 400);
-		@define ( _height_thumb2 , 400 );
-		break;
-	}
-	break;
-	case 'hoatdong':
-	switch($act){
-		default:
-		$config['type'] = array('seo','ten','noidung','hinhanh','hinhthem');
-		@define ( _width_thumb , 360 );
-		@define ( _height_thumb , 220 );
-		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 1024);
-		@define ( _height_thumb2 , 630 );
-		break;
-	}
-	break;
-	case 'hoidap':
-	switch($act){
-		default:
-		$config['type'] = array('seo','ten','mota','noidung','hinhanh');
-		@define ( _width_thumb , 145 );
-		@define ( _height_thumb , 125 );
-		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 400);
-		@define ( _height_thumb2 , 340 );
-		break;
-	}
-	break;
-	case 'doingu':
-	switch($act){
-		default:
-		$config['type'] = array('seo','ten','chucvu','noidung','hinhanh');
-		@define ( _width_thumb , 240 );
-		@define ( _height_thumb , 310 );
-		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 425);
-		@define ( _height_thumb2 , 550 );
-		break;
-	}
-	break;
-	case 'tai-sao':
+	case 'the-manh':
 	switch($act){
 		default:
 		$config['type'] = array('ten','mota','hinhanh');
@@ -187,6 +140,13 @@ switch($type){
 		@define ( _style_thumb , 2 );
 		@define ( _width_thumb2 , 70);
 		@define ( _height_thumb2 , 70 );
+		break;
+	}
+	break;
+	case 'slider-ma':
+	switch($act){
+		default:
+		$config['type'] = array('ten');
 		break;
 	}
 	break;
@@ -209,12 +169,12 @@ switch($type){
 		@define ( _height_thumb2 , 310 );
 		break;
 		default:
-		$config['type'] = array('seo','ten','noidung','hinhanh','mota','danhmuc');
-		@define ( _width_thumb , 400 );
-		@define ( _height_thumb , 300 );
-		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 400);
-		@define ( _height_thumb2 , 300 );
+		$config['type'] = array('seo','ten','noidung','hinhanh');
+		@define ( _width_thumb , 40 );
+		@define ( _height_thumb , 40 );
+		@define ( _style_thumb , 2 );
+		@define ( _width_thumb2 , 40);
+		@define ( _height_thumb2 , 40 );
 		break;
 	}
 	break;
@@ -234,11 +194,7 @@ switch($type){
 	}
 	break;
 	case 'tin-tuc':
-	case 'tuyen-dung':
-	case 'tu-van':
 	case 'chinh-sach':
-	case 'huong-dan':
-	case 'gia-si':
 	switch($act){
 		case 'danhmuc':
 		$config['type'] = array('seo','ten');
@@ -329,7 +285,7 @@ switch($type){
 		@define ( _height_thumb2 , 600 );
 		break;
 		default:
-		$config['type'] = array('ten','hinhthem','del');
+		$config['type'] = array('ten','hinhthem');
 		@define ( _width_thumb , 400 );
 		@define ( _height_thumb , 400 );
 		@define ( _style_thumb , 1 );
@@ -352,8 +308,8 @@ switch($type){
 	case 'logo':
 	switch($act){
 		default:
-		@define ( _width_thumb2 , 200 );
-		@define ( _height_thumb2 , 120 );
+		@define ( _width_thumb2 , 250 );
+		@define ( _height_thumb2 , 80 );
 		break;
 	}
 	break;
@@ -425,11 +381,11 @@ switch($type){
 	case 'slider2':
 	switch($act){
 		default:
-		@define ( _width_thumb , 930 );
-		@define ( _height_thumb , 450);
+		@define ( _width_thumb , 1366 );
+		@define ( _height_thumb , 475);
 		@define ( _style_thumb , 2 );
-		@define ( _width_thumb2 , 930 );
-		@define ( _height_thumb2 , 450);
+		@define ( _width_thumb2 , 1366 );
+		@define ( _height_thumb2 , 475);
 		break;
 	}
 	break;
@@ -466,11 +422,11 @@ switch($type){
 	case 'quang-cao':
 	switch($act){
 		default:
-		@define ( _width_thumb , 600 );
-		@define ( _height_thumb , 260 );
+		@define ( _width_thumb , 1366 );
+		@define ( _height_thumb , 570 );
 		@define ( _style_thumb , 2 );
-		@define ( _width_thumb2 , 600 );
-		@define ( _height_thumb2 , 260 );
+		@define ( _width_thumb2 , 1366 );
+		@define ( _height_thumb2 , 570 );
 		break;
 	}
 	break;

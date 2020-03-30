@@ -3,30 +3,28 @@
         $slider = get_result("select ten$lang as ten,photo,thumb from #_slider 
           where hienthi=1 and type='slider' order by stt");
          ?>
-         <div class="slider-bg">
-           <div class="container">
-           <div class="slider-flex">
-            <?php include _template."layout/menu_left.php";?>
-             <div id="slideshow">
-               <div class="slideshow-slider-main">
-                 <?php 
-                 foreach ($slider as $key => $v) {
-                  ?>
-                  <div class="slideshow-slider-item">
-                   <section>
-                    <a href="<?= $v["link"] ?>" class="slider-link"><picture>
-                      <source media="(min-width: 1024px)" srcset="<?= _upload_hinhanh_l.$v["thumb"] ?>" />
-                        <source media="(min-width: 550px)" srcset="thumb/768x320/1/<?= _upload_hinhanh_l.$v["photo"] ?>" />
-                          <img src="thumb/425x177/1/<?= _upload_hinhanh_l.$v["photo"] ?>" 
-                          alt="<?= $v["ten"] ?>" />
-                        </picture></a>
-                      </section>
-                    </div>
-                  <?php } ?>
+         <div id="slideshow">
+           <div class="slideshow-slider-main">
+             <?php 
+             foreach ($slider as $key => $v) {
+              ?>
+              <div class="slideshow-slider-item">
+               <section>
+                <a href="<?= $v["link"] ?>" class="slider-link"><picture>
+                  <source media="(min-width: 1024px)" srcset="<?= _upload_hinhanh_l.$v["thumb"] ?>" />
+                    <source media="(min-width: 550px)" srcset="thumb/768x270/1/<?= _upload_hinhanh_l.$v["photo"] ?>" />
+                      <img src="thumb/425x150/1/<?= _upload_hinhanh_l.$v["photo"] ?>" 
+                      alt="<?= $v["ten"] ?>" />
+                    </picture></a>
+                  </section>
                 </div>
-              </div>
+              <?php } ?>
             </div>
-            </div>
+          </div>
+          <div class="web-slider-main">
+            <?php foreach ($sliderma as $key => $value) { ?>
+              <div class="slider-ma"><span class="ma-item"><?= $value["ten"] ?></span></div>
+            <?php } ?>
           </div>
           <?php }else{ 
   // $bntype = $type;

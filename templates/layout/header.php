@@ -3,12 +3,18 @@
     <div class="container">
       <div class="hd-top-flex">
         <div class="hd-top-left">
-          <?php foreach ($hotline as $key => $value) { ?>
-            <p><i class="fas fa-phone-alt"></i><a href="tel:<?=preg_replace('/[^0-9]/','',$value['link']);?>">
-              <?= $value['link'] ?></a></p>
-          <?php } ?>
+            <a href="" class="hd-name"><?= $company['ten'] ?></a>
+            <p><i class="fas fa-phone-alt"></i><a href="tel:<?=preg_replace('/[^0-9]/','',$company['dienthoai']);?>">
+              <?= $company['dienthoai'] ?></a></p>
         </div>
-        <marquee behavior="" direction=""><i class="fas fa-map-marker-alt"></i><?= $company["diachi"] ?></marquee>
+        <marquee behavior="" direction=""><?= $company["slogan"] ?></marquee>
+        <ul>
+          <li><a href=""><?= _trangchu ?></a></li>
+          <li><a href="gioi-thieu.html"><?= _gioithieu ?></a></li>
+          <li><a href="mua-si.html">Mua sỉ</a></li>
+          <li><a href="tin-tuc.html">Blog</a></li>
+          <li><a href="lien-he.html"><?= _lienhe ?></a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -17,6 +23,7 @@
       <div class="hd-bot-flex">
         <a href="" class="logo" ><img src="<?= _upload_hinhanh_l.$logolang["photo"] ?>" alt="logo"></a>
         <div class="hd-mid">
+          <button class="openBtn timkiem_icon" ><i class="fas fa-search"></i></button>
           <div id="search">
             <div class="my-search">
               <input type="text" class="form-control keyword" required="true" 
@@ -27,10 +34,10 @@
               <?= _timkiem ?></span>
             </div>
           </div>
-          <?php include _template."layout/menu_top.php"; ?>
+          <a href="gio-hang.html" class="giohang_fix"><i class="fas fa-cart"></i>Giỏ hàng</a>
         </div>
-        <span class="text-uppercase" id="humber_valak">Menu<i class="fas fa-bars"></i></span>
       </div>
     </div>
+    <?php include _template."layout/menu_top.php"; ?>
   </div>
 </header>
