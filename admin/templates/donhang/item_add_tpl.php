@@ -149,22 +149,23 @@ function get_thanhpho_item()
 
 function get_thanhpho()
 	{
-		$sql="select * from table_place_dist where id_city=".$_REQUEST['thanhpho_item']."  order by stt";
-		$stmt=mysql_query($sql);
-		$str='
-			<select id="thanhpho" name="thanhpho" class="main_select select_danhmuc" onchange="select_onchange1()">
-			<option>Quận/Huyện</option>			
-			';
-		while ($row=@mysql_fetch_array($stmt)) 
-		{
-			if($row["id"]==(int)@$_REQUEST["thanhpho"])
-				$selected="selected";
-			else 
-				$selected="";
-			$str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';			
-		}
-		$str.='</select>';
-		return $str;
+    global $d;
+      $sql="select * from table_place_dist where id_city=".$_REQUEST['thanhpho_item']."  
+         order by stt";
+      $d->query($sql);
+      $result = $d->result_array();     
+      $str='<select id="thanhpho" name="thanhpho" class="main_select select_danhmuc" 
+      onchange="select_onchange1()">
+      <option>Quận/Huyện</option>     ';        
+      foreach ($result as $key => $row) {
+        if($row["id"]==(int)@$_REQUEST["thanhpho"])
+          $selected="selected";
+        else
+          $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+        }
+      $str.='</select>';
+    return $str;
 	}
 function get_phuong()
 	{

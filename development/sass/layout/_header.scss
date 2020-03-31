@@ -47,74 +47,91 @@
     @include relative($left: 0);
 }
 .hd-top{
-    background-color: $bg-header-top;
-    position: relative;
-    &:before{
-        content: "";
-        background-color: $theme-color;
-        @include box(25%, 100%);
-        @include absolute();
-    }
+    background-color: $theme-color;
     .hd-top-flex{
-        @include boxstyle($display: flex, $align-items: center, $justify-content: space-between);
-        
-    }
-    .hd-top-left{
-        background-color: $theme-color;
-        @include bg("hd-pattern.jpg", $background-position: right center);
-        @include flex(1);
-        @include boxstyle($display: flex, $align-items: center);
-        min-height: 39px;
-        p{
-            @extend %hd-top-style;
-            @include setFont(18px, #fff, 700);
-            i{
-                @include box(27px, 27px, 100%);
-                font-size: 14px;
-                border: 1px solid #fff;
-                
-                @include boxstyle($display: inline-flex, $align-items: center, $justify-content: center);
-
-            }
-            a{
-                color: #fff;
-            }
-            &+p{
-                margin-left: 40px;
+        @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+        min-height: 30px;
+        marquee{
+            @include setFont(13px, #fff);
+            @include flex(1);
+        }
+        ul{
+            @extend %reset-list;
+            @include flex(1);
+            @include boxstyle($display: flex, $justify-content: flex-end, $align-items: center);
+            li{
+                position: relative;
+                @include boxstyle($display: inline-flex, $align-items: center);
+                @include doubly(){
+                    margin-left: 22px;
+                    &:before{
+                        content: "";
+                        background-color: #fff;
+                        @include box(1px, 9px);
+                        @include absolute($left: -11px);
+                    }
+                }
+                @include setTagAHover(#fff, #ff0);
+                a{
+                    @include setFont(12px, #fff, 300);
+                }
             }
         }
     }
-    marquee{
-        @include flex(1);
-        @extend %hd-top-style;
-        padding-left: 10px;
+}
+.hd-top-left{
+    @include flex(1);
+    @include boxstyle($display: inline-flex, $align-items: center);
+    .hd-name{
+        @include setFont(18px, #fff, 400, $font-SFUBelleRegular );
+        @include boxstyle($display: inline-flex, $align-items: center); 
+        line-height: 1;
+    }
+    p{
+        @include setFont(14px, #fff);
+        @include setTagAHover(#fff, #f00);
+        @include boxstyle($display: inline-flex, $align-items: center);
+        margin: 0 0 0 34px;
+        position: relative;
+        &:before{
+            content: "";
+            background-color: #fff;
+            @include box(1px, 16px);
+            @include absolute($left: -17px);
+        }
         i{
-            margin-right: 10px;
+            margin-right: 5px;
+            font-size: 12px;
+        }
+
+        a{
+            font-weight: 700;
         }
     }
 }
 .hd-bot{
-
+    &>.container{
+        z-index: 500;
+    }
     .hd-bot-flex{
-        @include boxstyle($display: flex, $align-items: center, $justify-content: space-between);
+        @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
         position: relative;
-        .hd-mid{
+        &:before{
+            content: "";
             @include flex(1);
-        }
-        &>span{
-            width: percentage(200/1190);
-            text-align: right;
-            cursor: pointer;
-            @include setFont(24px, #000, 600, $font-barlow-semi-condensed);
-            i{
-                margin-left: 9px;
-            }
         }
     }
 }
 .logo{
-    width: percentage(200/1190);
+    @include flex(1);
+    display: block;
+    text-align: center;
     img{
-        max-width: 200px !important;
+        max-height: 82px
     }
+}
+.hd-mid{
+    position: relative;
+    @include flex(1);
+    @include boxstyle($display: inline-flex, $justify-content: flex-end, $align-items: center);
 }

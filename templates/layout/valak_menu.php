@@ -1,10 +1,16 @@
-<?php /*<div id="valak_mmenu">
+<div id="valak_mmenu">
   <div class="logomini-box">
     <a href="" class="valak-home"><i class="fas fa-home"></i></a>
-    <div class="logomini_valak"><a href=""><strong>MENU</strong> 
-    <img src="<?= _upload_hinhanh_l.$logolang["photo"] ?>" alt="logo"> </a></div>
+    <div class="logomini_valak">
+      <a href="">
+        <strong>MENU</strong> 
+        <?php /* <img src="<?= _upload_hinhanh_l.$logolang["photo"] ?>" alt="logo"> */?>
+      </a>
+   </div>
     <a id="humber_valak" href="javascript:;"><i class="fas fa-bars"></i></a>
-  </div>*/?>
+  </div>
+<?php /*
+  */?>
   <?php /* <div class="logomini-box-right">
        <a class="valak-phone" href="tel:<?=preg_replace('/[^0-9]/','',$company['dienthoai']);?>">
        <i class="fas fa-phone-alt"></i> <?= $company["dienthoai"] ?></a> 
@@ -15,11 +21,13 @@
   <?php /* <?php if($deviceType!="computer"){ ?>
           <a href="gio-hang.html" class="giohang_fix"><i></i><span><?= count($_SESSION["cart"]) ?></span></a>
         <?php } ?> */?>
-  <?php /* <div class="valak-search"> <input type="text" id="txtCountry2" class="form-control keyword placeholder-1"
-     required="true" value="<?=_nhaptukhoatimkiem?>..." onclick="if(this.value=='<?=_nhaptukhoatimkiem?>...')
-     {this.value=''}" onblur="if(this.value==''){this.value='<?=_nhaptukhoatimkiem?>...'}"> 
-     <span onclick="onSearch($(this));return false;" class="btn_search"><i class="fas fa-search"></i></span> </div> 
-</div>*/?>
+        <?php if($deviceType!="computer"){ ?>
+    <div class="valak-search"> <input type="text" id="txtCountry2" class="form-control keyword placeholder-1"
+         required="true" value="<?=_nhaptukhoatimkiem?>..." onclick="if(this.value=='<?=_nhaptukhoatimkiem?>...')
+         {this.value=''}" onblur="if(this.value==''){this.value='<?=_nhaptukhoatimkiem?>...'}"> 
+         <span onclick="onSearch($(this));return false;" class="btn_search"><i class="fas fa-search"></i></span> </div> 
+        <?php } ?>
+</div>
 <div id="valak_openmmenu">
   <div id="valak_main">
     <div id="close_valak"></div>

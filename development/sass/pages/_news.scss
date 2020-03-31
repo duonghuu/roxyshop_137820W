@@ -35,7 +35,7 @@
         @include boxShadow(0px 0px 10px #f3f3f3);
         background: #fff;
         @include grid-col($col: 6, $grid-columns: 12, $gutter: 2%);
-        @include setTagAHover(#333, $bg-menu);
+        @include setTagAHover(#333, #f00);
         a{
             @include boxstyle($display: flex, $justify-content: space-between, $align-items: flex-start);
             padding: 10px;

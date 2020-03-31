@@ -21,7 +21,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="web-slider-main">
+          <div class="sliderma-main">
             <?php foreach ($sliderma as $key => $value) { ?>
               <div class="slider-ma"><span class="ma-item"><?= $value["ten"] ?></span></div>
             <?php } ?>

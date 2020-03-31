@@ -180,9 +180,9 @@
 @define ('_daonline','Đã online');
 @define ('_ngayhomnay','Ngày');
 @define ('_ngayhomqua','Ngày hôm qua');
-@define ('_thongketuan','Truy cập tuần');
+@define ('_thongketuan','Tuần');
 @define ('_thongkethang','Tháng');
-@define ('_tongtruycap','Tổng truy cập');
+@define ('_tongtruycap','Tổng kết');
 @define ('_tong','Tổng');
 
 //---------------- Tiện ích ----------------

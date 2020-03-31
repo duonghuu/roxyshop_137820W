@@ -16,10 +16,12 @@ $clseven = (($kdm+1) % 2 == 0) ? 'even' : 'odd';
 $link1 = "san-pham/".$vdm["tenkhongdau"]."-".$vdm["id"];
 $img1 = _upload_sanpham_l.$vdm["photo"];
 $spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb,photo from
- #_product where type='san-pham' and id_danhmuc = '".$vdm["id"]."' and noibat>0 and hienthi>0 order by stt asc");
+ #_product where type='san-pham' and id_danhmuc = '".$vdm["id"]."' and noibat>0 and hienthi>0 order by stt asc limit 0,3");
   ?>
+
   <div class="spnoibat-bg <?= $clseven ?>">
-    <div class="danhmuc-feature-img">
+    <?php if($deviceType=="computer"){ ?>
+    <div class="danhmuc-feature-img zoom_hinh">
       <a href="<?= $link1 ?>">
         <img src="<?= $img1 ?>" alt="<?= $vdm["ten"] ?>">
         <span class="feature-content">
@@ -28,6 +30,7 @@ $spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb
         </span>
       </a>
     </div>
+  <?php } ?>
     <div class="danhmuc-sanpham">
       <div class="danhmuc-sanpham-box">
         <div class="idx-tit">
@@ -68,6 +71,7 @@ $img = _upload_hinhanh_l.$value["photo"];
     <div class="idx-tit">
       <h4><a href="tin-tuc.html">Blog thời trang</a></h4>
     </div>
+   
     <div class="tinnb-main">
       <?php foreach ($tinnb as $key => $value) { 
         $img = _upload_tintuc_l.$value["photo"];
@@ -75,12 +79,14 @@ $img = _upload_hinhanh_l.$value["photo"];
         <div class="tinnb-item"><a href="<?= get_url($value, "tin-tuc") ?>">
             <figure><img src="<?= $img ?>" alt="<?= $value["ten"] ?>"></figure>
             <h5><?= $value["ten"] ?></h5>
+            <hr>
             <p><?= $value["mota"] ?></p>
           </a></div>
       <?php } ?>
     </div>
   </div>
 </div>
+
 <div class="themanh-bg">
   <div class="container">
     <div class="themanh-main">

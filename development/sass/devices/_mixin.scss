@@ -53,14 +53,8 @@
       h4 {
           @include font-size(20, 16);
           span, a {
-              &::after {
-                  display: none;
-              }
           }
       }
-  }
-  .pr-box article .info p del{
-    margin-left: 0;
   }
 }
 /*========= SLIDER ===============*/
@@ -82,36 +76,45 @@
   }
   #valak_mmenu{
     display: flex;
-    background-color: $bg-menu;
+    background-color: $bg-valak;
   }
   .toolbar{
-    background-color: $bg-menu !important; 
+    background-color: $bg-valak !important; 
   }
   .logo_valak{
-    background-color: $bg-menu !important; 
+    background-color: $bg-valak !important; 
   }
   .hd-bg{
     display: block;
   }
 }
 /*========= HOME ===============*/
-@mixin setLinkChinhSachSmall(){
-  .link-chinhsach-flex {
-    .link-chinhsach{
-      @include flex(1);
-      padding: 11.5px 0.5em;
-      @include doubly(){
-        margin-left: 1em;
-      };
+@mixin setSpnoibatSmall(){
+  .spnoibat-bg{
+    .danhmuc-sanpham{
+      @include relative($top: unset, $right: unset, $left: unset);
+      @at-root .even#{&}{
+          right: unset;
+          left: unset;
+      }
+      @include boxShadow(none);
+      width: 100%;
+      padding: 15px;
+    }
+  }
+  .spnoibat-main{
+    margin: 0 -4px;
+    .slick-box-item{
+      padding: 0 4px;
     }
   }
 }
-@mixin setProductDanhmucMobile(){
-  .product-danhmuc{
-      display: block;
-    h2{
+@mixin setThemanhSmall(){
+  .themanh-item {
+      article{
+        border-left: none;
+      }
     }
-  }
 }
 @mixin setVeChungToiMobile(){
   .vechungtoi-grid{
@@ -148,7 +151,8 @@
 }
 /*========= PRODUCT ===============*/
 @mixin setProductColumnMobile($p_col: 6, $p_gutter: 0){
-  .pr-box,.spnoibat-flex .product-grid .pr-box,.sptieubieu-flex .product-grid .pr-box{
+  .pr-box,.spnoibat-flex .product-grid .pr-box,.sptieubieu-flex .product-grid 
+  .pr-box, .spnoibat-bg .danhmuc-sanpham .danhmuc-sanpham-box .product-grid .pr-box{
     @include grid-col($col: $p_col, $grid-columns: 12, $col-offset: null, $gutter: $p_gutter);  
   }
 }
@@ -171,12 +175,12 @@
   #footer {
     .ft-flex {
       @include flex-wrap(wrap);
-      .ft-info,.ft-dknt {
+      .ft-info, .ft-dknt {
         width: 100%;
         margin-bottom: 1em;
       }
-      .ft-fanpage,.ft-baiviet  {
-        width: 100%;
+      .ft-fanpage, .ft-baiviet  {
+        width: 49%;
         margin-bottom: 1em;
       }
     }
@@ -185,5 +189,17 @@
 @mixin setCopyrightCenter(){
   .copyright {
     padding-bottom: 48px;
+    .ft-wrap {
+        @include flex-wrap(wrap);
+        .text {
+          width: 100%;
+          text-align: center;
+        }
+
+        ul.ft-thongke {
+          width: 100%;
+          @include justify-content(center);
+        }
+      }
   }
 }

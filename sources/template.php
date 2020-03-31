@@ -13,14 +13,15 @@ if($source=="index"){
     $tinnb=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,thumb,photo
         ,type,ngaytao,luotxem from #_news where type='tin-tuc' and noibat>0 and hienthi>0 order by stt asc");
     $c_tinnb=count($tinnb);
-    $sliderma = get_result("select ten$lang as ten,photo,thumb from #_slider 
+    $sliderma = get_result("select ten$lang as ten from #_news 
       where hienthi=1 and type='slider-ma' order by stt");
 }
 $dichvu=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,thumb,photo
     ,type,ngaytao,luotxem from #_news where type='dich-vu' and hienthi>0 order by stt asc");
 $danhmuc_cap1 = get_result("select ten$lang as ten,tenkhongdau,id,type from
  #_product_danhmuc where type='san-pham' and hienthi>0 order by stt asc");
-
+$themanh=get_result("select mota$lang as mota,ten$lang as ten,tenkhongdau,id,thumb,photo
+    ,type,ngaytao,luotxem from #_news where type='the-manh' and hienthi>0 order by stt asc");
 $logolang = get_fetch("select photo as photo from #_background where type='logo'");
 // $bannerlang = get_fetch("select photo as photo from #_background where type='banner'");
 // $ftlogo=get_fetch("select photo from #_about where type='footer' ");

@@ -3,19 +3,20 @@
 	and (max-width: $device_size_medium) 
 {
   @include setHeaderCenter;
-  @include setLinkChinhSachSmall;
+  @include showMobileMenu;
+  /*========= HOME ===============*/
+  @include setSpnoibatSmall;
+  @include setThemanhSmall;
   // @include setSliderSmall;
   // @include setDoitacSmall;
   // @include setLeftRightMobile;
   // @include setCartMobile;
-  // @include showMobileMenu;
-  $product-gutter: percentage(30/1190);
-  @include setProductColumnMobile(6, $product-gutter);
   // @include setTaiSaoFull;
   // @include setTinVideoFull;
+  /*========= FOOTER ===============*/
   @include setFooterSmall;
   @include setCopyrightCenter;
   // @include setProductMobile;
   
-
+  
 }

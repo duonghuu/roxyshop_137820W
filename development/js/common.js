@@ -68,6 +68,7 @@ $(document).ready(function() {
     dots:false,
     draggable:true,
   });
+   
     $('.web-slider-main').slick({lazyLoad: 'ondemand',
       infinite: true,
       accessibility:false,

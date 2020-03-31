@@ -1,72 +1,23 @@
 @media screen 
 	and (max-width: $device_size_mobile) {
+        /*========= COMMON ===============*/
+        @include setIdxTitleSize;
+        /*========= HEADER ===============*/
         @include setHeaderCenter;
-        @include setLinkChinhSachSmall;
+        @include showMobileMenu;
+        /*========= HOME ===============*/
+        @include setSpnoibatSmall;
+        @include setThemanhSmall;
         // @include setSliderSmall;
         // @include setDoitacSmall;
 
         // @include setLeftRightMobile;
         // @include setCartMobile;
-        // @include showMobileMenu;
-        $product-gutter: percentage(30/1190);
-       @include setProductColumnMobile(6, $product-gutter);
+        /*========= PRODUCT ===============*/
+        @include setProductColumnMobile(6, 8px); 
+        @include setProductMobile;
         // @include setTaiSaoFull;
-        // @include setProductMobile;
+        /*========= FOOTER ===============*/
         @include setFooterSmall;
         @include setCopyrightCenter;
-        @include setProductDanhmucMobile;
-        @include setVeChungToiMobile;
-        @include setIdxTitleSize;
-        .link-chinhsach-flex {
-            display: block;
-          .link-chinhsach{
-            @include flex(1);
-            width: 100%;
-            padding: 11.5px 0.5em;
-            margin-bottom: 1em;
-            @include doubly(){
-              margin-left: 0;
-            };
-          }
-        }
-        .btn-dangkymuasi{
-            margin: 20px 0;
-        }
-        .btn-dangkymuasi a{
-            width: 100%;
-            @include bg("dkmuasi.png", $background-size: contain, $background-position: center center);
-            &:before{
-                display: none;
-            }
-            h6{
-                @include font-size(20, 16);
-            }
-            p{
-                @include font-size(16, 16);
-            }
-        }
-        .link-zalo {
-            display: block;
-            li{
-                width: 100%;
-            }
-        }
-        .hd-bot .hd-bot-flex{
-            @include flex-wrap(wrap);
-            #humber_valak, .logo{
-                @include flex(1);
-            }
-            .logo{
-                width: auto;
-                img{
-                    max-width: 120px !important;
-                }
-            }
-            .hd-mid{
-                flex: unset;
-                width: 100%;
-                order: 3;
-                margin-bottom: 7px;
-            }
-        }
 }

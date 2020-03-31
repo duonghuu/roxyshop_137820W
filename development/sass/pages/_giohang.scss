@@ -13,18 +13,12 @@
   // width: 45px;
   // height: 45px;
   // border-radius: 50%;
-
-  // i{
-  //   font:{
-  //     family: $font-awesome ;
-  //     weight: 700;
-  //     style: normal;
-  //   }
-
-  //   &::before{
-  //     content: "\f07a";
-  //   }
-  // }
+  margin-left: 10px;
+  @include setFont(13px, #000);
+  i{
+    margin-right: 5px;
+    font-size: 16px;
+  }
 
   // span{
   //   position: absolute;

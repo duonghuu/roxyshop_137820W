@@ -8,7 +8,7 @@
     font-weight: 700;
     font-size: 20px;
 }
-$product-gutter: percentage(30/1190);
+$product-gutter: percentage(30/1330);
 .product-grid{
     // @include clearfix; 
     @include grid($display: flex, $flex-wrap: wrap, $gutter: $product-gutter);
@@ -16,7 +16,7 @@ $product-gutter: percentage(30/1190);
 }
 /*san pham*/
 .slick-box-item {
-    padding: 0 em(13);
+    padding: 0 em(15);
 }
 .pr-box{
     @include grid-col($col: 3, $grid-columns: 12, $gutter: $product-gutter);
@@ -37,7 +37,7 @@ $product-gutter: percentage(30/1190);
             display: block;
             overflow: hidden;
             position: relative;
-            padding-top: percentage(359/276);
+            padding-top: percentage(403/303);
             margin-bottom: 10px;
             img{
                 @extend %img-fill;
@@ -48,9 +48,9 @@ $product-gutter: percentage(30/1190);
             z-index:6;
             position:relative;
             h3{
-                @include setFont(16px, #262626, 400);
-                @include setTagAHover(#262626, #d80000);
-                margin-bottom: 2px;
+                @include setFont(16px, #333, 400);
+                @include setTagAHover(#333, #d8232a);
+                margin-bottom: 7px;
                 a{
                     @include transition(all .2s ease);
                     line-height: 1.4;
@@ -58,30 +58,22 @@ $product-gutter: percentage(30/1190);
             }
 
             p{
-                @include boxstyle($display: flex, $flex-wrap: wrap, $align-items: flex-end);
-                @include setFont(16px, #7f7777);
-                position: relative;
+                @include boxstyle($display: flex, $flex-wrap: wrap, $align-items: flex-end, $justify-content: 
+                    space-between);
+                @include setFont(13px, #9a9a9a);
                 margin: 0;
                 line-height: 1;
                 del{
-                    display: inline-block;
-                    margin: 0 0 0px 13px;
-                    line-height: 1;
-                    @include setFont(13px, #b1abab, 400);
                 }
 
                 strong{
-                    @include boxstyle($display: inline-flex, $flex-wrap: wrap);
-                    font-weight: 700;
-                    color: #ff8400;
+                    // @include boxstyle($display: inline-flex, $flex-wrap: wrap);
+                    // font-weight: 700;
+                    // color: #ff8400;
                 }
 
                 span{
-                    @include boxstyle($display: inline-flex, $flex-wrap: wrap);
-                    font-weight: 700;
-                    color: #ff8400;
-                    line-height: 1;
-                    margin-left: 5px;
+                    @include setFont(17px, #d8232a, 700);
                 }
             }
         }

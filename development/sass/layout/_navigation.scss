@@ -44,56 +44,49 @@
 }
 .main-nav {
     @include boxstyle($display: flex, $justify-content: center,$align-items: center);
-    
     position: relative;
-   
     ul{
-        list-style-type: none;
-        margin: 0;
+        @extend %reset-list;
     }
     &>ul {
         @include boxstyle($display: flex, $align-items: center,$justify-content: space-between);
-        
         z-index: 5;
-        
         &>li {
             @include boxstyle($display: flex, $align-items: center);
             position: relative;
             z-index: 5;
             @include flex(auto);
             &:not(:last-child):after{
-                content: "";
-                @include box(1px, 11px);
-                background-color: #dbdbdb;
-                @include absolute($right: -#{em(15)});
+                // content: "";
+                // @include box(1px, 11px);
+                // background-color: #dbdbdb;
+                // @include absolute($right: -#{em(15)});
             }
-            &+li{
-                margin-left: em(30);
+            @include doubly()
+            {
+                margin-left: em(50);
             }
             ul{
                 @extend %sub-menu-list;
             }
+            @include setTagAHover(#000,$color-menu-hover);
             &>a {
                 @include boxstyle($display: flex, $align-items: center,$justify-content: center, $flex-wrap: wrap);
-                min-height: 44px;
+                min-height: 38px;
                 position: relative;
                 text-align: center;
-                text-transform: uppercase;
-                @include setFont(15px, #212121, 600, $font-menu);
+                @include setFont(15px, #000, 700, $font-menu);
                 
             }
             
             &:hover {
-                &>a {
-                    @extend %hover_menu_color;
-                }
                 &>ul{
                     display: block;
                 }
             }
             &.active{
                 &>a {
-                    @extend %hover_menu_color;
+                    color: $color-menu-hover;
                 }
             }
         }
@@ -106,6 +99,7 @@
        
         li {
             position: relative;
+            
             a {
                 @include setFont(14px, #212121, 400, $font-menu);
                 text-decoration: none;
@@ -122,7 +116,7 @@
                     @include absolute($top: 0, $right: 5px);
                 }
             }
-            @include setTagAHover(#212121, $theme-color);
+            @include setTagAHover(#212121,$color-menu-hover);
             &:hover{
                 &>ul{
                     display: block;

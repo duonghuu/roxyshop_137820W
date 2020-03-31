@@ -73,7 +73,7 @@
     <?php phanquyen_menu('Slider mã giảm giá','news','man','slider-ma'); ?>
     <?php //phanquyen_menu('Banner trang trong','news','man','bntrong'); ?>
     <?php //phanquyen_menu('Text Đối tác','about','capnhat','txtdoitac'); ?>
-    <?php phanquyen_menu('Đối tác','slider','man_photo','doi-tac'); ?>
+    <?php //phanquyen_menu('Đối tác','slider','man_photo','doi-tac'); ?>
     <?php phanquyen_menu('Banner quảng cáo','slider','man_photo','quang-cao'); ?>
     <?php //phanquyen_menu('Banner quảng cáo dưới album','slider','man_photo','quang-cao2'); ?>
     <?php //phanquyen_menu('Quản lý quảng cáo 2 bên','slider','man_photo','letruot'); ?>
@@ -114,8 +114,8 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
     <span>Nội dung khác</span><strong></strong></a>
     <ul class="sub">
         <?php phanquyen_menu('Cấu hình thông tin Website','company','capnhat',''); ?>
-        <?php phanquyen_menu('Quản lý hotline','news','man','hotline'); ?>
-        <?php phanquyen_menu('Quản lý zalo','news','man','zalo'); ?>
+        <?php //phanquyen_menu('Quản lý hotline','news','man','hotline'); ?>
+        <?php //phanquyen_menu('Quản lý zalo','news','man','zalo'); ?>
         <?php //phanquyen_menu('Quản lý chi nhánh','news','man','diachi'); ?>
         <?php //phanquyen_menu('Quản lý video','video','man','video'); ?>
         <?php // phanquyen_menu('Tags','news','man','tags'); ?>
@@ -127,11 +127,8 @@ $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" cl
     echo ' activemenu' ?>" id="menuseo"><a href="#" title="" class="exp"><span>Hổ Trợ SEO
     </span><strong></strong></a>
     <ul class="sub">
-        <?php phanquyen_menu('Tuyển dụng','title','capnhat','tuyen-dung'); ?>
-        <?php phanquyen_menu('Chính sách','title','capnhat','chinh-sach'); ?>
         <?php phanquyen_menu('Tin tức','title','capnhat','tin-tuc'); ?>
         <?php phanquyen_menu('Sản phẩm','title','capnhat','san-pham'); ?>
-        <?php phanquyen_menu('Tư vấn','title','capnhat','tu-van'); ?>
     </ul>
 </li>
 </ul>

@@ -1,7 +1,7 @@
 #valak_mmenu {
     display: none;
     padding: 0 10px;
-    background-color: $bg-menu;
+    background-color: $bg-valak;
     position: relative;
     z-index: 9999;
     @include box(100%, 44px);
@@ -19,11 +19,12 @@
     // outline: 0;
     // border: 0;
     /* float: right; */
-    // color: #fff;
+    color: #fff;
     // padding: 7px 10px;
 }
 #humber_valak i {
     font-size: 23px;
+    margin-left: 5px;
 }
 .mask_menu {
     position: fixed;
@@ -220,5 +221,5 @@
 .valak-home{
     color: #fff;
     font-size: 20px;
-    margin-right: 14px;
+    margin-right: 7px;
 }

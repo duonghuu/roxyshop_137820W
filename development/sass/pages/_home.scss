@@ -11,21 +11,23 @@
 .idx-tit {
     margin-bottom: 37px;
     h4 {
-        @include setFont(30px, $theme-color, 400, $font-SFUFuturaHeavy);
+        @include setFont(em(33), #333, 700);
+        @include bg("idx-tit.png",$background-position: bottom center);
+        padding-bottom: 25px;
         text-transform: uppercase;
         text-align: center;
         margin: 0;
         img{
         }
         span, a {
-            color: $theme-color;
+            color: #333;
             display: inline-block;
             position: relative;
             &::after {
-                content: "";
-                @include bg("idx-tit.png");
-                @include box(155px, 33px);
-                @include absolute($bottom: -20px, $right: -90px);
+                // content: "";
+                // @include bg("idx-tit.png");
+                // @include box(155px, 33px);
+                // @include absolute($bottom: -20px, $right: -90px);
             }
         }
 
@@ -40,173 +42,184 @@
 .idx-desc {
     // @include setFont(15px, #808080, 400, $font-text);
 }
-
-.product-danhmuc{
-    $pro-danhmuc-gutter: percentage(26/1190);
-    @include grid($display: flex, $flex-wrap: wrap, $gutter: $pro-danhmuc-gutter);
-  h2{
-    @include grid-col($col: 6, $grid-columns: 12, $gutter: $pro-danhmuc-gutter);
-    @include setFont(18px, #212121, 700);
-    @include setTagAHover(#212121, $theme-color);
-    background-color: #eee;
-    border-radius: 3px;
-    padding: 14px;
-    text-align: center;
-    a{
-
+.sliderma-main{
+    background-color: #fc0214;
+    .slider-ma{
+        .ma-item{
+            @include boxstyle($display: flex, $align-items: center, $justify-content: center);
+            @include setFont(13px, #fff, 700);
+            min-height: 36px;
+            text-transform: uppercase;
+        }
     }
-  }
 }
-.diachi-cuahang{
-    @include setFont(16px, #212121);
-    @include boxstyle($display: flex, $align-items: center);
-    margin-bottom: 8px;
-  figure{
-    min-width: 28px;
-    margin: 0 5px 0 0;
-    img{
+.spmoi-bg, .spmoi-bg{
+    padding: em(55) 0;
+}
+.spnoibat-main{
+    margin: 0 -#{em(15)};
+}
+.spnoibat-bg{
+    @include clearfix;    
+    position: relative;
+    margin-bottom: 40px;
+  .danhmuc-feature-img{
+    float: left;
+    width: 50%;
 
+    @at-root .even#{&}{
+        float: right;
     }
-  }
-  strong{
-    
-  }
-}
-.vechungtoi-bg{
-    padding: 20px 0;
-}
-.vechungtoi-grid{
-    $vechungtoi-gutter: percentage(30/1190);
-    @include grid($display: flex, $flex-wrap: wrap, $gutter: $vechungtoi-gutter);
-  .vechungtoi-item{
-    @include grid-col($col: 4, $grid-columns: 12, $gutter: $vechungtoi-gutter);
     a{
-        display: block;
-      figure{
         position: relative;
-        padding-top: percentage(244/376);
-        overflow: hidden;
-        margin-bottom: 0;
-        img{
-          @extend %img-fill;
+        padding-top: percentage(711/684);
+        display: block;
+      img{
+        @extend %img-fill;
+      }
+      span.feature-content{
+        $feature-postion: em(20);
+        @include absolute($feature-postion,$feature-postion,$feature-postion,$feature-postion);
+        @include boxstyle($display: flex, $justify-content: center, $align-items: center, $flex-direction: column);
+        border: 3px solid #fefdfd;
+        p{
+            @include setFont(em(41), #fff, 700);
+            margin-bottom: 0;
+        }
+        h2{
+            @include setFont(em(29), #fff, 400);
+            margin-bottom: 0;
         }
       }
     }
   }
-}
-.thongtin-chinhsach-bg{
-    background-color: #efefef;
-    padding: 40px 0;
-}
-.link-chinhsach-flex{
-    @include grid($display: flex, $flex-wrap: wrap, $justify-content: center);
-  .link-chinhsach{
-    padding: 11.5px em(45);
-    border-radius: 30px;
-    @include boxstyle($display: inline-flex, $align-items: center, $justify-content: center);
-    &+.link-chinhsach{
-        margin-left: percentage(136/1190);
+  .danhmuc-sanpham{
+    $right-position: percentage(33/1366);
+    $top-position: 63px;
+    @include absolute($top: $top-position, $right: $right-position);
+    @include boxShadow(3px 4px 5px rgba(0,0,0,.25));
+    min-height: percentage(579/711);
+    width: percentage(807/1366);
+    padding: 14px 10px;
+    background-color: #fdfdfd;
+    @at-root .even#{&}{
+        right: unset;
+        left: $right-position;
     }
-    img{
-        margin-right: 10px;
-    }
-    a{
-        @include setFont(20px, #fff);
-    }
-    
-  }
-}
-.bg-xanh{
-    background-color: #62b224;
-}
-.bg-do{
-    background-color: #e72b2b;
-}
-.btn-dangkymuasi{
-    text-align: center;
-    margin: 40px 0;
-  a{
-    position: relative;
-    min-height: 118px;
-    @include boxstyle($display: inline-flex, $flex-direction: column, $justify-content: center, $align-items: center);
-    &:before{
-        content: url($images-url+"dkmuasi.png");
-        z-index: -1;
-        // @include absolute($left: 0, $top: 0);
-        @include centerer;
-    }
-    h6{
-        @include setFont(33.33px, #221100, 400, $font-SFUFuturaHeavy );
-        margin-bottom: 0;
-    } 
-    p{
-      @include setFont(20.72px, #221100, 400, $font-SFUFuturaBook );
-      margin-bottom: 0;
-    }  
-  }
-}
-
-.link-zalo{
-    $linkzalo-gut: percentage(18/820);
-    list-style-type: none;
-
-    @include grid($display: flex, $flex-wrap: wrap, $justify-content: space-between, $gutter: $linkzalo-gut);
-    margin: 0 auto;
-    max-width: 820px;
-  li{
-    background-color: #0fa8e1;
-    @include grid-col($col: 6, $grid-columns: 12, $gutter: $linkzalo-gut); 
-    @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
-    border-radius: 12px;
-    overflow: hidden;
-
-    figure{
-        width: 99px;
-        margin-bottom: 0;
-        padding-left: 10px;
-        background-color: #fff;
-        margin-right: 30px;
-      img{
-
-      }
-    }
-    span{
-        @include setFont(20px, #fff);
-        @include flex(1);
-        @include setTagAHover(#fff, #f00);
-      a{
-        font-weight: 700;
-      }
-    }
-  }
-}
-.quangcao-bg{
-    padding: 50px 0;
-}
-.quangcao-main{
-    margin: 0 -#{em(4.5)};
-    .quangcao-item{
-        padding: 0 em(4.5);
-        a{
-            display: block;
-            img{
-
+    .danhmuc-sanpham-box{
+        .product-grid{
+            @include grid($display: flex, $flex-wrap: wrap, $gutter: 8px);
+            .pr-box{
+                @include grid-col($col: 4, $grid-columns: 12, $gutter: 8px);
             }
         }
     }
+  }
 }
-.page-title{
-    color: rgba(255,255,255,.8);
-    width: 100%;
-    border-bottom: 1px solid rgba(168,168,168,.15);
-    position: relative;
-    margin-bottom: 15px;
-    padding: em(30) 0;
-    background-color: #0fa8e1;
-    .entry-header{
-        h1{
-            @include setFont(em(36), #fff, 400, $font-SFUFuturaHeavy );
-            margin-bottom: 0;
+
+.qc-item {
+    a{
+        display: block;
+        img{
+            width: 100%;
         }
     }
+}
+.tinnb-bg{
+    padding: em(40) 0;
+    background-color: #f8f8f8;
+}
+.tinnb-main{
+    margin: 0 -#{em(14)};
+  .tinnb-item{
+    padding: 0 em(14);
+    a{
+        display: block;
+        padding: 10px;
+        background-color: #fff;
+      figure{
+        position: relative;
+        padding-top: percentage(305/393);
+        img{
+            @extend %img-fill;
+        }
+      }
+      h5{
+        @include setFont(16px, #333, 400);
+        margin-bottom: 5px;
+        @include line-clamp($font-size: 16px, $line-height: 1.5, $lines-to-show: 2, $max-height: false);
+      }
+      hr{
+        margin: 0 0 5px 0;
+      }
+      p{
+        @include setFont(14px, #333);
+        @include line-clamp($font-size: 14px, $line-height: 1.5, $lines-to-show: 3, $max-height: false);
+        text-align: justify;
+        text-align-last: left;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.themanh-bg{
+    border-top: 1px solid #141414;
+    padding: 10px 0;
+}
+.themanh-main{
+    // margin: 0 -#{em(20)};
+
+}
+.themanh-item{
+    // padding: 0 em(20);
+    margin-left: -1px;
+  article{
+    @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+    padding-left: 10px;
+    border-left: 1px solid #141414;
+    figure{
+        margin: 0 5px 0 0;
+        @include box(60px, 60px);
+        position: relative;
+      img{
+        @extend %img-fill;
+        object-fit: scale-down;
+      }
+    }
+    .info{
+        @include flex(1);
+      h6{
+        @include setFont(16px, #141414, 700);
+        @include line-clamp($font-size: 16px, $line-height: 1, $lines-to-show: 1, $max-height: true);
+      }
+      span{
+        @include setFont(15px, #606060);
+        display: block;
+        @include line-clamp($font-size: 15px, $line-height: 1, $lines-to-show: 1, $max-height: true);
+      }
+    }
+  }
+}
+.ft-info-title {
+    @include setFont(em(15), #fff, 400);
+    margin-bottom: 0;
+}
+.dichvu-item{
+    background-color: #f5f1d9;
+    @include doubly(){
+        margin-top: 9px;
+    }
+    border-radius: 5px;
+    overflow: hidden;
+  a{
+    @include boxstyle($display: flex, $align-items: center);
+    @include setFont(15px, #00004f, 400);
+    padding: 3px;
+    text-transform: uppercase;
+    figure{
+        @include box(40px, 40px);
+        margin: 0 5px 0 0;
+        img{}
+    }
+  }
 }

@@ -15,6 +15,7 @@
         </div>
         <div class="ft-baiviet">
           <p class="ft-tit text-uppercase"><span>Dịch vụ giao hàng</span></p>
+
           <?php foreach ($dichvu as $key => $value) { ?>
             <div class="dichvu-item text-uppercase"><a href="<?= get_url($value, "dich-vu") ?>">
                 <figure><img src="<?= _upload_tintuc_l.$value["photo"] ?>" alt="<?= $value["ten"] ?>"></figure>
@@ -46,13 +47,14 @@
   <div class="container">
     <div class="ft-wrap">
       <p class="text">Copyright © 2020 <?= $company["ten"] ?>. Design by Nina</p>
-             <?php /*  
       <ul class="ft-thongke">
-        <li>Online: <span><?php $count=count_online();echo $tong_xem=$count['dangxem'];?></span></li>
+        <li>Đang Online: <span><?php $count=count_online();echo $tong_xem=$count['dangxem'];?></span></li>
+        <li><?=_thongketuan?>: <span><?=$trongtuan;?></span></li>   
+        <li><?=_thongkethang?>: <span><?=$trongthang;?></span></li> 
         <li><?=_tongtruycap?>: <span><?php $count=count_online();echo $tong_xem=$count['daxem'];?></span></li>
-                           <li><?=_thongketuan?>: <span><?=$trongtuan;?></span></li>   
-            </ul>
-        <li><?=_thongkethang?>: <span><?=$trongthang;?></span></li> <li><?=_ngayhomqua?>: <span><?=$homqua;?></span></li> 
+      </ul>
+             <?php /*  
+        <li><?=_ngayhomqua?>: <span><?=$homqua;?></span></li> 
 */?>
     </div>
   </div>

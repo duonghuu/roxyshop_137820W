@@ -22,7 +22,7 @@
 		$page--;
 		$bg = $pageSize*$page;
 
-		$tintuc = get_result("select *,ten$lang as ten,mota$lang as mota from #_news where $where limit $bg,$pageSize");
+		$product = get_result("select *,ten$lang as ten,mota$lang as mota from #_product where $where limit $bg,$pageSize");
 		$url_link = getCurrentPageURL();
 	}
 ?>

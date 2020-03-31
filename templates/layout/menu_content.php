@@ -3,7 +3,7 @@ $str='';
 for($i=0;$i<count($danhmuc_cap1);$i++){
   $claa = ($id_danhmuc == $danhmuc_cap1[$i]["id"]) ? 'class="active"' : "";
   if($link_id){
-    $link1 = $com.'/'.$danhmuc_cap1[$i]["tenkhongdau"].'-'.$danhmuc_cap1[$i]["id"];
+    $link1 = 'san-pham/'.$danhmuc_cap1[$i]["tenkhongdau"].'-'.$danhmuc_cap1[$i]["id"];
   }else{
     $link1 = $danhmuc_cap1[$i]["tenkhongdau"];  
   }
@@ -12,10 +12,10 @@ for($i=0;$i<count($danhmuc_cap1);$i++){
   $danhmuc_cap2= get_result("select id,ten$lang as ten,tenkhongdau,type from #_product_list where hienthi=1 and
    type='san-pham' and id_danhmuc='".$danhmuc_cap1[$i]["id"]."' order by stt,id asc");
   if(count($danhmuc_cap2)>0){
-    $str.='<ul>';
+    $str.='<ul class="sub-menu">';
     for($j=0;$j<count($danhmuc_cap2);$j++){
       if($link_id){
-        $link2 = $com.'/'.$danhmuc_cap2[$j]["tenkhongdau"].'-'.$danhmuc_cap2[$j]["id"].'/';
+        $link2 = 'san-pham/'.$danhmuc_cap2[$j]["tenkhongdau"].'-'.$danhmuc_cap2[$j]["id"].'/';
       }else{
         $link2 = $danhmuc_cap2[$j]["tenkhongdau"];  
       }
