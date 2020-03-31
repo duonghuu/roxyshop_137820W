@@ -6026,7 +6026,7 @@ $('.spnoibat-main').on({
       accessibility: false,
       slidesToShow: 4,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 3000,
       speed: 1000,
       arrows: true,
@@ -6060,7 +6060,7 @@ $('.spnoibat-main').on({
         accessibility: false,
         slidesToShow: 3,
         slidesToScroll: 1,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 3000,
         speed: 1000,
         arrows: true,
@@ -6089,7 +6089,7 @@ $('.spnoibat-main').on({
           accessibility: false,
           slidesToShow: 4,
           slidesToScroll: 1,
-          autoplay: false,
+          autoplay: true,
           autoplaySpeed: 3000,
           speed: 1000,
           arrows: true,
@@ -6725,13 +6725,13 @@ $(document).ready(function() {
           add_popup(lang_hethongloi);
         },
         success:function(kq){
-          add_popup(kq.thongbao);
+          // add_popup(kq.thongbao);
           $('.giohang_fix span').html(kq.sl);
-          // $('.giohang-left-cont').html(kq.thongtin);
-          // $('.giohang-left-tit span').html(soluong);
-          // $('.giohang-right-tit span').html(kq.sl);
-          // $('.giohang-thanhtien span, .giohang-right-tt .ghajax, .giohang-right-total .ghajax').html(kq.tongtien);
-          // $('#giohang').addClass('active');
+          $('.giohang-left-cont').html(kq.thongtin);
+          $('.giohang-left-tit span').html(soluong);
+          $('.giohang-right-tit span').html(kq.sl);
+          $('.giohang-thanhtien span, .giohang-right-tt .ghajax, .giohang-right-total .ghajax').html(kq.tongtien);
+          $('#giohang').addClass('active');
         }
       });
     }

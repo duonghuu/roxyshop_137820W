@@ -10622,6 +10622,8 @@ div.mxhft {
             line-height: 18px;
             color: #292929;
             margin-bottom: 5px; }
+            #giohang .w-giohang .w-giohang-flex .giohang-left-cont-flex .giohang-left-info .giohang-left-proprice span {
+              margin-right: 8px; }
     #giohang .w-giohang .w-giohang-flex .giohang-right {
       min-height: 200px;
       padding: 15px 20px 10px;

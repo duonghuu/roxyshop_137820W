@@ -18,8 +18,8 @@
                     <?php phanquyen_menu('Sản phẩm','product','man','san-pham'); ?>
                     <?php //phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
                     <?php //phanquyen_menu('Quản lý thương hiệu','news','man','thuonghieu'); ?>
-                    <?php //phanquyen_menu('Quản lý màu sắc','news','man','mausac'); ?>
-                    <?php //phanquyen_menu('Quản lý size','news','man','size'); ?>
+                    <?php phanquyen_menu('Quản lý màu sắc','news','man','mausac'); ?>
+                    <?php phanquyen_menu('Quản lý size','news','man','size'); ?>
                 </ul>
             </li>
             <li class="categories_li <?php if(in_array($_GET['type'], array('khuyen-mai','y-kien','thu-vien','chinh-sach'

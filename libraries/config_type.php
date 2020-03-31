@@ -49,7 +49,7 @@ switch($type){
 
 		default:
 		$config['type'] = array('seo','ten','mota','gia','giakm','noibat','danhmuc','list','hinhanh','hinhthem','noidung','spmoi',
-	'tieubieu');
+	'tieubieu','colormau','sizekichthuoc');
 		$config['ck'] = array('mota2');
 		$config['title'] = array('tieubieu'=>"Sản phẩm hot",'noibat'=>"Nổi bật",
 			'spmoi'=>"Mới",'spbanchay'=>"Bán chạy","mota"=>"Mô tả","toado"=>"Iframe google map",
@@ -67,7 +67,7 @@ switch($type){
 	case 'mausac':
 	switch($act){
 		default:
-		$config['type'] = array('hinhanh', 'ten', 'color','noibat');
+		$config['type'] = array('ten', 'color');
 		$config['title']["noibat"] = "Dùng hình ảnh";
 		@define ( _width_thumb , 200 );
 		@define ( _height_thumb , 200 );

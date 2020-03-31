@@ -389,13 +389,14 @@ $ds_photo=$d->result_array();
   <div class="clear"></div>
   </div>
   <?php } ?>
+  <?php /*
   <?php if(in_array('thuoctinh',$config['type'])) { ?>
   <div class="formRow formRow-flex form-group fieldGroup">
       <div class="formRight-flex">
           <a href="javascript:void(0)" class="btn btn-success blueB button addMore">Thêm món</a>
       </div>
   </div>
-  <?php /* <div class="selector" style="float: none;height: auto">
+  <div class="selector" style="float: none;height: auto">
     <?php foreach ($add_data as $key => $value) {  ?>
         <div class="formRow formRow-flex form-group fieldGroup">
            <label>Món: </label>
