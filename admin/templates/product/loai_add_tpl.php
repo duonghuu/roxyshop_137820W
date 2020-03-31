@@ -21,7 +21,7 @@
       $sql="select * from table_product_cat where id_list='".$_REQUEST['id_list']."' order by stt,id desc";
       $d->query($sql);
       $result = $d->result_array();     
-      $str='<select id="id_cat" name="id_cat" onchange="select_onchange2()" class="main_select select_danhmuc">
+      $str='<select id="id_cat" name="id_cat" class="main_select select_danhmuc">
         <option value="">Danh mục cấp 3</option>';        
       foreach ($result as $key => $row) {
         if($row["id"]==(int)@$_REQUEST["id_cat"])
