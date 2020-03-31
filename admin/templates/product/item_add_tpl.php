@@ -1,5 +1,5 @@
 <?php 
-$mon = get_result("select ten,id from table_news where type='mon' order by stt asc");
+// $mon = get_result("select ten,id from table_news where type='mon' order by stt asc");
 $mausac = get_result("select ten,id,color from table_news where type='mausac' order by stt asc");
 $size = get_result("select ten,id,color from table_news where type='size' order by stt asc");
 $a_mausac2 = explode(',', $item["mausac2"]);
@@ -395,29 +395,29 @@ $ds_photo=$d->result_array();
           <a href="javascript:void(0)" class="btn btn-success blueB button addMore">Thêm món</a>
       </div>
   </div>
-  <div class="selector" style="float: none;height: auto">
-  <?php foreach ($add_data as $key => $value) {  ?>
-      <div class="formRow formRow-flex form-group fieldGroup">
-         <label>Món: </label>
-
-         <div class="formRight formRight-flex">
-             <input type="hidden" name="idgoi[]" value="<?= $value["id"] ?>"   />
-             <select name="chucvugoi[]" required="">
-               <option value="">Chọn món</option>
-               <?php foreach ($mon as $kmon => $vmon) {
-                $sel = ($vmon["id"]==$value["chucvu"])?'selected':'';
-               echo '<option '.$sel.' value="'.$vmon["id"].'_'.$vmon["ten"].'">'.$vmon["ten"].'</option>';  
-               } ?>
-               
-             </select>
-             <input type="text" name="linkgoi[]" value="<?= $value["link"] ?>"  title="Mô tả" placeholder="Mô tả" class="tipS" />
-             <a href="javascript:void(0)" data-id="<?= $value["id"] ?>" class="btn btn-danger button redB remove">Xóa</a>
-         </div>
-         <div class="clear"></div>
-     </div>   
-  <?php } ?>
-  </div>
-  <?php } ?>
+  <?php /* <div class="selector" style="float: none;height: auto">
+    <?php foreach ($add_data as $key => $value) {  ?>
+        <div class="formRow formRow-flex form-group fieldGroup">
+           <label>Món: </label>
+  
+           <div class="formRight formRight-flex">
+               <input type="hidden" name="idgoi[]" value="<?= $value["id"] ?>"   />
+               <select name="chucvugoi[]" required="">
+                 <option value="">Chọn món</option>
+                 <?php foreach ($mon as $kmon => $vmon) {
+                  $sel = ($vmon["id"]==$value["chucvu"])?'selected':'';
+                 echo '<option '.$sel.' value="'.$vmon["id"].'_'.$vmon["ten"].'">'.$vmon["ten"].'</option>';  
+                 } ?>
+                 
+               </select>
+               <input type="text" name="linkgoi[]" value="<?= $value["link"] ?>"  title="Mô tả" placeholder="Mô tả" class="tipS" />
+               <a href="javascript:void(0)" data-id="<?= $value["id"] ?>" class="btn btn-danger button redB remove">Xóa</a>
+           </div>
+           <div class="clear"></div>
+       </div>   
+    <?php } ?>
+    </div>
+    <?php } ?> */?>
 
   <?php if(in_array('colormau',$config['type'])) { 
     ?>
@@ -688,7 +688,7 @@ $ds_photo=$d->result_array();
     });
 });
 </script>
-<!-- copy of input fields group -->
+<?php /* <!-- copy of input fields group -->
 <div class="form-group fieldGroupCopy" style="display: none;">
     <label>Món: </label>
     <div class="formRight formRight-flex">
@@ -726,4 +726,4 @@ $ds_photo=$d->result_array();
                 $(this).parents(".fieldGroup").remove();
             });
     });
-</script>
+</script> */?>

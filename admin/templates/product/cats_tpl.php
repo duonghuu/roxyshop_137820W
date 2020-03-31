@@ -46,44 +46,41 @@
 </script>
 <?php
 function get_main_danhmuc()
-	{
-		$sql="select * from table_product_danhmuc where type='".$_REQUEST['type']."' order by stt";
-		$stmt=mysql_query($sql);
-		$str='
-			<select id="id_danhmuc" name="id_danhmuc" onchange="select_onchange()" class="main_select">
-			<option>Chọn danh mục cấp 1</option>
-			';
-		while ($row=@mysql_fetch_array($stmt))
-		{
-			if($row["id"]==(int)@$_REQUEST["id_danhmuc"])
-				$selected="selected";
-			else
-				$selected="";
-			$str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-		}
-		$str.='</select>';
-		return $str;
-	}
-
+{
+  global $d;
+  $sql="select * from table_product_danhmuc where type='".$_REQUEST['type']."' order by stt,id desc";
+  $d->query($sql);
+  $result = $d->result_array();
+  $str='<select id="id_danhmuc" name="id_danhmuc" onchange="select_onchange()" class="main_select">
+  <option value="">Danh mục cấp 1</option>';
+  foreach ($result as $key => $row) {
+    if($row["id"]==(int)@$_REQUEST["id_danhmuc"])
+      $selected="selected";
+    else
+      $selected="";
+    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+  }
+  $str.='</select>';
+  return $str;
+}
 function get_main_list()
-	{
-		$sql="select * from table_product_list where id_danhmuc=".$_REQUEST['id_danhmuc']."  order by stt";
-		$stmt=mysql_query($sql);
-		$str='
-			<select id="id_list" name="id_list" onchange="select_onchange1()" class="main_select">
-			<option>Chọn danh mục cấp 2</option>
-			';
-		while ($row=@mysql_fetch_array($stmt))
-		{
-			if($row["id"]==(int)@$_REQUEST["id_list"])
-				$selected="selected";
-			else
-				$selected="";
-			$str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-		}
-		$str.='</select>';
-		return $str;
-	}
+{
+  global $d;
+  $sql="select * from table_product_list where id_danhmuc='".$_REQUEST['id_danhmuc']."' order by stt,id desc";
+  $d->query($sql);
+  $result = $d->result_array();     
+  $str='<select id="id_list" name="id_list" onchange="select_onchange1()" class="main_select">
+  <option value="">Danh mục cấp 2</option>';        
+  foreach ($result as $key => $row) {
+    if($row["id"]==(int)@$_REQUEST["id_list"])
+      $selected="selected";
+    else
+      $selected="";       
+    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+  }
+  $str.='</select>';
+  return $str;
+}
 
 ?>
 <div class="control_frm" style="margin-top:25px;">
