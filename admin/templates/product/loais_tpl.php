@@ -120,7 +120,7 @@ function get_main_category()
       <thead>
       <tr>
         <td></td>
-        <td class="tb_data_small"><a href="#" class="tipS" style="margin: 5px;">Thứ tự</a></td
+        <td class="tb_data_small"><a href="#" class="tipS" style="margin: 5px;">Thứ tự</a></td>
         <td class="tb_data_small"><?=get_main_danhmuc()?></td>
         <td class="tb_data_small"><?=get_main_list()?></td>
         <td class="tb_data_small"><?=get_main_category()?></td>
