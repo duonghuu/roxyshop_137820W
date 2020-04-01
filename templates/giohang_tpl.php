@@ -36,13 +36,26 @@
                         </tr>
                   <?php } ?>
                     <tr>
+                        <td colspan="6" >
+                            <div class="col-md-12 d-flex justify-content-between flex-wrap coupon-form mt-2">
+                              <input type="text" name="coupon" id="coupon" placeholder="Mã giảm giá" class="form-control">
+                              <button type="button" id="sudung" class="btn btn-primary ml-2">Sử dụng</button>  
+                            </div>
+                            <p class="field-message field-message-error show-coupon"></p>
+                        </td>
+                      </tr>
+                    <tr>
+                          <input id="code_coupon" name="code_coupon" type="hidden" value="0">
+                          <input id="price_coupon" name="price_coupon" type="hidden" value="0">
                           <input id="price_ship" name="price_ship" type="hidden" value="0">
                           <input id="tong_gia" name="tong_gia" type="hidden" value="<?= get_order_total() ?>">
-                        <td colspan="6" class="tongtien_gh"><div class="show-price-ship"></div><?=_tongtien?>: <span><?=number_format(get_order_total(),0, ',', '.')?> đ</span></td>
+                        <td colspan="6" class="tongtien_gh"><div class="show-price-ship"></div>
+                          <?=_tongtien?>: <span><?=number_format(get_order_total(),0, ',', '.')?> đ</span></td>
                       </tr>
                 <?php } else{
                     echo "<tr><td>"._khongcosanphamtronggiohang."</td>";}?>
               </table>
+
         </div><!--.left_gh-->
 
 

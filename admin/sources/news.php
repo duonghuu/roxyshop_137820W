@@ -199,6 +199,7 @@ function save_item(){
 	$data['id_cat'] = (int)$_POST['id_cat'];
 	$data['id_item'] = (int)$_POST['id_item'];
 	$data['tenkhongdau'] = changeTitle($data['ten']);
+	$data['gia'] = (int)$_POST['gia'];
 	$data['stt'] = $_POST['stt'];
 	$data['type'] = $_POST['type'];
 	// $data['link'] = $_POST['link'];
@@ -212,6 +213,7 @@ function save_item(){
 	$data['h1'] = $_POST['h1'];
 	$data['h2'] = $_POST['h2'];
 	$data['h3'] = $_POST['h3'];
+
 	if($id){
 		if($photo = upload_image("file", _format_duoihinh, _upload_tintuc,$file_name)){
 			$data['photo'] = $photo;

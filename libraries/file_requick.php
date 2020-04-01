@@ -213,6 +213,13 @@ switch($com)
 	$source = "giohang";
 	$template = "giohang";
 	break;
+	case 'gio-hang2':
+	$type = "giohang";
+	$title = _giohang;
+	$title_cat = _giohang;
+	$source = "giohang2";
+	$template = "giohang2";
+	break;
 	case 'dang-xuat':
 	logout();
 	break;

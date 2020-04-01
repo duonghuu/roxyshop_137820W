@@ -227,6 +227,7 @@ $ds_photo=$d->result_array();
   <div class="clear"></div>
   </div>
   <?php } ?>
+  
   <?php if(in_array('color',$config['type'])) { ?>
     <div class="formRow">
       <label>Màu nền :</label>
@@ -371,7 +372,19 @@ $ds_photo=$d->result_array();
 
       </div><!-- End content <?=$key?> -->
     <?php } ?>
+
   </div>      <!-- .widget  -->
+  <div class="widget">
+    <?php if(in_array('gia',$config['type'])) { ?>
+    <div class="formRow">
+      <label>Giá</label>
+      <div class="formRight">
+        <input type="text" name="gia" title="Nhập giá" id="gia" class="tipS" value="<?=@$item['gia']?>" />
+      </div>
+      <div class="clear"></div>
+    </div>
+  <?php } ?>
+  </div>
   <?php if(in_array('seo',$config['type'])) include _template."seo_tpl.php"; ?>
   <div class="widget">
     <?php if(in_array('noibat',$config['type'])) { ?>

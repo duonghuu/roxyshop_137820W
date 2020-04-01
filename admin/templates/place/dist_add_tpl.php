@@ -1,19 +1,18 @@
 <?php
 function get_main_city($id=0)
     {
-        $sql="select * from table_place_city order by stt";
-        $stmt=mysql_query($sql);
+        $getdata = get_result("select * from table_place_city order by stt");
         $str='
-            <select id="id_city" name="id_city" class="main_font">
-            <option>Chọn tỉnh thành</option>            
-            ';
-        while ($row=@mysql_fetch_array($stmt)) 
+        <select id="id_city" name="id_city" class="main_font">
+        <option value="">Chọn tỉnh thành</option>
+        ';
+        foreach($getdata as $key=>$row)
         {
             if($row["id"]==(int)$id)
                 $selected="selected";
-            else 
+            else
                 $selected="";
-            $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';            
+            $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
         }
         $str.='</select>';
         return $str;
@@ -58,13 +57,13 @@ function get_main_city($id=0)
 			<div class="clear"></div>
 		</div>	
         
-        <?php /* <div class="formRow">
-                            <label>Phí vận chuyển</label>
-                            <div class="formRight">
-                                <input type="text" name="gia" title="Nhập Phí vận chuyển" id="name" class="tipS" value="<?=@$item['gia']?>" />
-                            </div>
-                            <div class="clear"></div>
-                        </div>         */?>        
+        <div class="formRow">
+            <label>Phí vận chuyển</label>
+            <div class="formRight">
+                <input type="text" name="gia" title="Nhập Phí vận chuyển" id="name" class="tipS" value="<?=@$item['gia']?>" />
+            </div>
+            <div class="clear"></div>
+        </div>     
              
       
     

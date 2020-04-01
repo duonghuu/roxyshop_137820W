@@ -8,7 +8,7 @@
             
             <li class="categories_li <?php if($_GET['com']=='httt' || $_GET['com']=='order'
             || $_GET['type']=='thuonghieu' || $_GET['type']=='mausac' || $_GET['type']=='size'
-            || $_GET['type']=='txtsp' || $_GET['type']=='san-pham' || $_GET['com']=='excel' )
+            || $_GET['type']=='txtsp' || $_GET['type']=='san-pham' || $_GET['type']=='coupon' || $_GET['com']=='excel' )
             echo ' activemenu' ?>" id="menu_"><a href="" title="" class="exp">
                 <span>Sản phẩm</span><strong></strong></a>
                 <ul class="sub">
@@ -20,6 +20,7 @@
                     <?php //phanquyen_menu('Quản lý thương hiệu','news','man','thuonghieu'); ?>
                     <?php phanquyen_menu('Quản lý màu sắc','news','man','mausac'); ?>
                     <?php phanquyen_menu('Quản lý size','news','man','size'); ?>
+                    <?php phanquyen_menu('Quản lý mã giảm giá','news','man','coupon'); ?>
                 </ul>
             </li>
             <li class="categories_li <?php if(in_array($_GET['type'], array('khuyen-mai','y-kien','thu-vien','chinh-sach'
@@ -98,16 +99,15 @@
             <?php //phanquyen_menu('Quản lý com','com','man',''); ?>
         </ul>
     </li>
-<?php /*<li class="categories_li <?php if($_GET['com']=='place') echo ' activemenu' ?>"
+<li class="categories_li <?php if($_GET['com']=='place') echo ' activemenu' ?>"
  id="menu_pl"><a href="" title="" class="exp"><span>Địa điểm</span><strong></strong></a>
     <ul class="sub">
         <?php phanquyen_menu('Quản lý Tỉnh thành','place','man_city',''); ?>
         <?php phanquyen_menu('Quản lý Quận huyện','place','man_dist',''); ?>
-        <?php phanquyen_menu('Quản lý Phường xã','place','man_ward',''); ?>
-        <?php phanquyen_menu('Quản lý Đường','place','man_street',''); ?>
+        <?php //phanquyen_menu('Quản lý Phường xã','place','man_ward',''); ?>
+        <?php //phanquyen_menu('Quản lý Đường','place','man_street',''); ?>
     </ul>
 </li>
-*/?>
 <li class="categories_li setting_li <?php if(in_array($type, array('txtvideo','video',
 'hotline','zalo','tags','diachi')) || $_GET['com']=='company' || $_GET['com']=='meta' ||
 $_GET['com']=='user') echo ' activemenu' ?>" id="menu_cp"><a href="" title="" class="exp">

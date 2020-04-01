@@ -94,7 +94,6 @@ function get_items(){
 	$d->query($sql);
 	
 	$items = $d->result_array();
-	
 	$curPage = isset($_GET['curPage']) ? $_GET['curPage'] : 1;
 	$url="index.php?com=order&act=man&tinhtrang=".$_GET['tinhtrang']."&ngaytao=".$_GET['ngaytao']."&ngayin=".$_REQUEST['ngayin']."&hinhthucgiaohang=".$_GET['hinhthucgiaohang'];
 	$maxR=20;

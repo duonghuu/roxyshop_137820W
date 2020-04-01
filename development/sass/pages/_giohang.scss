@@ -379,3 +379,11 @@
   box-sizing: border-box;
   text-transform: uppercase;
 }
+.coupon-form{
+  input{
+    @include flex(1);
+  }
+  .btn{
+
+  }
+}

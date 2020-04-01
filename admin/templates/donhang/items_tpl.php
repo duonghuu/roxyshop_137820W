@@ -273,32 +273,35 @@ function tinhtrang($i=0)
                 <td align="center">
                <?=date('d/m/Y',$items[$i]['ngaytao'])?>
                 </td>
+
+                <td align="center"><?=number_format($items[$i]['tonggia'],0, ',', '.')?>&nbsp;vnđ
+                </td>
       
-        <td align="center">
-         <?php
-					$d->reset();
-					$sql_chitietdonhang = "select gia,giacu,soluong from #_chitietdonhang where madonhang='".$items[$i]['madonhang']."' order by stt,id desc";
-					$d->query($sql_chitietdonhang);
-					$chitietdonhang = $d->result_array();
-					$tongtiendonhang = 0;
-					$soluongchiphi = 0;
-				?>
-                 <?php for($j=0, $count_chitietdonhang=count($chitietdonhang); $j<$count_chitietdonhang; $j++){?>
-                 		<?php 
-							if($chitietdonhang[$j]['giacu']>0){
-								$tongtiendonhang = $tongtiendonhang + ($chitietdonhang[$j]['giacu']*$chitietdonhang[$j]['soluong']);
-							}
-							else
-							{
-							$tongtiendonhang = $tongtiendonhang + ($chitietdonhang[$j]['gia']*$chitietdonhang[$j]['soluong']);	
-							}
-							$soluongchiphi += $chitietdonhang[$j]['soluong'];
-							
-						?>
-                 <?php } ?>
-                 
-                 <?=number_format($tongtiendonhang,0, ',', '.')?>&nbsp;vnđ
-        </td>
+        <?php /* <td align="center">
+                 <?php
+                  $d->reset();
+                  $sql_chitietdonhang = "select gia,giacu,soluong from #_chitietdonhang where madonhang='".$items[$i]['madonhang']."' order by stt,id desc";
+                  $d->query($sql_chitietdonhang);
+                  $chitietdonhang = $d->result_array();
+                  $tongtiendonhang = 0;
+                  $soluongchiphi = 0;
+                ?>
+                         <?php for($j=0, $count_chitietdonhang=count($chitietdonhang); $j<$count_chitietdonhang; $j++){?>
+                             <?php 
+                      if($chitietdonhang[$j]['giacu']>0){
+                        $tongtiendonhang = $tongtiendonhang + ($chitietdonhang[$j]['giacu']*$chitietdonhang[$j]['soluong']);
+                      }
+                      else
+                      {
+                      $tongtiendonhang = $tongtiendonhang + ($chitietdonhang[$j]['gia']*$chitietdonhang[$j]['soluong']);  
+                      }
+                      $soluongchiphi += $chitietdonhang[$j]['soluong'];
+                      
+                    ?>
+                         <?php } ?>
+                         
+                         <?=number_format($tongtiendonhang,0, ',', '.')?>&nbsp;vnđ
+                </td> */?>
        
         <td align="center">
            <?php 

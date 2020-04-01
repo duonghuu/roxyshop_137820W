@@ -28,6 +28,9 @@ if(count($_SESSION['cart'])>0)
 		$email = $_POST['email'];
 		$noidung = $_POST['noidung'];
 		$price_ship = $_POST['price_ship'];
+		$price_coupon = $_POST['price_coupon'];
+		$code_coupon = $_POST['code_coupon'];
+		$tong_gia = $_POST['tong_gia'];
 		$ip = getRealIPAddress();
 		$id_user = $_SESSION['login']['id'];
 		//validate dữ liệu
@@ -37,13 +40,13 @@ if(count($_SESSION['cart'])>0)
 		$diachi = trim(strip_tags($diachi));	
 		$email = trim(strip_tags($email));	
 		$noidung = trim(strip_tags($noidung));
-		$hoten = mysql_real_escape_string($hoten);
-		$dienthoai = mysql_real_escape_string($dienthoai);
-		$diachi = mysql_real_escape_string($diachi);
-		$email = mysql_real_escape_string($email);
-		$noidung = mysql_real_escape_string($noidung);
+		$hoten = trim(strip_tags($hoten));
+		$dienthoai = trim(strip_tags($dienthoai));
+		$diachi = trim(strip_tags($diachi));
+		$email = trim(strip_tags($email));
+		$noidung = trim(strip_tags($noidung));
 		$price_ship = trim(strip_tags($price_ship));		
-		$tonggia = get_order_total();				
+		$tonggia = $tong_gia;				
 		$ngaydangky = time();
 		$ngaycapnhat = time();	
 		$coloi = false;		
@@ -103,6 +106,8 @@ if(count($_SESSION['cart'])>0)
 			$isrt_data["email"] = $email;
 			$isrt_data["tonggia"] = $tonggia;
 			$isrt_data["phi"] = $price_ship;
+			$isrt_data["coupon"] = $code_coupon;
+			$isrt_data["coupon_cost"] = $price_coupon;
 			$isrt_data["noidung"] = $noidung;
 			$isrt_data["ngaytao"] = $ngaydangky;
 			$isrt_data["tinhtrang"] = 1;

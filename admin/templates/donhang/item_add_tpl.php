@@ -1,39 +1,39 @@
 <?php
 function tinhtrang($i=0)
 {
-  $sql="select * from table_tinhtrang order by id";
-  $stmt=mysql_query($sql);
-  $str='
-  <select id="id_tinhtrang" name="id_tinhtrang" class="main_font">          
-  ';
-  while ($row=@mysql_fetch_array($stmt)) 
-  {
-    if($row["id"]==$i)
-      $selected="selected";
-    else 
-      $selected="";
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["trangthai"].'</option>';      
-  }
-  $str.='</select>';
-  return $str;
+  global $d;
+    $sql="select * from table_tinhtrang order by id";
+    $d->query($sql);
+    $result = $d->result_array();
+    $str='<select id="id_tinhtrang" name="id_tinhtrang" class="main_font">
+      ';
+    foreach ($result as $key => $row) {
+      if($row["id"]==$i)
+        $selected="selected";
+      else
+        $selected="";
+      $str.='<option value='.$row["id"].' '.$selected.'>'.$row["trangthai"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
 }
 function hinhthucgiaohang($i=0)
 {
-  $sql="select * from table_hinhthucgiaohang order by id";
-  $stmt=mysql_query($sql);
-  $str='
-  <select id="hinhthucgiaohang" name="hinhthucgiaohang" class="main_font">          
-  ';
-  while ($row=@mysql_fetch_array($stmt)) 
-  {
-    if($row["id"]==$i)
-      $selected="selected";
-    else 
-      $selected="";
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';      
-  }
-  $str.='</select>';
-  return $str;
+  global $d;
+    $sql="select * from table_hinhthucgiaohang order by id";
+    $d->query($sql);
+    $result = $d->result_array();
+    $str='<select id="hinhthucgiaohang" name="hinhthucgiaohang" class="main_font">
+      ';
+    foreach ($result as $key => $row) {
+      if($row["id"]==$i)
+        $selected="selected";
+      else
+        $selected="";
+      $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
 }
 ?>
 <?php
@@ -99,38 +99,38 @@ $tongtiendonhang = 0;
 <?php
 function get_httt()
 {
+  global $d;
   $sql="select * from table_httt";
-  $stmt=mysql_query($sql);
-  $str='
-  <select id="httt" name="httt" class="main_select">
-  <option>Hình thức thanh toán</option>     
-  ';
-  while ($row=@mysql_fetch_array($stmt)) 
-  {
+  $d->query($sql);
+  $result = $d->result_array();     
+  $str='<select id="httt" name="httt" class="main_select " 
+  >
+  <option>Hình thức thanh toán</option>       ';        
+  foreach ($result as $key => $row) {
     if($row["id"]==(int)@$_REQUEST["httt"])
       $selected="selected";
-    else 
+    else
       $selected="";
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';      
+    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
   }
   $str.='</select>';
   return $str;
 }
 function get_thanhpho_item()
 {
+  global $d;
   $sql="select * from table_place_city order by stt";
-  $stmt=mysql_query($sql);
-  $str='
-  <select id="thanhpho_item" name="thanhpho_item" onchange="select_onchange()" class="main_select select_danhmuc" >
-  <option>Tỉnh/Thành phố</option>     
-  ';
-  while ($row=@mysql_fetch_array($stmt)) 
-  {
+  $d->query($sql);
+  $result = $d->result_array();     
+  $str='<select id="thanhpho_item" name="thanhpho_item" class="main_select select_danhmuc" 
+  onchange="select_onchange()">
+  <option>Tỉnh/Thành phố</option>    ';        
+  foreach ($result as $key => $row) {
     if($row["id"]==(int)@$_REQUEST["thanhpho_item"])
       $selected="selected";
-    else 
+    else
       $selected="";
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';      
+    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
   }
   $str.='</select>';
   return $str;
@@ -157,19 +157,20 @@ function get_thanhpho()
 }
 function get_phuong()
 {
-  $sql="select * from table_place_ward where id_dist=".$_REQUEST['thanhpho']."  order by stt";
-  $stmt=mysql_query($sql);
-  $str='
-  <select id="phuong" name="phuong" class="main_select select_danhmuc" >
-  <option>Phường/Xã</option>      
-  ';
-  while ($row=@mysql_fetch_array($stmt)) 
-  {
+  global $d;
+  $sql="select * from table_place_ward where id_dist=".$_REQUEST['thanhpho']."  
+  order by stt";
+  $d->query($sql);
+  $result = $d->result_array();     
+  $str='<select id="phuong" name="phuong" class="main_select select_danhmuc" 
+  >
+  <option>Phường/Xã</option> ';        
+  foreach ($result as $key => $row) {
     if($row["id"]==(int)@$_REQUEST["phuong"])
       $selected="selected";
-    else 
+    else
       $selected="";
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';      
+    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
   }
   $str.='</select>';
   return $str;

@@ -39,22 +39,21 @@
 <?php
 	function get_main_item()
 	{
-		$sql_huyen="select * from table_place_city where hienthi=1 order by stt,id desc";
-		$result=mysql_query($sql_huyen);
-		$str='
-			<select id="id_city" name="id_city" onchange="select_onchange()" class="main_select">
-			<option value="">Chọn tỉnh thành</option>	
-			';
-		while ($row_huyen=@mysql_fetch_array($result)) 
-		{
-			if($row_huyen["id"]==(int)@$_REQUEST["id_city"])
-				$selected="selected";
-			else 
-				$selected="";
-			$str.='<option value='.$row_huyen["id"].' '.$selected.'>'.$row_huyen["ten"].'</option>';			
-		}
-		$str.='</select>';
-		return $str;
+    $getdata = get_result("select * from table_place_city where hienthi=1 order by stt,id desc");
+    $str='
+    <select id="id_city" name="id_city" onchange="select_onchange()" class="main_select">
+    <option value="">Chọn tỉnh thành</option>
+    ';
+    foreach($getdata as $key=>$row)
+    {
+        if($row["id"]==(int)@$_REQUEST["id_city"])
+            $selected="selected";
+        else
+            $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
 	}
 ?>
 <form name="f" id="f" method="post">
@@ -85,7 +84,7 @@
         <td class="tb_data_small"><a href="#" class="tipS" style="margin: 5px;">Thứ tự</a></td>       
          <td width="200"><?=get_main_item()?></td>
          <td class="sortCol"><div>Tên<span></span></div></td>
-         <td width="150" class="none">Phí vận chuyển</td>
+         <td width="150" class="">Phí vận chuyển</td>
         <td class="tb_data_small">Ẩn/Hiện</td>
          <td width="200">Thao tác</td>
       </tr>
@@ -96,37 +95,41 @@
       </tr>
     </tfoot>
     <tbody>
-         <?php for($i=0, $count=count($items); $i<$count; $i++){?>
+         <?php 
+         for($i=0, $count=count($items); $i<$count; $i++){
+          ?>
           <tr>
-       <td>
+           <td>
             <input type="checkbox" name="iddel[]" value="<?=$items[$i]['id']?>" id="check<?=$i?>" />
-        </td>
-        <td align="center">
-             <input data-val0="<?=$items[$i]['id']?>" data-val2="table_<?=$_GET['com']?>_dist" data-val3="stt" onblur="stt(this)" type="text" value="<?=$items[$i]['stt']?>" name="ordering[]" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" class="tipS smallText update_stt" original-title="Nhập số thứ tự bài viết" rel="<?=$items[$i]['id']?>" />
-        </td> 
-      <td align="center">
-        <?php
-        $sql_danhmuc="select ten from table_place_city where id='".$items[$i]['id_city']."'";
-        $result=mysql_query($sql_danhmuc);
-        $item_danhmuc =mysql_fetch_array($result);
-        echo @$item_danhmuc['ten']
-      ?>      
+          </td>
+          <td align="center">
+           <input data-val0="<?=$items[$i]['id']?>" data-val2="table_<?=$_GET['com']?>_dist" data-val3="stt" 
+           onblur="stt(this)" type="text" value="<?=$items[$i]['stt']?>" name="ordering[]" 
+           onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" 
+           class="tipS smallText update_stt" original-title="Nhập số thứ tự bài viết" rel="<?=$items[$i]['id']?>" />
+         </td> 
+         <td align="center">
+          <?php
+          $sql_danhmuc="select ten from table_place_city where id='".$items[$i]['id_city']."'";
+          $result=get_fetch($sql_danhmuc);
+          echo @$result['ten'];
+          ?>      
         </td> 
         <td class="title_name_data">
-            <a href="index.php?com=place&act=edit_dist&id=<?=$items[$i]['id']?>" class="tipS SC_bold"><?=$items[$i]['ten']?></a>
+          <a href="index.php?com=place&act=edit_dist&id=<?=$items[$i]['id']?>" class="tipS SC_bold"><?=$items[$i]['ten']?></a>
         </td>
         
-        <td class="none">
-           	<?=number_format($items[$i]['gia'],0, ',', '.').' <sup>đ</sup>'; ?>
+        <td class="">
+          <?=number_format($items[$i]['gia'],0, ',', '.').' <sup>đ</sup>'; ?>
         </td>
-       
+
         <td align="center">
-           <a data-val2="table_<?=$_GET['com']?>_dist" rel="<?=$items[$i]['hienthi']?>" data-val3="hienthi" class="diamondToggle <?=($items[$i]['hienthi']==1)?"diamondToggleOff":""?>" data-val0="<?=$items[$i]['id']?>" ></a> 
-        </td>
+         <a data-val2="table_<?=$_GET['com']?>_dist" rel="<?=$items[$i]['hienthi']?>" data-val3="hienthi" class="diamondToggle <?=($items[$i]['hienthi']==1)?"diamondToggleOff":""?>" data-val0="<?=$items[$i]['id']?>" ></a> 
+       </td>
        
-        <td class="actBtns">
-            <a href="index.php?com=place&act=edit_dist&id=<?=$items[$i]['id']?>" title="" class="smallButton tipS" original-title="Sửa"><img src="./images/icons/dark/pencil.png" alt=""></a>
-            <a href="" onclick="CheckDelete('index.php?com=place&act=delete_dist&id=<?=$items[$i]['id']?>'); return false;" title="" class="smallButton tipS" original-title="Xóa"><img src="./images/icons/dark/close.png" alt=""></a>        </td>
+       <td class="actBtns">
+        <a href="index.php?com=place&act=edit_dist&id=<?=$items[$i]['id']?>" title="" class="smallButton tipS" original-title="Sửa"><img src="./images/icons/dark/pencil.png" alt=""></a>
+        <a href="" onclick="CheckDelete('index.php?com=place&act=delete_dist&id=<?=$items[$i]['id']?>'); return false;" title="" class="smallButton tipS" original-title="Xóa"><img src="./images/icons/dark/close.png" alt=""></a>        </td>
       </tr>
          <?php } ?>
                 </tbody>

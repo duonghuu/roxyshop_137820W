@@ -89,6 +89,13 @@ switch($type){
 		break;
 	}
 	break;
+	case 'coupon':
+	switch($act){
+		default:
+		$config['type'] = array('ten','gia');
+		break;
+	}
+	break;
 	case 'id_hientrang':
 	case 'id_huong':
 	switch($act){

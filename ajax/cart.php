@@ -16,6 +16,9 @@
 		case "tinhship":
 			tinhship();
 			break;
+		case "coupon":
+			coupon();
+			break;
 		default:
 			break;
 	}
@@ -106,6 +109,19 @@
 		$phiship=$rs_ship['gia'];
 		$tonggia=get_order_total()+$phiship;
 		$return['price_ship'] = $phiship;
+		$return['tonggia'] = $tonggia;
+		echo json_encode($return);	
+	}
+	function coupon()
+	{
+		global $d;
+		$id = (string)$_POST['id'];
+		// $tong_gia = (string)$_POST['tong_gia'];
+		$rs_ship = get_fetch("select gia from table_news where type='coupon' and ten='".$id."'");
+		$phiship=$rs_ship['gia'];
+		$tonggia=get_order_total()-$phiship;
+		$return['price_coupon'] = $phiship;
+		$return['code_coupon'] = $id;
 		$return['tonggia'] = $tonggia;
 		echo json_encode($return);	
 	}

@@ -6492,29 +6492,53 @@ $(document).ready(function() {
           }
         });
       });
-          // $("#quan").change(function(){
-          //     $val = $(this).val();
-          //     if($val!=''){
-          //         $.ajax({
-          //             type: "POST",
-          //             url: "ajax/cart.php",
-          //             dataType: "json",
-          //             data: {id:$val, act:"tinhship"},
-          //             success: function(data){
-          //                 if(data!=''){
-          //                     $("input#price_ship").val(data["price_ship"]);
-          //                     var price_ship=data;
-          //                     $(".show-price-ship").html("Phí vận chuyển: "+formatNumber(data["price_ship"])+' đ');
-          //                     $(".tongtien_gh span").html(formatNumber(data["tonggia"])  + ' đ');
-          //                     $("#tong_gia").val(data["tonggia"]);
-          //                 }else{
-          //                     $(".show-price-ship").html("Phí vận chuyển: Miễn phí");
-          //                 }
-          //                 $(".show-price-ship").show();
-          //             }
-          //         })
-          //     }
-          // });
+          $("#quan").change(function(){
+              $val = $(this).val();
+              if($val!=''){
+                  $.ajax({
+                      type: "POST",
+                      url: "ajax/cart.php",
+                      dataType: "json",
+                      data: {id:$val, act:"tinhship"},
+                      success: function(data){
+                          if(data!=''){
+                              $("input#price_ship").val(data["price_ship"]);
+                              var price_ship=data;
+                              $(".show-price-ship").html("Phí vận chuyển: "+formatNumber(data["price_ship"])+' đ');
+                              $(".tongtien_gh span").html(formatNumber(data["tonggia"])  + ' đ');
+                              $("#tong_gia").val(data["tonggia"]);
+                          }else{
+                              $(".show-price-ship").html("Phí vận chuyển: Miễn phí");
+                          }
+                          $(".show-price-ship").show();
+                      }
+                  })
+              }
+          });
+          $("#sudung").click(function(){
+              $val = $("#coupon").val();
+              if($val!=''){
+                  $.ajax({
+                      type: "POST",
+                      url: "ajax/cart.php",
+                      dataType: "json",
+                      data: {id:$val, act:"coupon"},
+                      success: function(data){
+                          if(data!=''){
+                              $("input#code_coupon").val(data["code_coupon"]);
+                              $("input#price_coupon").val(data["price_coupon"]);
+                              var price_ship=data;
+                              $(".show-coupon").html("Giảm giá: "+formatNumber(data["price_coupon"])+' đ');
+                              $(".tongtien_gh span").html(formatNumber(data["tonggia"])  + ' đ');
+                              $("#tong_gia").val(data["tonggia"]);
+                          }else{
+                              $(".show-coupon").html("Không tìm thấy mã giảm giá");
+                          }
+                          $(".show-coupon").show();
+                      }
+                  })
+              }
+          });
       $('.click_ajax2').click(function(){
         if(isEmpty($('#httt').val(), lang_chonhinhthucthanhtoan))
         {
