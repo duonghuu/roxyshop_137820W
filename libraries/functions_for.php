@@ -296,10 +296,23 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 	function showProduct($v,$options=array(),$k=null){
 		global $lang,$company,$com;
 		$link = get_url($v, $v["type"]);
-		// $giaspgiam = ($v["giakm"]>0)?'<span class="giam">-'.tinh_phantram($v["gia"],$v["giakm"]).
-		// '%</span>':"";
+		$giaspgiam = ($v["giakm"]>0)?'<span class="giam">-'.tinh_phantram($v["gia"],$v["giakm"]).
+		'%</span>':"";
 		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";
 		// $cls_banchay = ($v["spbanchay"]>0)?'<i class="sale"></i>':"";
+		$sizepanel = "";
+		if(!empty($v["size2"])){
+			$a_size2 = explode(',', $v["size2"]);
+			$size2 = get_result("select ten,id from table_news where type='size' and id in (".$v["size2"].") order by stt asc");
+			$sizelist = "";
+			foreach($size2 as $key=>$value)
+			{
+				$sizelist .= "<span>".$value["ten"]."</span>";
+			}
+			$sizepanel .= '<div class="sizepanel"><span>Size</span><div class="size-right">'.$sizelist.'</div></div>';
+		}
+
+		
 		$giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
 		$gia = ($giasp>0)?num_format($giasp).' vnđ':_lienhe;
 		$s_gia = "";
@@ -343,7 +356,7 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		echo $slickdiv.'<div class="pr-box name '.$wowclass.'" >
 		<article>
 				<a href="'.$link.'" class="imgsp zoom_hinh">'.$imgurl.$cls_moi.$cls_banchay.
-				$giaspgiam.'</a> 
+				$giaspgiam.$sizepanel.'</a> 
 			<div class="info">
 			<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
 			<p>'.$s_gia.'</p>

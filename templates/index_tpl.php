@@ -15,7 +15,7 @@
 $clseven = (($kdm+1) % 2 == 0) ? 'even' : 'odd';
 $link1 = "san-pham/".$vdm["tenkhongdau"]."-".$vdm["id"];
 $img1 = _upload_sanpham_l.$vdm["photo"];
-$spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb,photo from
+$spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb,photo,size2 from
  #_product where type='san-pham' and id_danhmuc = '".$vdm["id"]."' and noibat>0 and hienthi>0 order by stt asc limit 0,3");
   ?>
 

@@ -5,7 +5,7 @@
         
         <div class="ft-info">
           <p class="ft-info-title text-uppercase"><?= _thongtinlienhe ?></p>
-          <h4 class="ft-company"><a href=""><?= $company["ten"] ?></a></h4>
+          <?php /* <h4 class="ft-company"><a href=""><?= $company["ten"] ?></a></h4> */?>
           <div class="content"> <?php echo lay_text('footer'); ?> </div>
           <div class="mxh"><?= lay_mxh("mxh") ?></div>
         </div>

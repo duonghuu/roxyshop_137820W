@@ -1,7 +1,10 @@
 %hover-box-mau{
     border: 1px solid #EE0000 !important; 
 }
-
+%size-style{
+    @include setFont(16px, #333, 600);
+    text-transform: uppercase;
+}
 %gia-style{
     color: red;
     position: relative;
@@ -41,6 +44,37 @@ $product-gutter: percentage(30/1330);
             margin-bottom: 10px;
             img{
                 @extend %img-fill;
+            }
+            .giam{
+                @include absolute($top: 10px, $left: 10px);
+                @include box(40px, 40px, 100%);
+                @include setFont(12px, #fff);
+                @include boxstyle($display: inline-flex, $justify-content: center, $align-items: center);
+                background-color: #fc0214;
+            }
+            .sizepanel{
+                height: 51px;
+                @include boxstyle($display: flex, $justify-content: space-between, $align-items: center);
+                background-color: rgba(#fff, 0.9);
+                @include absolute($bottom: -51px, $left: 0px, $right: 0);
+                @include transition(all 0.2s ease);
+                padding: 0 20px;
+                &>span{
+                    @extend %size-style;
+                }
+                .size-right{
+                    span{
+                        @extend %size-style;
+                        @include doubly(){
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+            &:hover{
+                .sizepanel{
+                    bottom: 0;
+                }
             }
         }
 
