@@ -46,41 +46,42 @@
 </script>
 <?php
 function get_main_danhmuc()
-{
-  global $d;
-  $sql="select * from table_product_danhmuc where type='".$_REQUEST['type']."' order by stt,id desc";
-  $d->query($sql);
-  $result = $d->result_array();
-  $str='<select id="id_danhmuc" name="id_danhmuc" onchange="select_onchange()" class="main_select">
-  <option value="">Danh mục cấp 1</option>';
-  foreach ($result as $key => $row) {
-    if($row["id"]==(int)@$_REQUEST["id_danhmuc"])
-      $selected="selected";
-    else
-      $selected="";
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-  }
-  $str.='</select>';
-  return $str;
-}
+	{
+        $getdata = get_result("select * from table_product_danhmuc where type='".$_REQUEST['type']."' order by stt");
+        $str='
+          <select id="id_danhmuc" name="id_danhmuc" onchange="select_onchange()" class="main_select">
+          <option>Danh mục cấp 1</option>
+          ';
+        foreach($getdata as $key=>$row)
+        {
+          if($row["id"]==(int)@$_REQUEST["id_danhmuc"])
+            $selected="selected";
+          else
+            $selected="";
+          $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+        }
+        $str.='</select>';
+        return $str;
+	}
+
 function get_main_list()
-{
-  global $d;
-  $sql="select * from table_product_list where id_danhmuc='".$_REQUEST['id_danhmuc']."' order by stt,id desc";
-  $d->query($sql);
-  $result = $d->result_array();     
-  $str='<select id="id_list" name="id_list" onchange="select_onchange1()" class="main_select">
-  <option value="">Danh mục cấp 2</option>';        
-  foreach ($result as $key => $row) {
-    if($row["id"]==(int)@$_REQUEST["id_list"])
-      $selected="selected";
-    else
-      $selected="";       
-    $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-  }
-  $str.='</select>';
-  return $str;
-}
+	{
+    $getdata = get_result("select * from table_product_list where id_danhmuc='".$_REQUEST['id_danhmuc']."' order by stt");
+    $str='
+      <select id="id_list" name="id_list" onchange="select_onchange1()" class="main_select">
+      <option>Danh mục cấp 2</option>
+      ';
+    foreach($getdata as $key=>$row)
+    {
+      if($row["id"]==(int)@$_REQUEST["id_list"])
+        $selected="selected";
+      else
+        $selected="";
+      $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
+	}
 
 ?>
 <div class="control_frm" style="margin-top:25px;">
@@ -150,19 +151,15 @@ function get_main_list()
         </td>
         <td align="center">
        	 	<?php
-				$sql_danhmuc="select ten from table_product_danhmuc where id='".$items[$i]['id_danhmuc']."'";
-				$result=mysql_query($sql_danhmuc);
-				$item_danhmuc =mysql_fetch_array($result);
-				echo @$item_danhmuc['ten']
+        $item_danhmuc = get_fetch("select ten from table_product_danhmuc where id='".$items[$i]['id_danhmuc']."'");
+				echo @$item_danhmuc['ten'];
             ?>
 
         </td>
          <td align="center">
        	 	<?php
-				$sql_cat="select ten from table_product_list where id='".$items[$i]['id_list']."'";
-				$result=mysql_query($sql_cat);
-				$item_cat =mysql_fetch_array($result);
-				echo @$item_cat['ten']
+                $item_cat = get_fetch("select ten from table_product_list where id='".$items[$i]['id_list']."'");
+                echo @$item_cat['ten'];
             ?>
 
         </td>

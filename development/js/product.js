@@ -4,8 +4,41 @@
       onExpandClose: function(){MagicZoom.refresh();}
     };
     $(document).ready(function() {
-      $('.slick2').slick({slidesToShow: 1, slidesToScroll: 1, arrows: false, fade: true, autoplay:false, autoplaySpeed:5000, asNavFor: '.slick'});
-      $('.slick').slick({slidesToShow: 4, slidesToScroll: 1, asNavFor: '.slick2', dots: false, centerMode: false, focusOnSelect: true, responsive: [{breakpoint: 800, settings: {slidesToShow: 3, slidesToScroll: 1, } }, {breakpoint: 376, settings: {slidesToShow: 2, slidesToScroll: 1, } } ] });
+      $('.slick2').slick({
+        slidesToShow: 1, 
+        slidesToScroll: 1, 
+        arrows: false, 
+        fade: true, 
+        autoplay:false, 
+        autoplaySpeed:5000, 
+        asNavFor: '.slick'
+      });
+      $('.slick').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.slick2',
+        dots: false,
+        arrows: false, 
+        centerMode: false,
+        focusOnSelect: true,
+        vertical: true,
+        responsive: [
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 376,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          } 
+        } 
+        ] 
+      });
       
       var giatri_default = js_num_danhgiasao;
       $('.danhgiasao span:lt('+giatri_default+')').addClass('active');
