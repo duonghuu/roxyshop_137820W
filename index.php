@@ -39,7 +39,9 @@ $_SESSION['dong'] = lay_banner('dong');
 <body class="cls<?= $template ?>" <?=$str_background?> >
     <?php /* <div class="wap_load"><div class="cssload-thecube"><div class="cssload-cube cssload-c1"></div>
     <div class="cssload-cube cssload-c2"></div><div class="cssload-cube cssload-c4"></div>
-    <div class="cssload-cube cssload-c3"></div></div></div> */?>
+    <div class="cssload-cube cssload-c3"></div></div></div> */
+    if($template != "checkouts"){
+    ?>
     <div id="wapper"  >
         <section class="head-main">
             <?php 
@@ -75,6 +77,10 @@ $_SESSION['dong'] = lay_banner('dong');
     include _template."layout/cart_popup.php";
     if($deviceType=="computer") include _template."layout/phone3.php";
     include _template."layout/phone2.php";
+}else{
+    include _template.$template."_tpl.php";
+}
+
     include _template."layout/js.php";
     ?>
     <?=$company['codethem2']?>

@@ -80,7 +80,7 @@ $img = _upload_hinhanh_l.$value["photo"];
             <figure><img src="<?= $img ?>" alt="<?= $value["ten"] ?>"></figure>
             <h5><?= $value["ten"] ?></h5>
             <hr>
-            <p><?= $value["mota"] ?></p>
+            <p><?= catchuoi($value["mota"],150) ?><span class="dot">Xem thêm</span></p>
           </a></div>
       <?php } ?>
     </div>

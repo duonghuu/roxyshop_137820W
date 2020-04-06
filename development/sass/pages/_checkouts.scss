@@ -1,0 +1,110 @@
+.checkouts-bg{
+  @include grid($display: flex, $justify-content: space-between);
+  position: relative;
+  min-height: 100vh;
+  &:before{
+    @include absolute($top: 0, $right: 0);
+    @include box(percentage(620/1420), 100%);
+    z-index: -1;
+    background-color: #fafafa;
+    content: "";
+    border-left: 1px solid #e1e1e1;
+  }
+}
+.checkouts-cart-info{ 
+  $pd-40: em(40);
+  $pd-160: em(160);
+  order: 1;
+  padding: $pd-40 $pd-160 $pd-40 $pd-40;
+  width: percentage(620/1420);
+}
+.cart-info-product-list{
+  .product{
+    @include grid($display: flex, $align-items: center, $justify-content: space-between);
+    margin-bottom: 20px;
+  }
+  .product-quantity{}
+  .product-price{
+    @include setFont(12px, #4b4b4b, 500);
+  }
+  .product-image{
+    position: relative;
+    
+    figure{
+      @include box(65px, 65px, 8px);
+      border: 1px solid #e1e1e1;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0;
+      img{
+        @extend %img-fill;
+        object-fit: scale-down;
+        z-index: -1;
+      }
+    }
+    .product-thumbnail-quantity{
+      @include absolute($top: -11px, $right: -11px);
+      @include box(22px, 22px, 100%);
+      @include grid($display: flex, $align-items: center, $justify-content: center);
+      @include setFont(12px, #fff);
+      background-color: rgba(153,153,153,0.9);
+    }
+  }
+  .product-description{
+    padding-left: 1em;
+    &-name{
+      @include setFont(14px, #4b4b4b);
+      display: block;
+    }
+    &-variant{
+      display: block;
+      @include setFont(12px, #969696);
+    }
+  }
+}
+.order-summary-section-discount{
+  @include grid($display: flex, $justify-content: space-between);
+  border-color: #e1e1e1;
+  border-style: solid;
+  border-width: 1px 0;
+  padding: 1em 0;
+  margin-bottom: 1.5em;
+  input{
+    @include flex(1);
+  }
+  .btn{
+    margin-left: 1em;
+  }
+}
+.order-summary-section-total-lines{
+  .total-line{
+    @include grid($display: flex, $justify-content: space-between);
+    @include setFont(14px, #717171);
+    label{}
+    span{}
+  }
+}
+.total-line-table-footer{
+  border-top: 1px solid #e1e1e1;
+  padding-top: 1em;
+  margin-top: 1em;
+  .total-line{
+    @include setFont(16px, #4b4b4b);
+    span{
+      font-size: 24px;
+    }
+  }
+}
+.checkouts-customer-info{
+  @include flex(1);
+}
+.visually-hidden {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    clip: rect(0 0 0 0);
+    @include box(2px, 2px);
+    margin: -2px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+}

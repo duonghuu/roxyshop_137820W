@@ -220,6 +220,13 @@ switch($com)
 	$source = "giohang2";
 	$template = "giohang2";
 	break;
+	case 'checkouts':
+	$type = "thanhtoan";
+	$title = _thanhtoan;
+	$title_cat = _thanhtoan;
+	$source = "checkouts";
+	$template = "checkouts";
+	break;
 	case 'dang-xuat':
 	logout();
 	break;

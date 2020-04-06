@@ -115,6 +115,21 @@ module.exports = function(grunt) {
                 livereload: true
             },
         },
+        scripts_b: {
+            files: [
+                '<%= dirs.inputSCSS %>/*.scss',             // development/sass/*.scss
+                '<%= dirs.inputSCSS %>/*/*.scss',           // development/sass/*/*.scss
+                '<%= dirs.inputDevJS %>/*.js', 
+                '<%= dirs.input %>/index.html',
+                '<%= dirs.inputHTMLELements %>/*.html',     // development/html-elements/*.html
+                //'<%= dirs.inputHTMLELements %>/*/*.html', // development/html-elements/*/*.html
+            ],
+            tasks: ['sass','concat'],
+            options: {
+                spawn: false,
+                livereload: true
+            },
+        },
     },
     // Plugin 06: connect
     // connect: {
@@ -139,18 +154,23 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('dev', [
-    'sass',
-    // 'connect',
-    'watch'
-  ]);
+      'sass',
+      // 'connect',
+      'watch:scripts'
+    ]);
+    grunt.registerTask('devjs', [
+      'sass',
+      // 'connect',
+      'watch:scripts_b'
+    ]);
   // Task Publish Project
     grunt.registerTask('publish', [
         'cssmin',
         'concat',
         'uglify'
     ]);
-    grunt.registerTask('devjs', [
-      'concat:basic'
-    ]);
+    // grunt.registerTask('devjs', [
+    //   'concat:basic'
+    // ]);
     
 }
