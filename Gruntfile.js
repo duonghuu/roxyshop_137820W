@@ -158,7 +158,7 @@ module.exports = function(grunt) {
       // 'connect',
       'watch:scripts'
     ]);
-    grunt.registerTask('devjs', [
+    grunt.registerTask('dev2', [
       'sass',
       // 'connect',
       'watch:scripts_b'
@@ -169,8 +169,8 @@ module.exports = function(grunt) {
         'concat',
         'uglify'
     ]);
-    // grunt.registerTask('devjs', [
-    //   'concat:basic'
-    // ]);
+    grunt.registerTask('devjs', [
+      'concat:basic'
+    ]);
     
 }

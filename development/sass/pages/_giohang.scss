@@ -275,8 +275,8 @@
   }
 }
 .gh_flex{
-  @include flexbox;
-  @include justify-content(space-between);
+  // @include flexbox;
+  // @include justify-content(space-between);
 
   .td_gh {
     font-size: 18px;
@@ -285,8 +285,9 @@
   }
 
   .left_gh {
-    @include flex(1);
-    margin-right: 2em;
+    // @include flex(1);
+    // margin-right: 2em;
+    width: 100%;
   }
 
   .right_gh {

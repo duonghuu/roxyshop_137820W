@@ -164,6 +164,27 @@
     }
   }
 }
+/*========= Checkout ===============*/
+@mixin setCheckout_lg{
+  .checkouts-bg{
+    @include grid($display: flex, $flex-wrap: wrap);
+    &:before{
+      display: none;
+    }
+  }
+  .checkouts-cart-info{ 
+    $pd-40: em(40);
+    padding: $pd-40 $pd-40 10px $pd-40;
+    width: 100%;
+    order: 0;
+  }
+  .checkouts-customer-info{
+    $pd-40: em(40);
+    padding: $pd-40 $pd-40 10px $pd-40;
+    width: 100%;
+  }
+
+}
 /*========= Doitac ===============*/
 @mixin setDoitacSmall(){
   .doitac-bg .doitac-main{

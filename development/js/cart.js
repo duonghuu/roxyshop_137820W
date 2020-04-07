@@ -10,6 +10,18 @@ function formatNumber(nStr)//format gia
     }
     return x1 + x2;
 }
+function updateCartInfo(){
+  var code_coupon = $("#code_coupon").val();
+  var price_coupon = $("#price_coupon").val();
+  var price_ship = $("#price_ship").val();
+  var gia_cart = $("#gia_cart").val();
+  var sum_cart = parseInt(gia_cart) + parseInt(price_ship) - parseInt(price_coupon);
+
+  $(".total-line-reduction span").text('-'+formatNumber(price_coupon)+'₫');
+  $(".total-line-shipping span").text(formatNumber(price_ship)+'₫');
+  $(".total-line-table-footer span").text(formatNumber(sum_cart)  + '₫');
+  $("#tong_gia").val(sum_cart);
+}
 $(document).ready(function() {
   $('.giohang-cl').click(function(event) {
     $('#giohang').removeClass('active');
@@ -74,14 +86,16 @@ $(document).ready(function() {
                       success: function(data){
                           if(data!=''){
                               $("input#price_ship").val(data["price_ship"]);
-                              var price_ship=data;
-                              $(".show-price-ship").html("Phí vận chuyển: "+formatNumber(data["price_ship"])+' đ');
-                              $(".tongtien_gh span").html(formatNumber(data["tonggia"])  + ' đ');
-                              $("#tong_gia").val(data["tonggia"]);
+                              // var price_ship=data;
+                              // $(".total-line-shipping span").html(formatNumber(data["price_ship"])+'₫');
+                              // $(".total-line-table-footer span").html(formatNumber(data["tonggia"])  + '₫');
+                              // $("#tong_gia").val(data["tonggia"]);
                           }else{
-                              $(".show-price-ship").html("Phí vận chuyển: Miễn phí");
+                            $("input#price_ship").val(data["price_ship"]);
+                              // $(".total-line-shipping span").html("0₫");
                           }
-                          $(".show-price-ship").show();
+                          updateCartInfo();
+                          // $(".show-price-ship").show();
                       }
                   })
               }
@@ -98,14 +112,19 @@ $(document).ready(function() {
                           if(data!=''){
                               $("input#code_coupon").val(data["code_coupon"]);
                               $("input#price_coupon").val(data["price_coupon"]);
-                              var price_ship=data;
-                              $(".show-coupon").html("Giảm giá: "+formatNumber(data["price_coupon"])+' đ');
-                              $(".tongtien_gh span").html(formatNumber(data["tonggia"])  + ' đ');
-                              $("#tong_gia").val(data["tonggia"]);
+                              $(".show-coupon").hide();
+                              $(".order-summary-section-total-lines .total-line.total-line-reduction").css("display","flex");
+                              // var price_ship=data;
+                              // $(".show-coupon").html("Giảm giá: "+formatNumber(data["price_coupon"])+' đ');
+                              // $(".tongtien_gh span").html(formatNumber(data["tonggia"])  + ' đ');
+                              // $("#tong_gia").val(data["tonggia"]);
                           }else{
-                              $(".show-coupon").html("Không tìm thấy mã giảm giá");
+                              $(".show-coupon").show();
+                              $(".order-summary-section-total-lines .total-line.total-line-reduction").hide();
+                              
                           }
-                          $(".show-coupon").show();
+                          updateCartInfo();
+                          // $(".show-coupon").show();
                       }
                   })
               }
