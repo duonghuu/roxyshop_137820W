@@ -10,6 +10,10 @@
 }
 .idx-tit {
     margin-bottom: 37px;
+    position: relative;
+    &>a{
+      @include absolute($right: 0, $top: 5px);
+    }
     h4 {
         @include setFont(em(33), #333, 700);
         @include bg("idx-tit.png",$background-position: bottom center);
@@ -76,6 +80,8 @@
         display: block;
       img{
         @extend %img-fill;
+        object-fit: cover;
+        object-position: top center;
       }
       span.feature-content{
         $feature-postion: em(20);
@@ -142,7 +148,8 @@
         padding-top: percentage(305/393);
         img{
             @extend %img-fill;
-            object-fit: scale-down;
+            object-fit: cover;
+            object-position: top center;
         }
       }
       h5{
@@ -223,6 +230,7 @@
     text-transform: uppercase;
     figure{
         @include box(40px, 40px);
+        @include boxstyle($display: flex, $align-items: center);
         margin: 0 5px 0 0;
         img{}
     }

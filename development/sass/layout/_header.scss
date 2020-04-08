@@ -110,6 +110,11 @@
     }
 }
 .hd-bot{
+    @include relative($left: 0, $right: 0);
+    background-color: #fff;
+    &.fixed{
+        @include boxShadow(0 3px 3px rgba(51,51,51,0.2));
+    }
     &>.container{
         z-index: 500;
     }
@@ -127,7 +132,11 @@
     display: block;
     text-align: center;
     img{
-        max-height: 82px
+        height: 82px;
+        @include transition(all 0.4s ease);
+        @at-root .fixed #{&}{
+            height: 50px;
+        }
     }
 }
 .hd-mid{

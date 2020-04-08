@@ -37,7 +37,37 @@
       <div class="linebrk_valak"></div>
       <div class="main_manu_valak">
         <ul >
-          <?php include _template."layout/menu_content.php";?>
+          <?php //include _template."layout/menu_content.php";?>
+          <?php 
+          $str='';
+          for($i=0;$i<count($danhmuc_cap1);$i++){
+            $claa = ($id_danhmuc == $danhmuc_cap1[$i]["id"]) ? 'class="active"' : "";
+            if($link_id){
+              $link1 = 'san-pham/'.$danhmuc_cap1[$i]["tenkhongdau"].'-'.$danhmuc_cap1[$i]["id"];
+            }else{
+              $link1 = $danhmuc_cap1[$i]["tenkhongdau"];  
+            }
+
+            $str.='<li '.$claa.'><a href="'.$link1.'">'.$danhmuc_cap1[$i]["ten"].'</a>';
+            $danhmuc_cap2= get_result("select id,ten$lang as ten,tenkhongdau,type,thumb,photo from #_product_list where hienthi=1 and
+             type='san-pham' and id_danhmuc='".$danhmuc_cap1[$i]["id"]."' order by stt,id asc");
+            if(count($danhmuc_cap2)>0){
+              $str.='<ul class="sub-menu">';
+              for($j=0;$j<count($danhmuc_cap2);$j++){
+                if($link_id){
+                  $link2 = 'san-pham/'.$danhmuc_cap2[$j]["tenkhongdau"].'-'.$danhmuc_cap2[$j]["id"].'/';
+                }else{
+                  $link2 = $danhmuc_cap2[$j]["tenkhongdau"];  
+                }
+                $str.='<li><a href="'.$link2.'">'.$danhmuc_cap2[$j]["ten"].'</a></li>';
+              }
+              $str.='</ul>';
+            }
+            $str.='</li>';
+          }
+          echo $str;
+           ?>
+        </ul>
       </div>
       <div class="linebrk_valak"></div>
       <div class="valak_mmenuf">

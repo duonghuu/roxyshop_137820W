@@ -337,13 +337,13 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		// 	}
 		// }
 		if(($options["slick"])){
-			$imgurl='<img src="images/1x1.png" data-lazy="'._upload_sanpham_l.$v["thumb"].
+			$imgurl='<img src="images/1x1.png" data-lazy="thumb/300x400/1/'._upload_sanpham_l.$v["photo"].
 			'" alt="'.$v["ten"].'" />';
 			$slickdiv = '<div class="slick-box-item">';
 			$slickenddiv = '</div>';
 			$wowclass="";
 		}else{
-			$imgurl='<img data-src="'._upload_sanpham_l.$v["thumb"].'" alt="'.$v["ten"].
+			$imgurl='<img data-src="thumb/300x400/1/'._upload_sanpham_l.$v["photo"].'" alt="'.$v["ten"].
 			'" class="lazy" />';
 			$slickdiv=$slickenddiv="";
 			$wowclass='wow zoomIn';

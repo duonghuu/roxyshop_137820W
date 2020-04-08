@@ -2,6 +2,7 @@
   <div class="container">
     <div class="idx-tit">
       <h4><a href="san-pham-moi.html">New Arrival</a></h4>
+      <a href="san-pham-moi.html"><img src="images/arrow-right.png" alt="arrow"></a>
     </div>
     <div class="spnoibat-main">
       <?php foreach($spmoi as $key=>$value){
@@ -35,6 +36,7 @@ $spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb
       <div class="danhmuc-sanpham-box">
         <div class="idx-tit">
           <h4><a href="<?= $link1 ?>"><?= $vdm["ten"] ?></a></h4>
+          <a href="<?= $link1 ?>"><img src="images/arrow-right.png" alt="arrow"></a>
         </div>
         <div class="product-grid">
           <?php foreach ($spnoibat as $key => $value) {
@@ -50,6 +52,7 @@ $spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb
   <div class="container">
     <div class="idx-tit">
       <h4><a href="san-pham-hot.html">Sản phẩm hot</a></h4>
+      <a href="san-pham-hot.html"><img src="images/arrow-right.png" alt="arrow"></a>
     </div>
     <div class="spnoibat-main">
       <?php foreach($sptieubieu as $key=>$value){
@@ -61,7 +64,7 @@ $spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb
 
 <div class="web-slider-main">
   <?php foreach($quangcao as $key=>$value){ 
-$img = _upload_hinhanh_l.$value["photo"];
+    $img = _upload_hinhanh_l.$value["photo"];
     ?>
     <div class="qc-item"><a href="<?= $value["link"] ?>"><img src="<?= $img ?>" alt="<?= $value["ten"] ?>"></a></div>
   <?php } ?>

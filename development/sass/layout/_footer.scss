@@ -50,6 +50,10 @@
 
         .ft-baiviet {
             width: percentage(350/1300);
+
+            @include doubly(){
+               width: percentage(242/1300); 
+            }
             ul {
                 @extend %reset-list;
 

@@ -31,13 +31,13 @@ switch($type){
 		break;
 
 		case 'list':
-		$config['type'] = array('seo','ten');
+		$config['type'] = array('seo','ten','hinhanh');
 		$config['title'] = array('noibat'=>"Nổi bật");
-		@define ( _width_thumb , 400 );
-		@define ( _height_thumb , 560 );
+		@define ( _width_thumb , 300 );
+		@define ( _height_thumb , 300 );
 		@define ( _style_thumb , 1 );
-		@define ( _width_thumb2 , 400 );
-		@define ( _height_thumb2 , 560 );
+		@define ( _width_thumb2 , 300 );
+		@define ( _height_thumb2 , 300 );
 		break;
 
 		case 'cat':
@@ -57,7 +57,7 @@ switch($type){
 			"vitri"=>"Vị trí");
 		@define ( _width_thumb , 300 );
 		@define ( _height_thumb , 400 );
-		@define ( _style_thumb , 2 );
+		@define ( _style_thumb , 1 );
 		@define ( _width_thumb2 , 450 );
 		@define ( _height_thumb2 , 600 );
 		break;
@@ -67,7 +67,7 @@ switch($type){
 	case 'mausac':
 	switch($act){
 		default:
-		$config['type'] = array('ten', 'color');
+		$config['type'] = array('ten', 'color','noibat','hinhanh');
 		$config['title']["noibat"] = "Dùng hình ảnh";
 		@define ( _width_thumb , 200 );
 		@define ( _height_thumb , 200 );
