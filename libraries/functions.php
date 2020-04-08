@@ -1,4 +1,5 @@
 <?php if(!defined('_lib')) die("Error");
+use Intervention\Image\ImageManagerStatic as Image;
 ini_set ('memory_limit', '256M');
 function del_cache(){
   $files = glob('../@#cache/*'); // get all file names
@@ -814,7 +815,72 @@ function ampify($html='') {
   $html = preg_replace('/(<[^>]+) style=".*?"/i', '$1', $html);
   return $html;
 }
+
 //Tạo hình ảnh kahcs
+function thumb_simple($src_img, $new_w, $new_h){
+  $src_img->fit($new_w, $new_h, function ($constraint) {
+    $constraint->upsize();
+  });
+  return $src_img;
+}
+function thumb_ratio($src_img, $new_w, $new_h){
+  $src_img->resize($new_w, $new_h, function ($constraint) {
+    $constraint->aspectRatio();
+    $constraint->upsize();
+  });
+  return $src_img;
+}
+function thumb_bgratio($src_img, $new_w, $new_h){
+  $src_img->resize($new_w, $new_h, function ($constraint) {
+    $constraint->aspectRatio();
+    $constraint->upsize();
+  });
+  $img_thumb = Image::canvas($new_w, $new_h, 'rgba(255,255,255,1)');
+  $img_thumb->insert($src_img, 'center');
+  return $img_thumb;
+}
+function create_image($file, $width, $height, $folder,$file_name,$zoom_crop='1'){
+   $type = end(explode('.',$file_name));
+   $name = basename($file_name, '.'.$type);
+   $name=changeTitleImage($name);
+   $file_name = $name.'.'.$type;
+   $new_w = $width;
+   $new_h = $height;
+
+   $image_url = $folder.$file;
+   $array = getimagesize($image_url);
+   if ($array)
+   {
+     list($image_w, $image_h) = $array;
+   }
+   else
+   {
+    die("NO IMAGE $image_url");
+  }
+  $src_w=$image_w;
+  $src_h=$image_h;
+
+  $src_img = Image::make($image_url);
+
+  $quant = 90;
+  $myExpType = 'JPEG';
+  $new_file=$file_name.fns_Rand_digit(0,9,4).'_'.round($width).'x'.
+  round($height).'.'.$myExpType;
+  $pathto = $folder.$new_file;
+  if ($zoom_crop==1) {
+    $IMG = thumb_simple($src_img, $new_w, $new_h);
+  }
+  if ($zoom_crop==2) {
+    $IMG = thumb_bgratio($src_img, $new_w, $new_h);
+  }
+  if ($zoom_crop==3) {
+    $IMG = thumb_ratio($src_img, $new_w, $new_h);
+  }
+
+  //$img->save('public/foo', 80, 'jpg');
+  $IMG->save($pathto, $quant);
+  return $new_file;
+  }
 function create_thumb($file, $width, $height, $folder,$file_name,$zoom_crop='1'){
   $ext = end(explode('.',$file_name));
   $name = basename($file_name, '.'.$ext);

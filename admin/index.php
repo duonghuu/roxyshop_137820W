@@ -18,6 +18,7 @@ include_once _lib."pclzip.php";
 include_once _lib."class.database.php";
 // if (version_compare(phpversion(), '7.0.0', '<')) include_once _lib."class.database.php";
 // else include_once _lib."class.database7.3.php"; 
+require '../composer/vendor/autoload.php';
 
 $com = (string)(isset($_REQUEST['com'])) ? addslashes($_REQUEST['com']) : "";
 $act = (string)(isset($_REQUEST['act'])) ? addslashes($_REQUEST['act']) : "";

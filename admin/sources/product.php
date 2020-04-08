@@ -358,7 +358,8 @@ function save_item(){
             //saveImageWaterMark(_upload_sanpham.$data['photo']);
             $data['photo'] = $photo;
             if(_width_thumb > 0 and _height_thumb > 0)
-                $data['thumb'] = create_thumb($data['photo'], _width_thumb, _height_thumb, _upload_sanpham,$file_name,_style_thumb);
+                $data['thumb'] = create_image($data['photo'], _width_thumb, 
+                    _height_thumb, _upload_sanpham,$file_name,_style_thumb);
             $row=get_fetch("select photo,thumb from #_product where id=".$id);
             if($row){
                 delete_file(_upload_sanpham.$row['photo']);
@@ -384,7 +385,7 @@ function save_item(){
             //image_fix_orientation(_upload_sanpham.$photo);
             $data['photo'] = $photo;
             if(_width_thumb > 0 and _height_thumb > 0)
-                $data['thumb'] = create_thumb($data['photo'], _width_thumb, _height_thumb, _upload_sanpham,$file_name,_style_thumb);
+                $data['thumb'] = create_image($data['photo'], _width_thumb, _height_thumb, _upload_sanpham,$file_name,_style_thumb);
         }
         $data['ngaytao'] = time();
         $d->setTable('product');
