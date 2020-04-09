@@ -1,4 +1,5 @@
 <?php	if(!defined('_source')) die("Error");
+/*
 $act = (isset($_REQUEST['act'])) ? addslashes($_REQUEST['act']) : "";
 $urlcu = "";
 $urlcu .= (isset($_REQUEST['id_danhmuc'])) ? "&id_danhmuc=".addslashes($_REQUEST['id_danhmuc']) : "";
@@ -1659,4 +1660,5 @@ function delete_danhmuc(){
 	}
 	else transfer("Không nhận được dữ liệu", "index.php?com=product&act=man_danhmuc".$urlcu);
 }
+*/
 ?>
