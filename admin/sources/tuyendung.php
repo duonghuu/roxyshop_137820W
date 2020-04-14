@@ -1,5 +1,5 @@
 <?php	if(!defined('_source')) die("Error");
-
+/*
 	$act = (isset($_REQUEST['act'])) ? addslashes($_REQUEST['act']) : "";
 
 	$urlcu = "";
@@ -508,6 +508,6 @@ function delete_cat(){
 		}
 		else transfer("Không nhận được dữ liệu", $duongdan);
 }
-?>
+*/
 
 

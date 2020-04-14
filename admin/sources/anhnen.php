@@ -78,7 +78,8 @@ function save_photo(){
 			$d->setTable('anhnen');
 			$d->setWhere('id', $id);
 			if(!$d->update($data)) transfer("Cập nhật dữ liệu bị lỗi", "index.php?com=anhnen&act=capnhat&type=".$_REQUEST['type']."");
-			redirect("index.php?com=anhnen&act=capnhat&type=".$_REQUEST['type']."");
+			$s_redirect = (string)trim("index.php?com=anhnen&act=capnhat&type=".$_REQUEST['type']);
+			redirect($s_redirect);
 			
 	}
 }

@@ -2,22 +2,21 @@
 <?php
 	function get_main_item()
 		{
-			$sql_huyen="select * from table_vnexpress_item where type='".$_REQUEST['type']."' order by stt,id desc ";
-			$result=mysql_query($sql_huyen);
-			$str='
-				<select id="id_item" name="id_item"" class="main_select select_danhmuc">
-				<option value="0">Chọn danh mục</option>
-				';
-			while ($row_huyen=@mysql_fetch_array($result)) 
-			{
-				if($row_huyen["id"]==(int)@$_REQUEST["id_item"])
-					$selected="selected";
-				else 
-					$selected="";
-				$str.='<option value='.$row_huyen["id"].' '.$selected.'>'.$row_huyen["ten"].'</option>';			
-			}
-			$str.='</select>';
-			return $str;
+      global $d;
+        $sql="select * from table_vnexpress_item where type='".$_REQUEST['type']."' order by stt,id desc";
+        $d->query($sql);
+        $result = $d->result_array();     
+        $str='<select id="id_item" name="id_item" class="main_select select_danhmuc">
+          <option value="0">Chọn danh mục</option>';        
+        foreach ($result as $key => $row) {
+          if($row["id"]==(int)@$_REQUEST["id_item"])
+            $selected="selected";
+          else
+            $selected="";
+          $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+          }
+        $str.='</select>';
+      return $str;
 		}
 ?>
 <div class="control_frm" style="margin-top:25px;">

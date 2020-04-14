@@ -250,22 +250,38 @@ function get_dists(){
 		$count=count($id_array);
 		if($multi=='show'){
 			for($i=0;$i<$count;$i++){
-				$sql = "UPDATE table_place_dist SET hienthi =1 WHERE  id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");				
+				$data = array();
+				$data["hienthi"] = 1;
+				$d->reset();
+				$d->setTable("place_dist");
+				$d->setWhere("id", $id_array[$i]);
+				if($d->update($data) == false){
+					die("Not query sqlUPDATE_ORDER");
+				}	
 			}
 			redirect("index.php?com=place&act=man_dist");			
 		}
 		if($multi=='hide'){
 			for($i=0;$i<$count;$i++){
-				$sql = "UPDATE table_place_dist SET hienthi =0 WHERE  id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");				
+				$data = array();
+				$data["hienthi"] = 0;
+				$d->reset();
+				$d->setTable("place_dist");
+				$d->setWhere("id", $id_array[$i]);
+				if($d->update($data) == false){
+					die("Not query sqlUPDATE_ORDER");
+				}			
 			}
 			redirect("index.php?com=place&act=man_dist");			
 		}
 		if($multi=='del'){
 			for($i=0;$i<$count;$i++){							
-				$sql = "delete from table_place_dist where id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");			
+				$d->reset();
+				$d->setTable('place_dist');
+				$d->setWhere('id',$id_array[$i]);
+				if($d->delete() == false){
+				  die("Not query sqlUPDATE_ORDER");	
+				}
 			}
 			redirect("index.php?com=place&act=man_dist");			
 		}
@@ -273,21 +289,36 @@ function get_dists(){
 	#----------------------------------------------------------------------------------------
 	if($_REQUEST['hienthi']!='')
 	{
-	$id_up = $_REQUEST['hienthi'];
-	$sql_sp = "SELECT id,hienthi FROM table_place_dist where id='".$id_up."' ";
-	$d->query($sql_sp);
-	$cats= $d->result_array();
-	$hienthi=$cats[0]['hienthi'];
-	if($hienthi==0)
-	{
-	$sqlUPDATE_ORDER = "UPDATE table_place_dist SET hienthi =1 WHERE  id = ".$id_up."";
-	$resultUPDATE_ORDER = mysql_query($sqlUPDATE_ORDER) or die("Not query sqlUPDATE_ORDER");
-	}
-	else
-	{
-	$sqlUPDATE_ORDER = "UPDATE table_place_dist SET hienthi =0  WHERE  id = ".$id_up."";
-	$resultUPDATE_ORDER = mysql_query($sqlUPDATE_ORDER) or die("Not query sqlUPDATE_ORDER");
-	}	
+		$id_up = $_REQUEST['hienthi'];
+		$d->reset();
+		$d->setTable('place_dist');
+		$d->setWhere('id',$id_up);
+		$d->select('id,hienthi');
+		$cats= $d->fetch_array();
+
+		$hienthi=$cats['hienthi'];
+		if($hienthi==0)
+		{
+			$data = array();
+			$data["hienthi"] = 1;
+			$d->reset();
+			$d->setTable("place_dist");
+			$d->setWhere($id, $id_up);
+			if($d->update($data) == false){
+				die("Not query sqlUPDATE_ORDER");
+			}
+		}
+		else
+		{
+			$data = array();
+			$data["hienthi"] = 0;
+			$d->reset();
+			$d->setTable("place_dist");
+			$d->setWhere($id, $id_up);
+			if($d->update($data) == false){
+				die("Not query sqlUPDATE_ORDER");
+			}
+		}	
 	}
 	#-------------------------------------------------------------------------------
 	if((int)$_REQUEST['id_cat']!='')
@@ -318,8 +349,7 @@ function get_dists(){
 	$page--;
 	$bg=$pageSize*$page;		
 	$sql = "SELECT * from #_place_dist $where order by id  limit $bg,$pageSize";		
-	$d->query($sql);
-	$items = $d->result_array();	
+	$items=get_result($sql);
 	$url_link='index.php?com=place&act=man_dist';		
 }
 function get_dist(){
@@ -327,10 +357,12 @@ function get_dist(){
 	$id = isset($_GET['id']) ? themdau($_GET['id']) : "";
 	if(!$id)
 		transfer("Không nhận được dữ liệu", "index.php?com=place&act=man_dist");	
-	$sql = "select * from #_place_dist where id='".$id."'";
-	$d->query($sql);
-	if($d->num_rows()==0) transfer("Dữ liệu không có thực", "index.php?com=place&act=man_dist");
-	$item = $d->fetch_array();	
+	$item = get_fetch("select * from #_place_dist where id='".$id."'");
+	if($item){
+
+	}else{
+	    transfer("Dữ liệu không có thực", "index.php?com=place&act=man_dist");
+	} 
 }
 function save_dist(){
 	global $d;	
@@ -378,12 +410,14 @@ function delete_dist(){
 	}
 	if(isset($_GET['id'])){
 		$id =  themdau($_GET['id']);
-		$d->reset();		
-		$sql = "delete from #_place_dist where id='".$id."'";
-		if($d->query($sql))
+		$d->reset();
+		$d->setTable('place_dist');
+		$d->setWhere('id',$id);
+		if($d->delete() == false){
+		  transfer("Xóa dữ liệu bị lỗi", "index.php?com=place&act=man_dist".$urlcu);
+		}else{
 			redirect("index.php?com=place&act=man_dist".$id_catt."");
-		else
-			transfer("Xóa dữ liệu bị lỗi", "index.php?com=place&act=man_dist".$urlcu);
+		}
 	}else transfer("Không nhận được dữ liệu", "index.php?com=place&act=man_dist".$urlcu);
 }
 #====================================
@@ -395,22 +429,38 @@ function get_wards(){
 		$count=count($id_array);
 		if($multi=='show'){
 			for($i=0;$i<$count;$i++){
-				$sql = "UPDATE table_place_ward SET hienthi =1 WHERE  id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");				
+				$data = array();
+				$data["hienthi"] = 1;
+				$d->reset();
+				$d->setTable("place_ward");
+				$d->setWhere("id", $id_array[$i]);
+				if($d->update($data) == false){
+					die("Not query sqlUPDATE_ORDER");
+				}
 			}
 			redirect("index.php?com=place&act=man_ward".$urlcu);			
 		}
 		if($multi=='hide'){
 			for($i=0;$i<$count;$i++){
-				$sql = "UPDATE table_place_ward SET hienthi =0 WHERE  id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");				
+				$data = array();
+				$data["hienthi"] = 0;
+				$d->reset();
+				$d->setTable("place_ward");
+				$d->setWhere("id", $id_array[$i]);
+				if($d->update($data) == false){
+					die("Not query sqlUPDATE_ORDER");
+				}			
 			}
 			redirect("index.php?com=place&act=man_ward".$urlcu);			
 		}
 		if($multi=='del'){
 			for($i=0;$i<$count;$i++){							
-				$sql = "delete from table_place_ward where id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");			
+				$d->reset();
+				$d->setTable('place_ward');
+				$d->setWhere('id',$id_array[$i]);
+				if($d->delete() == false){
+				  die("Not query sqlUPDATE_ORDER");	
+				}	
 			}
 			redirect("index.php?com=place&act=man_ward".$urlcu);			
 		}
@@ -418,21 +468,36 @@ function get_wards(){
 	#----------------------------------------------------------------------------------------
 	if($_REQUEST['hienthi']!='')
 	{
-	$id_up = $_REQUEST['hienthi'];
-	$sql_sp = "SELECT id,hienthi FROM table_place_ward where id='".$id_up."' ";
-	$d->query($sql_sp);
-	$cats= $d->result_array();
-	$hienthi=$cats[0]['hienthi'];
-	if($hienthi==0)
-	{
-	$sqlUPDATE_ORDER = "UPDATE table_place_ward SET hienthi =1 WHERE  id = ".$id_up."";
-	$resultUPDATE_ORDER = mysql_query($sqlUPDATE_ORDER) or die("Not query sqlUPDATE_ORDER");
-	}
-	else
-	{
-	$sqlUPDATE_ORDER = "UPDATE table_place_ward SET hienthi =0  WHERE  id = ".$id_up."";
-	$resultUPDATE_ORDER = mysql_query($sqlUPDATE_ORDER) or die("Not query sqlUPDATE_ORDER");
-	}	
+		$id_up = $_REQUEST['hienthi'];
+		$d->reset();
+		$d->setTable('place_ward');
+		$d->setWhere('id',$id_up);
+		$d->select('id,hienthi');
+		$cats= $d->fetch_array();
+
+		$hienthi=$cats['hienthi'];
+		if($hienthi==0)
+		{
+			$data = array();
+			$data["hienthi"] = 1;
+			$d->reset();
+			$d->setTable("place_ward");
+			$d->setWhere($id, $id_up);
+			if($d->update($data) == false){
+				die("Not query sqlUPDATE_ORDER");
+			}
+		}
+		else
+		{
+			$data = array();
+			$data["hienthi"] = 0;
+			$d->reset();
+			$d->setTable("place_ward");
+			$d->setWhere($id, $id_up);
+			if($d->update($data) == false){
+				die("Not query sqlUPDATE_ORDER");
+			}
+		}	
 	}
 	#-------------------------------------------------------------------------------
 	if($_REQUEST['id_city']!='')
@@ -461,8 +526,7 @@ function get_wards(){
 	$page--;
 	$bg=$pageSize*$page;		
 	$sql = "SELECT * from #_place_ward $where order by id limit $bg,$pageSize";		
-	$d->query($sql);
-	$items = $d->result_array();	
+	$items=get_result($sql);
 	$url_link='index.php?com=place&act=man_ward';		
 }
 function get_ward(){
@@ -470,10 +534,12 @@ function get_ward(){
 	$id = isset($_GET['id']) ? themdau($_GET['id']) : "";
 	if(!$id)
 		transfer("Không nhận được dữ liệu", "index.php?com=place&act=man_ward".$urlcu);	
-	$sql = "select * from #_place_ward where id='".$id."'";
-	$d->query($sql);
-	if($d->num_rows()==0) transfer("Dữ liệu không có thực", "index.php?com=place&act=man_ward".$urlcu);
-	$item = $d->fetch_array();	
+	$item = get_fetch("select * from #_place_ward where id='".$id."'");
+	if($item){
+
+	}else{
+	    transfer("Dữ liệu không có thực", "index.php?com=place&act=man_ward".$urlcu);
+	} 	
 }
 function save_ward(){
 	global $d,$urlcu;	
@@ -521,12 +587,14 @@ function delete_ward(){
 	}
 	if(isset($_GET['id'])){
 		$id =  themdau($_GET['id']);
-		$d->reset();		
-		$sql = "delete from #_place_ward where id='".$id."'";
-		if($d->query($sql))
+		$d->reset();
+		$d->setTable('place_ward');
+		$d->setWhere('id',$id);
+		if($d->delete() == false){
+		  transfer("Xóa dữ liệu bị lỗi", "index.php?com=place&act=man_ward");
+		}else{
 			redirect("index.php?com=place&act=man_ward".$id_catt."");
-		else
-			transfer("Xóa dữ liệu bị lỗi", "index.php?com=place&act=man_ward");
+		}
 	}else transfer("Không nhận được dữ liệu", "index.php?com=place&act=man_ward");
 }
 #====================================
@@ -538,22 +606,38 @@ function get_streets(){
 		$count=count($id_array);
 		if($multi=='show'){
 			for($i=0;$i<$count;$i++){
-				$sql = "UPDATE table_place_street SET hienthi =1 WHERE  id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");				
+				$data = array();
+				$data["hienthi"] = 1;
+				$d->reset();
+				$d->setTable("place_street");
+				$d->setWhere("id", $id_array[$i]);
+				if($d->update($data) == false){
+					die("Not query sqlUPDATE_ORDER");
+				}			
 			}
 			redirect("index.php?com=place&act=man_street".$urlcu);			
 		}
 		if($multi=='hide'){
 			for($i=0;$i<$count;$i++){
-				$sql = "UPDATE table_place_street SET hienthi =0 WHERE  id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");				
+				$data = array();
+				$data["hienthi"] = 0;
+				$d->reset();
+				$d->setTable("place_street");
+				$d->setWhere("id", $id_array[$i]);
+				if($d->update($data) == false){
+					die("Not query sqlUPDATE_ORDER");
+				}					
 			}
 			redirect("index.php?com=place&act=man_street".$urlcu);			
 		}
 		if($multi=='del'){
 			for($i=0;$i<$count;$i++){							
-				$sql = "delete from table_place_street where id = ".$id_array[$i]."";
-				mysql_query($sql) or die("Not query sqlUPDATE_ORDER");			
+				$d->reset();
+				$d->setTable('place_street');
+				$d->setWhere('id',$id_array[$i]);
+				if($d->delete() == false){
+					die("Not query sqlUPDATE_ORDER");	
+				}
 			}
 			redirect("index.php?com=place&act=man_street".$urlcu);		
 		}
@@ -561,21 +645,36 @@ function get_streets(){
 	#----------------------------------------------------------------------------------------
 	if($_REQUEST['hienthi']!='')
 	{
-	$id_up = $_REQUEST['hienthi'];
-	$sql_sp = "SELECT id,hienthi FROM table_place_street where id='".$id_up."' ";
-	$d->query($sql_sp);
-	$cats= $d->result_array();
-	$hienthi=$cats[0]['hienthi'];
-	if($hienthi==0)
-	{
-	$sqlUPDATE_ORDER = "UPDATE table_place_street SET hienthi =1 WHERE  id = ".$id_up."";
-	$resultUPDATE_ORDER = mysql_query($sqlUPDATE_ORDER) or die("Not query sqlUPDATE_ORDER");
-	}
-	else
-	{
-	$sqlUPDATE_ORDER = "UPDATE table_place_street SET hienthi =0  WHERE  id = ".$id_up."";
-	$resultUPDATE_ORDER = mysql_query($sqlUPDATE_ORDER) or die("Not query sqlUPDATE_ORDER");
-	}	
+		$id_up = $_REQUEST['hienthi'];
+		$d->reset();
+		$d->setTable('place_street');
+		$d->setWhere('id',$id_up);
+		$d->select('id,hienthi');
+		$cats= $d->fetch_array();
+
+		$hienthi=$cats['hienthi'];
+		if($hienthi==0)
+		{
+			$data = array();
+			$data["hienthi"] = 1;
+			$d->reset();
+			$d->setTable("place_street");
+			$d->setWhere($id, $id_up);
+			if($d->update($data) == false){
+				die("Not query sqlUPDATE_ORDER");
+			}
+		}
+		else
+		{
+			$data = array();
+			$data["hienthi"] = 0;
+			$d->reset();
+			$d->setTable("place_street");
+			$d->setWhere($id, $id_up);
+			if($d->update($data) == false){
+				die("Not query sqlUPDATE_ORDER");
+			}
+		}	
 	}
 	#-------------------------------------------------------------------------------
 	if($_REQUEST['id_city']!='')
@@ -608,9 +707,7 @@ function get_streets(){
 	$page--;
 	$bg=$pageSize*$page;		
 	$sql = "SELECT * from #_place_street $where order by id limit $bg,$pageSize";		
-	$d->query($sql);
-	$items = $d->result_array();	
-
+	$items=get_result($sql);
 	$url_link='index.php?com=place&act=man_street'.$urlcu;
 }
 function get_street(){
@@ -618,10 +715,12 @@ function get_street(){
 	$id = isset($_GET['id']) ? themdau($_GET['id']) : "";
 	if(!$id)
 		transfer("Không nhận được dữ liệu", "index.php?com=place&act=man_street");	
-	$sql = "select * from #_place_street where id='".$id."'";
-	$d->query($sql);
-	if($d->num_rows()==0) transfer("Dữ liệu không có thực", "index.php?com=place&act=man_street");
-	$item = $d->fetch_array();	
+	$item = get_fetch("select * from #_place_street where id='".$id."'");
+	if($item){
+
+	}else{
+	    transfer("Dữ liệu không có thực", "index.php?com=place&act=man_street");
+	} 
 }
 function save_street(){
 	global $d,$urlcu;	
@@ -671,12 +770,14 @@ function delete_street(){
 	}
 	if(isset($_GET['id'])){
 		$id =  themdau($_GET['id']);
-		$d->reset();		
-		$sql = "delete from #_place_street where id='".$id."'";
-		if($d->query($sql))
+		$d->reset();
+		$d->setTable('place_street');
+		$d->setWhere('id',$id);
+		if($d->delete() == false){
+		  transfer("Xóa dữ liệu bị lỗi", "index.php?com=place&act=man_street");
+		}else{
 			redirect("index.php?com=place&act=man_street".$id_catt."");
-		else
-			transfer("Xóa dữ liệu bị lỗi", "index.php?com=place&act=man_street");
+		}
 	}else transfer("Không nhận được dữ liệu", "index.php?com=place&act=man_street");
 }
 ?>

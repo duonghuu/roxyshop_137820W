@@ -44,38 +44,39 @@
 <?php
 function get_main_city()
 {
-    $sql_huyen="select * from table_place_city where hienthi=1 order by stt,id desc";
-    $result=mysql_query($sql_huyen);
+    $getdata = get_result("select * from table_place_city where hienthi=1 order by stt,id desc");
     $str='
     <select id="id_city" name="id_city" onchange="select_onchange()" class="main_select">
-    <option value="">Chọn tỉnh thành</option>   
+    <option value="">Chọn tỉnh thành</option>
     ';
-    while ($row_huyen=@mysql_fetch_array($result)) 
+    foreach($getdata as $key=>$row)
     {
-        if($row_huyen["id"]==(int)@$_REQUEST["id_city"])
+        if($row["id"]==(int)@$_REQUEST["id_city"])
             $selected="selected";
-        else 
+        else
             $selected="";
-        $str.='<option value='.$row_huyen["id"].' '.$selected.'>'.$row_huyen["ten"].'</option>';            
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
     }
     $str.='</select>';
     return $str;
 }
 function get_main_dist()
 {
-    $sql_huyen="select * from table_place_dist where id_city='".$_GET['id_city']."' order by stt,id desc";
-    $result=mysql_query($sql_huyen);
+    if(!empty($_REQUEST['id_city'])){
+        $getdata = get_result("select * from table_place_dist where 
+            id_city=".$_REQUEST['id_city']." order by stt,id desc");        
+    }
     $str='
     <select id="id_dist" name="id_dist" onchange="select_onchange1()" class="main_select">
-    <option value="">Chọn quận huyện</option>   
+    <option value="">Chọn quận huyện</option>
     ';
-    while ($row_huyen=@mysql_fetch_array($result)) 
+    foreach($getdata as $key=>$row)
     {
-        if($row_huyen["id"]==(int)@$_REQUEST["id_dist"])
+        if($row["id"]==(int)@$_REQUEST["id_dist"])
             $selected="selected";
-        else 
+        else
             $selected="";
-        $str.='<option value='.$row_huyen["id"].' '.$selected.'>'.$row_huyen["ten"].'</option>';            
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
     }
     $str.='</select>';
     return $str;

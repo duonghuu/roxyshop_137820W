@@ -1,59 +1,56 @@
 <?php
 function get_main_city()
 {
-    $sql="select * from table_place_city order by stt";
-    $stmt=mysql_query($sql);
-    $str='
-    <select id="id_city" name="id_city" class="main_select select_danhmuc" onchange="select_onchange()">
-    <option value="0">Chọn tỉnh thành</option>          
-    ';
-    while ($row=@mysql_fetch_array($stmt)) 
-    {
+    global $d;
+      $sql="select * from table_place_city order by stt";
+      $d->query($sql);
+      $result = $d->result_array();
+      $str='<select id="id_city" name="id_city" onchange="select_onchange()" class="main_select select_danhmuc">
+        <option value="0">Chọn tỉnh thành</option>';
+      foreach ($result as $key => $row) {
         if($row["id"]==(int)@$_REQUEST["id_city"])
-            $selected="selected";
-        else 
-            $selected="";
-        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';            
-    }
-    $str.='</select>';
-    return $str;
+          $selected="selected";
+        else
+          $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+      }
+      $str.='</select>';
+      return $str;
 }
 function get_main_dist()
 {
-    $sql="select * from table_place_dist where id_city=".$_REQUEST['id_city']."  order by stt";
-    $stmt=mysql_query($sql);
-    $str='
-    <select id="id_dist" name="id_dist" class="main_select select_danhmuc" onchange="select_onchange1()">
-    <option value="0">Chọn quận huyện</option>          
-    ';
-    while ($row=@mysql_fetch_array($stmt)) 
-    {
+    global $d;
+      $sql="select * from table_place_dist where id_city='".$_REQUEST['id_city']."' order by stt";
+      $d->query($sql);
+      $result = $d->result_array();     
+      $str='<select id="id_dist" name="id_dist" onchange="select_onchange1()" class="main_select select_danhmuc">
+        <option value="0">Chọn quận huyện</option>';        
+      foreach ($result as $key => $row) {
         if($row["id"]==(int)@$_REQUEST["id_dist"])
-            $selected="selected";
-        else 
-            $selected="";
-        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';            
-    }
-    $str.='</select>';
+          $selected="selected";
+        else
+          $selected="";       
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+        }
+      $str.='</select>';
     return $str;
 }
 function get_main_ward()
 {
-    $sql="select * from table_place_ward where id_dist=".$_REQUEST['id_dist']."  order by stt";
-    $stmt=mysql_query($sql);
-    $str='
-    <select id="id_ward" name="id_ward" class="main_select select_danhmuc">
-    <option value="0">Chọn phường xã</option>          
-    ';
-    while ($row=@mysql_fetch_array($stmt)) 
-    {
+    global $d;
+      $sql="select * from table_place_ward where id_dist='".$_REQUEST['id_dist']."' order by stt";
+      $d->query($sql);
+      $result = $d->result_array();     
+      $str='<select id="id_ward" name="id_ward" class="main_select select_danhmuc">
+        <option value="0">Chọn phường xã</option>';        
+      foreach ($result as $key => $row) {
         if($row["id"]==(int)@$_REQUEST["id_ward"])
-            $selected="selected";
-        else 
-            $selected="";
-        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';            
-    }
-    $str.='</select>';
+          $selected="selected";
+        else
+          $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+        }
+      $str.='</select>';
     return $str;
 }    
 ?>

@@ -1,5 +1,5 @@
 <?php  if(!defined('_source')) die("Error");	
-	
+/*	
 	if(count($_SESSION['cart'])>0)
 	{
 	#Lấy tỉnh thành phố
@@ -262,5 +262,4 @@
 	{
 		transfer("Bạn chưa mua sản phẩm nào.Vui lòng chọn mua sản phẩm.<br/>Cảm Ơn!!!.", "index.html");
 	}
-?>
-
+*/

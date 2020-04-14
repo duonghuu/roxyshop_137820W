@@ -26,62 +26,62 @@ function timkiem()
 <?php
 function get_main_danhmuc()
 	{
-		$sql="select * from table_news_danhmuc order by stt";
-		$stmt=mysql_query($sql);
-		$str='
-			<select id="id_danhmuc" name="id_danhmuc" onchange="select_onchange()" class="main_select">
-			<option>Chọn danh mục</option>
-			';
-		while ($row=@mysql_fetch_array($stmt))
-		{
-			if($row["id"]==(int)@$_REQUEST["id_danhmuc"])
-				$selected="selected";
-			else
-				$selected="";
-			$str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-		}
-		$str.='</select>';
-		return $str;
+    $getdata = get_result("select * from table_news_danhmuc where type='".$_REQUEST['type']."' order by stt");
+    $str='
+    <select id="id_danhmuc" name="id_danhmuc" onchange="select_onchange()" class="main_select">
+    <option value="">Danh mục cấp 1</option>
+    ';
+    foreach($getdata as $key=>$row)
+    {
+        if($row["id"]==(int)@$_REQUEST["id_danhmuc"])
+            $selected="selected";
+        else
+            $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
 	}
 
 function get_main_list()
 	{
-		$sql="select * from table_news_list where id_danhmuc=".$_REQUEST['id_danhmuc']."  order by stt";
-		$stmt=mysql_query($sql);
-		$str='
-			<select id="id_list" name="id_list" onchange="select_onchange1()" class="main_select">
-			<option>Chọn danh mục</option>
-			';
-		while ($row=@mysql_fetch_array($stmt))
-		{
-			if($row["id"]==(int)@$_REQUEST["id_list"])
-				$selected="selected";
-			else
-				$selected="";
-			$str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-		}
-		$str.='</select>';
-		return $str;
+    if(!empty($_REQUEST['id_danhmuc'])){
+        $getdata = get_result("select * from table_news_list where 
+            id_danhmuc=".$_REQUEST['id_danhmuc']." order by stt");        
+    }
+    $str='
+    <select id="id_list" name="id_list" onchange="select_onchange1()" class="main_select">
+    <option value="">Danh mục cấp 2</option>
+    ';
+    foreach($getdata as $key=>$row)
+    {
+        if($row["id"]==(int)@$_REQUEST["id_list"])
+            $selected="selected";
+        else
+            $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
 	}
 
 function get_main_category()
 	{
-		$sql="select * from table_news_cat where id_list=".$_REQUEST['id_list']." order by stt";
-		$stmt=mysql_query($sql);
-		$str='
-			<select id="id_cat" name="id_cat" onchange="select_onchange2()" class="main_select">
-			<option>Chọn danh mục</option>
-			';
-		while ($row=@mysql_fetch_array($stmt))
-		{
-			if($row["id"]==(int)@$_REQUEST["id_cat"])
-				$selected="selected";
-			else
-				$selected="";
-			$str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
-		}
-		$str.='</select>';
-		return $str;
+    $getdata = get_result("select * from table_news_cat where id_list=".$_REQUEST['id_list']." order by stt");
+    $str='
+    <select id="id_cat" name="id_cat" onchange="select_onchange2()" class="main_select">
+    <option value="">Danh mục cấp 3</option>
+    ';
+    foreach($getdata as $key=>$row)
+    {
+        if($row["id"]==(int)@$_REQUEST["id_cat"])
+            $selected="selected";
+        else
+            $selected="";
+        $str.='<option value='.$row["id"].' '.$selected.'>'.$row["ten"].'</option>';
+    }
+    $str.='</select>';
+    return $str;
 	}
 
 ?>

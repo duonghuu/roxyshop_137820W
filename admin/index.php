@@ -141,9 +141,6 @@ switch($com){
 	case 'news':
 	$source = "news";
 	break;
-	case 'tuyendung':
-	$source = "tuyendung";
-	break;
 	case 'product':
 	$source = "product";
 	break;
