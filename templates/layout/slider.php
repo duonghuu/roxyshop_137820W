@@ -2,6 +2,7 @@
       if($source == "index"){
         $slider = get_result("select ten$lang as ten,photo,thumb from #_slider 
           where hienthi=1 and type='slider' order by stt");
+        $backgroundma=get_fetch("select * from #_anhnen where type='backgroundma' ");
          ?>
          <div id="slideshow">
            <div class="slideshow-slider-main">
@@ -21,7 +22,7 @@
               <?php } ?>
             </div>
           </div>
-          <div class="sliderma-main">
+          <div class="sliderma-main" style="background-color: <?= $backgroundma['color'] ?>">
             <?php foreach ($sliderma as $key => $value) { ?>
               <div class="slider-ma"><span class="ma-item"><?= $value["ten"] ?></span></div>
             <?php } ?>

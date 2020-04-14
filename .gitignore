@@ -14,6 +14,7 @@
 !/admin/index.php
 !/admin/ajax.php
 !/admin/ajax_phanquyen.php
+/composer
 /images
 /css/fontawesome
 /css/fonts

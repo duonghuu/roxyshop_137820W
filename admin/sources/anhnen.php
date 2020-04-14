@@ -5,6 +5,9 @@ $act = (isset($_REQUEST['act'])) ? addslashes($_REQUEST['act']) : "";
 switch($act){
 	case "capnhat":
 		get_photo();
+		if($type=="backgroundma")
+		$template = "anhnen/item_mau_add";
+	else
 		$template = "anhnen/item_add";
 		break;
 	case "save":

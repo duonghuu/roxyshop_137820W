@@ -294,14 +294,18 @@ if(in_array('bct',$config['company'])) { ?>
     <div class="formRow">
       <label>Code thêm header</label>
       <div class="formRight">
-        <textarea rows="8" cols="" class="tipS description_input" name="codethem" original-title="Nhập thêm các code muốn thêm vào website như google analytics..."><?=@unzip_chuanhoa($item['codethem'])?></textarea>
+        <textarea rows="8" cols="" class="tipS description_input" name="codethem" 
+        original-title="Nhập thêm các code muốn thêm vào website như google analytics...">
+        <?=@unzip_chuanhoa($item['codethem'])?></textarea>
       </div>
       <div class="clear"></div>
     </div>
          <div class="formRow">
       <label>Code thêm body - chat - gg analytic</label>
       <div class="formRight">
-        <textarea rows="8" cols="" class="tipS description_input" name="codethem2" original-title="Nhập thêm các code muốn thêm vào website như code chat,google analytics..."><?=@unzip_chuanhoa($item['codethem2'])?></textarea>
+        <textarea rows="8" cols="" class="tipS description_input" name="codethem2" 
+        original-title="Nhập thêm các code muốn thêm vào website như code chat,google analytics...">
+        <?=@unzip_chuanhoa($item['codethem2'])?></textarea>
       </div>
       <div class="clear"></div>
     </div>

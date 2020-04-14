@@ -42,8 +42,17 @@
     }
 
     .product_info, .zoom_slick{
-        width: 100%;
+        width: 100% !important;
         margin-bottom: 10px;
+    }
+    .pr__detail--verticle .zoom_slick .slick{
+      display: none;
+    }
+    .pr__detail--verticle .zoom_slick .slick2{
+      width: 100%;
+      .slick-prev, .slick-next{
+        opacity: 1;
+      }
     }
 }
 /*========= COMMON ===============*/

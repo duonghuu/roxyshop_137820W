@@ -16,7 +16,7 @@
                     <?php phanquyen_menu('Danh mục cấp 2','product','man_list','san-pham'); ?>
                     <?php //phanquyen_menu('Danh mục cấp 3','product','man_cat','san-pham'); ?>
                     <?php phanquyen_menu('Sản phẩm','product','man','san-pham'); ?>
-                    <?php //phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
+                    <?php phanquyen_menu('Quản lý hình thức thanh toán','httt','man',''); ?>
                     <?php //phanquyen_menu('Quản lý thương hiệu','news','man','thuonghieu'); ?>
                     <?php phanquyen_menu('Quản lý màu sắc','news','man','mausac'); ?>
                     <?php phanquyen_menu('Quản lý size','news','man','size'); ?>
@@ -72,6 +72,7 @@
     <?php //phanquyen_menu('Cập nhật banner mobile','background','capnhat','banner_mobi'); ?>
     <?php phanquyen_menu('Quản lý slider','slider','man_photo','slider'); ?>
     <?php phanquyen_menu('Slider mã giảm giá','news','man','slider-ma'); ?>
+    <?php phanquyen_menu('Màu background mã giảm giá','anhnen','capnhat','backgroundma'); ?>
     <?php //phanquyen_menu('Banner trang trong','news','man','bntrong'); ?>
     <?php //phanquyen_menu('Text Đối tác','about','capnhat','txtdoitac'); ?>
     <?php //phanquyen_menu('Đối tác','slider','man_photo','doi-tac'); ?>

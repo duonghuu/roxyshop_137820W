@@ -84,47 +84,48 @@
 */?>
 <div class="li" style="display: flex;flex-wrap: wrap;justify-content: space-between;"><a class="dathang nutdathang" 
   data-id="<?=$row_detail['id']?>">Thêm vào giỏ</a> <a class="muangay" data-id="<?=$row_detail['id']?>">Đặt mua ngay</a></div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs mt-3">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#thongtinchitiet"><strong>Mô tả sản Phẩm</strong></a>
+    </li>
+    <?php /* <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#binhluan"></strong><?=_binhluan?></strong></a>
+      </li */?>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div class="tab-pane active" id="thongtinchitiet">
+      <div class="box_detail_product">
+        <div class="content"><?=$row_detail['noidung']?></div>
+      </div>
+      
+      <?php if(!empty($tags_sp)) { ?>
+        <div class="tukhoa">
+          <div id="tags">
+            <span>Tags:</span>
+            <?php
+            foreach($tags_sp as $k=>$tags_sp_item) { 
+              ?>
+              <a href="tags/<?=changeTitle($tags_sp_item['ten'])?>-<?=$tags_sp_item['id']?>" title="<?=$tags_sp_item['ten']?>"><?=$tags_sp_item['ten']?></a>
+            <?php } ?>
+            <div class="clear"></div>
+          </div>
+        </div>
+      <?php } ?>
+    </div>
+    <?php /* <div class="tab-pane fade" id="binhluan"><?php //include _template."layout/comment.php";?> <div class="fb-comments" data-href="<?=getCurrentPageURL()?>" data-numposts="5" data-width="100%"></div></div> */?>
+  </div>
 <div class="li"><?php include _template."layout/share.php";?></div>
 </div>
 </div><!--.wap_pro-->
-<!-- Nav tabs -->
-<ul class="nav nav-tabs mt-3">
-  <li class="nav-item">
-    <a class="nav-link active" data-toggle="tab" href="#thongtinchitiet"><strong><?=_thongtinchitiet?></strong></a>
-  </li>
-  <?php /* <li class="nav-item">
-      <a class="nav-link" data-toggle="tab" href="#binhluan"></strong><?=_binhluan?></strong></a>
-    </li */?>
-</ul>
 
-<!-- Tab panes -->
-<div class="tab-content">
-  <div class="tab-pane active" id="thongtinchitiet">
-    <div class="box_detail_product">
-      <div class="content"><?=$row_detail['noidung']?></div>
-    </div>
-    
-    <?php if(!empty($tags_sp)) { ?>
-      <div class="tukhoa">
-        <div id="tags">
-          <span>Tags:</span>
-          <?php
-          foreach($tags_sp as $k=>$tags_sp_item) { 
-            ?>
-            <a href="tags/<?=changeTitle($tags_sp_item['ten'])?>-<?=$tags_sp_item['id']?>" title="<?=$tags_sp_item['ten']?>"><?=$tags_sp_item['ten']?></a>
-          <?php } ?>
-          <div class="clear"></div>
-        </div>
-      </div>
-    <?php } ?>
-  </div>
-  <?php /* <div class="tab-pane fade" id="binhluan"><?php //include _template."layout/comment.php";?> <div class="fb-comments" data-href="<?=getCurrentPageURL()?>" data-numposts="5" data-width="100%"></div></div> */?>
-</div>
 
 <div class="clear"></div>
 </div><!--.box_containe-->
 <?php if(count($product)>0) { ?>
-  <div class="tieude_giua"><div><?=$title_other?></div></div>
+  <div class="tieude_giua mt-3"><div><?=$title_other?></div></div>
   <div class="product-grid">
     <?php foreach ($product as $k => $v) { 
       showProduct($v);

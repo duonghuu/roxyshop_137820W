@@ -282,7 +282,8 @@ $ds_photo=$d->result_array();
            <div class="formRow">
              <label>Tên</label>
              <div class="formRight">
-               <input type="text" name="data[ten<?=$key?>]" title="Nhập tên" id="ten<?=$key?>" class="tipS" value="<?=@$item['ten'.$key]?>" />
+               <input type="text" name="data[ten<?=$key?>]" title="Nhập tên" id="ten<?=$key?>" class="tipS"
+                value="<?=htmlspecialchars($item['ten'.$key])?>" />
              </div>
              <div class="clear"></div>
            </div>

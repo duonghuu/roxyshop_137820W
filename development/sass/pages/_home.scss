@@ -47,7 +47,7 @@
     // @include setFont(15px, #808080, 400, $font-text);
 }
 .sliderma-main{
-    background-color: #fc0214;
+    
     .slider-ma{
         .ma-item{
             @include boxstyle($display: flex, $align-items: center, $justify-content: center);

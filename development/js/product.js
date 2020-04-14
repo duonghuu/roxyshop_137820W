@@ -7,7 +7,7 @@
       $('.slick2').slick({
         slidesToShow: 1, 
         slidesToScroll: 1, 
-        arrows: false, 
+        arrows: true, 
         fade: true, 
         autoplay:false, 
         autoplaySpeed:5000, 
