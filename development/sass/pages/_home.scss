@@ -51,7 +51,7 @@
     .slider-ma{
         .ma-item{
             @include boxstyle($display: flex, $align-items: center, $justify-content: center);
-            @include setFont(13px, #fff, 700);
+            @include setFont(13px, #000, 700);
             min-height: 36px;
             text-transform: uppercase;
         }

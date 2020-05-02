@@ -175,23 +175,23 @@
 }
 /*========= Checkout ===============*/
 @mixin setCheckout_lg{
-  .checkouts-bg{
-    @include grid($display: flex, $flex-wrap: wrap);
-    &:before{
-      display: none;
-    }
-  }
-  .checkouts-cart-info{ 
-    $pd-40: em(40);
-    padding: $pd-40 $pd-40 10px $pd-40;
-    width: 100%;
-    order: 0;
-  }
-  .checkouts-customer-info{
-    $pd-40: em(40);
-    padding: $pd-40 $pd-40 10px $pd-40;
-    width: 100%;
-  }
+ .checkouts-bg{
+   @include grid($display: flex, $flex-wrap: wrap);
+   &:before{
+     display: none;
+   }
+ }
+ .checkouts-cart-info{ 
+   $pd-40: em(40);
+   padding: 10px;
+   width: 100%;
+   order: 0;
+ }
+ .checkouts-customer-info{
+   $pd-40: em(40);
+   padding: 10px;
+   width: 100%;
+ }
 
 }
 /*========= Doitac ===============*/
@@ -209,9 +209,18 @@
         width: 100%;
         margin-bottom: 1em;
       }
-      .ft-fanpage, .ft-baiviet  {
+      .ft-baiviet  {
         width: 49%;
         margin-bottom: 1em;
+        @include doubly(){
+           width: 49%;
+        }
+        @include media("<=425px"){
+             width: 100%;
+          @include doubly(){
+             width: 100%;
+          }
+        };
       }
     }
   }

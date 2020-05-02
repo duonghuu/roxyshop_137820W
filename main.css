@@ -10250,7 +10250,7 @@ div.mxhft {
       position: relative; }
 
 .sliderma-main .slider-ma .ma-item {
-  color: #fff;
+  color: #000;
   font-size: 13px;
   font-weight: 700;
   min-height: 36px;
@@ -11682,11 +11682,11 @@ background: #fff;
     .checkouts-bg:before {
       display: none; }
   .checkouts-cart-info {
-    padding: 2.5em 2.5em 10px 2.5em;
+    padding: 10px;
     width: 100%;
     order: 0; }
   .checkouts-customer-info {
-    padding: 2.5em 2.5em 10px 2.5em;
+    padding: 10px;
     width: 100%; }
   /*========= FOOTER ===============*/
   #footer .ft-flex {
@@ -11697,9 +11697,18 @@ background: #fff;
     #footer .ft-flex .ft-info, #footer .ft-flex .ft-dknt {
       width: 100%;
       margin-bottom: 1em; }
-    #footer .ft-flex .ft-fanpage, #footer .ft-flex .ft-baiviet {
+    #footer .ft-flex .ft-baiviet {
       width: 49%;
       margin-bottom: 1em; }
+      #footer .ft-flex .ft-baiviet + .ft-baiviet {
+        width: 49%; } }
+    @media screen and (min-width: 768px) and (max-width: 992px) and (max-width: 425px) {
+      #footer .ft-flex .ft-baiviet {
+        width: 100%; }
+        #footer .ft-flex .ft-baiviet + .ft-baiviet {
+          width: 100%; } }
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
   .copyright {
     padding-bottom: 48px; }
     .copyright .ft-wrap {
@@ -11716,12 +11725,40 @@ background: #fff;
         -ms-flex-pack: center;
         -webkit-justify-content: center;
         -moz-justify-content: center;
-        justify-content: center; } }
+        justify-content: center; }
+  .checkouts-bg {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap; }
+    .checkouts-bg:before {
+      display: none; }
+  .checkouts-cart-info {
+    padding: 10px;
+    width: 100%;
+    order: 0; }
+  .checkouts-customer-info {
+    padding: 10px;
+    width: 100%; } }
 
 /*  ================================================================================
   EXTRA SMALL
   (>425px & <768px)
   ================================================================================ */
+@media screen and (min-width: 425px) and (max-width: 768px) {
+  .checkouts-bg {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap; }
+    .checkouts-bg:before {
+      display: none; }
+  .checkouts-cart-info {
+    padding: 10px;
+    width: 100%;
+    order: 0; }
+  .checkouts-customer-info {
+    padding: 10px;
+    width: 100%; } }
+
 /*  ================================================================================
   MOBILE SIZE
   Phones Less than 425px
@@ -11798,9 +11835,18 @@ background: #fff;
     #footer .ft-flex .ft-info, #footer .ft-flex .ft-dknt {
       width: 100%;
       margin-bottom: 1em; }
-    #footer .ft-flex .ft-fanpage, #footer .ft-flex .ft-baiviet {
+    #footer .ft-flex .ft-baiviet {
       width: 49%;
       margin-bottom: 1em; }
+      #footer .ft-flex .ft-baiviet + .ft-baiviet {
+        width: 49%; } }
+    @media screen and (max-width: 425px) and (max-width: 425px) {
+      #footer .ft-flex .ft-baiviet {
+        width: 100%; }
+        #footer .ft-flex .ft-baiviet + .ft-baiviet {
+          width: 100%; } }
+
+@media screen and (max-width: 425px) {
   .copyright {
     padding-bottom: 48px; }
     .copyright .ft-wrap {
@@ -11817,6 +11863,19 @@ background: #fff;
         -ms-flex-pack: center;
         -webkit-justify-content: center;
         -moz-justify-content: center;
-        justify-content: center; } }
+        justify-content: center; }
+  .checkouts-bg {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap; }
+    .checkouts-bg:before {
+      display: none; }
+  .checkouts-cart-info {
+    padding: 10px;
+    width: 100%;
+    order: 0; }
+  .checkouts-customer-info {
+    padding: 10px;
+    width: 100%; } }
 
 /*# sourceMappingURL=main.css.map */

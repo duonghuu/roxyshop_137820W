@@ -119,7 +119,7 @@
                 <svg class="previous-link-icon icon-chevron icon" xmlns="http://www.w3.org/2000/svg" width="6.7" height="11.3" viewBox="0 0 6.7 11.3"><path d="M6.7 1.1l-1-1.1-4.6 4.6-1.1 1.1 1.1 1 4.6 4.6 1-1-4.6-4.6z"></path></svg>
                 <?= _giohang ?>
             </a>
-            <button class="btn btn-primary" type="button">Hoàn tất đơn hàng</button>
+            <button class="btn btn-primary" type="submit">Hoàn tất đơn hàng</button>
           </div> <!-- end step-footer  -->
         </div>
       </div>      <!-- end main-content  -->
