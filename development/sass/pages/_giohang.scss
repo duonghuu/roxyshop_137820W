@@ -72,7 +72,9 @@
     transition: all 0.5s;
     top: -1000px;
     max-height: 90%;
-
+    @include media("<=768px"){
+        max-width: 98%;
+    };
     .giohang-cl{
       position: absolute;
       top: -13px;
@@ -91,7 +93,11 @@
         float: left;
         width: 50%;
         border-right: 1px solid #e3e3e3;
+        @include media("<=768px"){
+        float: none;
+        width: 100%;
 
+        };
         &-tit{
           font-size: 18px;
           color: #06783d;
@@ -168,7 +174,11 @@
         padding: 15px 20px 10px;
         float: left;
         width: 50%;
+        @include media("<=768px"){
+        float: none;
+        width: 100%;
 
+        };
         &-tit{
           font-size: 18px;
           color: #292929;

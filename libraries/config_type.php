@@ -489,7 +489,12 @@ switch($type){
 	case 'footer':
 	switch($act){
 		default:
-		$config['type'] = array('noidung');
+		$config['type'] = array('noidung','hinhanh');
+		@define ( _width_thumb , 1366 );
+		@define ( _height_thumb , 360 );
+		@define ( _style_thumb , 1 );
+		@define ( _width_thumb2 , 1366 );
+		@define ( _height_thumb2 , 360 );
 		break;
 	}
 	break;

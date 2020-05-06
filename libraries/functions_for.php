@@ -301,24 +301,24 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 		// $cls_moi = ($v["spmoi"]>0)?'<i class="new">new</i>':"";
 		// $cls_banchay = ($v["spbanchay"]>0)?'<i class="sale"></i>':"";
 		$sizepanel = "";
-		if(!empty($v["size2"])){
-			$a_size2 = explode(',', $v["size2"]);
-			$size2 = get_result("select ten,id from table_news where type='size' and id in (".$v["size2"].") order by stt asc");
-			$sizelist = "";
-			foreach($size2 as $key=>$value)
-			{
-				$sizelist .= "<span>".$value["ten"]."</span>";
-			}
-			$sizepanel .= '<div class="sizepanel"><span>Size</span><div class="size-right">'.$sizelist.'</div></div>';
-		}
+		// if(!empty($v["size2"])){
+		// 	$a_size2 = explode(',', $v["size2"]);
+		// 	$size2 = get_result("select ten,id from table_news where type='size' and id in (".$v["size2"].") order by stt asc");
+		// 	$sizelist = "";
+		// 	foreach($size2 as $key=>$value)
+		// 	{
+		// 		$sizelist .= "<span>".$value["ten"]."</span>";
+		// 	}
+		// 	$sizepanel .= '<div class="sizepanel"><span>Size</span><div class="size-right">'.$sizelist.'</div></div>';
+		// }
 
 		
 		$giasp = ($v["giakm"]>0)?$v["giakm"]:$v["gia"];
-		$gia = ($giasp>0)?num_format($giasp).' vnđ':_lienhe;
+		$gia = ($giasp>0)?num_format($giasp).' đ':'';
 		$s_gia = "";
 		if($v["giakm"]>0) {
-			$s_gia .= '<span>'.num_format($v["giakm"]).' vnđ</span>';
-			$s_gia .= '<del>'.num_format($v["gia"]).' vnđ</del>';
+			$s_gia .= '<span>'.num_format($v["giakm"]).' đ</span>';
+			$s_gia .= '<del>'.num_format($v["gia"]).' đ</del>';
 		}else{
 			$s_gia .= '<span>'.$gia.'</span>';
 		}
@@ -348,9 +348,10 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 			$slickdiv=$slickenddiv="";
 			$wowclass='wow zoomIn';
 		}
-		// $linkct= '<a href="'.$link.'" class="chitietnt" >Xem chi tiết</a>';
-		// $linkct .= '<a href="#" data-id="'.$v["id"].'" class="dathang">
-		// <i class="fas fa-shopping-cart"></i> Đặt hàng</a>';
+		$linkct= '<a data-fancybox data-type="ajax" data-src="'.$link.'" href="#" class="chitietnt" >
+		<i class="far fa-eye"></i> Xem nhanh</a>';
+		$linkct .= '<a href="'.$link.'">
+		<i class="fas fa-shopping-cart"></i> Mua ngay</a>';
 		// $linkct = '<a href="#" data-id="'.$v["id"].'" class="dathang">
 		// <i class="fas fa-shopping-cart"></i></a>';
 		echo $slickdiv.'<div class="pr-box name '.$wowclass.'" >
@@ -358,9 +359,9 @@ function lay_slider($type,$class='',$width=0,$height=0,$zc=2){
 				<a href="'.$link.'" class="imgsp zoom_hinh">'.$imgurl.$cls_moi.$cls_banchay.
 				$giaspgiam.$sizepanel.'</a> 
 			<div class="info">
-			<h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
-			<p>'.$s_gia.'</p>
-			</div>
+			<div class="tp_button">'.$linkct.
+			'</div><h3><a href="'.$link.'">'.$v["ten"].'</a></h3>
+			<p>'.$s_gia.'</p></div>
 		</article></div>'.$slickenddiv;
 	}
 	function lay_sanpham($product,$class,$width=0,$height=0,$zc=2){

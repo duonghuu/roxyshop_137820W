@@ -1,11 +1,13 @@
 <?php /* <div class="tieude_giua"><div><?=$title_cat?></div></div> */?>
 <div class="box_container">
+  <article id="article">
   <div class="box_detail_product">
     <div class="content ">
         <?=$row_detail['noidung']?>
     
 </div><!--.content-->
-<?php include _template."layout/share.php";?></div>
+<?php include _template."layout/share.php";?>
+</div>
 <?php if(count($tintuc) > 0) { ?>
 
             <div class="othernews">
@@ -38,4 +40,6 @@
       </form>
     </div>
   <?php } ?>
+
+  </article>
 </div><!--.box_container-->

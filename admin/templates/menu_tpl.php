@@ -79,7 +79,7 @@
     <?php phanquyen_menu('Banner quảng cáo','slider','man_photo','quang-cao'); ?>
     <?php //phanquyen_menu('Banner quảng cáo dưới album','slider','man_photo','quang-cao2'); ?>
     <?php //phanquyen_menu('Quản lý quảng cáo 2 bên','slider','man_photo','letruot'); ?>
-    <?php //phanquyen_menu('Cập nhật pupop quảng cáo','background','capnhat','pupop'); ?>
+    <?php phanquyen_menu('Cập nhật pupop quảng cáo','background','capnhat','pupop'); ?>
 </ul>
 </li>
 <?php /*<li class="categories_li <?php if($_GET['com']=='database' || $_GET['com']=='backup')

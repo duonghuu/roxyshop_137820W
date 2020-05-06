@@ -41,7 +41,6 @@ $product-gutter: percentage(30/1330);
             overflow: hidden;
             position: relative;
             padding-top: percentage(403/303);
-            margin-bottom: 10px;
             img{
                 @extend %img-fill;
             }
@@ -81,10 +80,39 @@ $product-gutter: percentage(30/1330);
         .info{
             z-index:6;
             position:relative;
+            padding-top: 10px;
+            .tp_button{
+                @include grid(flex, $flex-wrap: wrap, $justify-content: center, 
+                  $align-items: center, $gutter: null);
+                min-height: 40px;
+                opacity: 0;
+                visibility: hidden;
+                @include background-opacity(#000, $opacity: 0.5);
+                @include absolute($left: 0px, $top: 0px);
+                @include transition(all 0.25s ease-in-out);
+                width: 100%;
+                a{
+                    @include setFont(12px, #fff, 400, $font-text);
+                    @include grid(inline-flex, $flex-wrap: wrap, $justify-content: center, 
+                      $align-items: center, $gutter: null);
+                    @include flex(1);
+                    position: relative;
+                    i{
+                        margin-right: 5px;
+                    }
+                    @include doubly(){
+                        @include p-el(before, $el-width: 1px, $el-height: 12px){
+                          background-color: #fff;
+                          @include absolute($left: 0px); 
+                        };
+                    };
+                }
+            }
             h3{
                 @include setFont(16px, #333, 400);
                 @include setTagAHover(#333, #d8232a);
                 margin-bottom: 7px;
+                text-align: center;
                 a{
                     @include transition(all .2s ease);
                     line-height: 1.4;
@@ -111,6 +139,15 @@ $product-gutter: percentage(30/1330);
                 }
             }
         }
+        @include on-event(){
+            .info{
+                .tp_button{
+                    top: -40px;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        };
     }
 }
 
@@ -408,3 +445,6 @@ background: #fff;
 .muangay,a.dathang.nutdathang{width:49%;display:inline-flex;justify-content:center;text-transform:uppercase;
     background-color:#000;color:#fff!important;border-radius:4px;padding:10px;font-size:18px;font-weight:700;}
 .muangay{width:49%;background-color:#000}
+.pr-quickview{
+    width: 80%;
+}

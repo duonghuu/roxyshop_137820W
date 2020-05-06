@@ -40,6 +40,9 @@ $_SESSION['dong'] = lay_banner('dong');
     <?php /* <div class="wap_load"><div class="cssload-thecube"><div class="cssload-cube cssload-c1"></div>
     <div class="cssload-cube cssload-c2"></div><div class="cssload-cube cssload-c4"></div>
     <div class="cssload-cube cssload-c3"></div></div></div> */
+    if($template == "product_detail2"){
+
+    }else{
     if($template != "checkouts"){
     ?>
     <div id="wapper"  >
@@ -70,7 +73,7 @@ $_SESSION['dong'] = lay_banner('dong');
         ?>
     </div><!---END .wapper-->
     <?php 
-    // include _template."layout/pupop.php";
+    include _template."layout/pupop.php";
     //include _template."layout/facebook.php";
     //include _template."layout/phone.php";
     //include _template."layout/chat_facebook.php";
@@ -80,7 +83,7 @@ $_SESSION['dong'] = lay_banner('dong');
 }else{
     include _template.$template."_tpl.php";
 }
-
+}
     include _template."layout/js.php";
     ?>
     <?=$company['codethem2']?>

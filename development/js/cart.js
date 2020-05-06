@@ -174,12 +174,16 @@ $(document).ready(function() {
         }
         frm_order.submit();
       });
-  $('.size').click(function(){
-    $('.size').removeClass('active_size');
+    $( "body" ).on( "click", ".size", function() {
+    $sp_id = $(this).attr('data-id');
+    console.log('.size[data-id="'+$sp_id+'"]');
+    $('.size[data-id="'+$sp_id+'"]').removeClass('active_size');
     $(this).addClass('active_size');
   });
-  $('.mausac').click(function(){
-    $('.mausac').removeClass('active_mausac');
+    $( "body" ).on( "click", ".mausac", function() {
+    $sp_id = $(this).attr('data-id');
+    console.log('.mausac[data-id="'+$sp_id+'"]');
+    $('.mausac[data-id="'+$sp_id+'"]').removeClass('active_mausac');
     $(this).addClass('active_mausac');
   });
   $('.cart_popup').click(function(){
@@ -236,27 +240,28 @@ $(document).ready(function() {
     return false;
   });
   $( "body" ).on( "click", ".muangay", function() {
-    if($('.size').length && $('.active_size').length==false)
+    $sp_id = $(this).attr('data-id');
+    if($('.size[data-id="'+$sp_id+'"]').length && $('.active_size[data-id="'+$sp_id+'"]').length==false)
     {
       alert('Chọn size');
       return false;
     }
-    if($('.active_size').length)
+    if($('.active_size[data-id="'+$sp_id+'"]').length)
     {
-      var size = $('.active_size').html();
+      var size = $('.active_size[data-id="'+$sp_id+'"]').html();
     }
     else
     {
       var size = '';
     }
-    if($('.mausac').length && $('.active_mausac').length==false)
+    if($('.mausac[data-id="'+$sp_id+'"]').length && $('.active_mausac[data-id="'+$sp_id+'"]').length==false)
     {
       alert('Chọn màu');
       return false;
     }
-    if($('.active_mausac').length)
+    if($('.active_mausac[data-id="'+$sp_id+'"]').length)
     {
-      var mausac = $('.active_mausac').html();
+      var mausac = $('.active_mausac[data-id="'+$sp_id+'"]').html();
     }
     else
     {
@@ -264,7 +269,7 @@ $(document).ready(function() {
     }
     var act = "dathang";
     var id = $(this).data('id');
-    var soluong = $('.soluong').val();
+    var soluong = $('.soluong[data-id="'+$sp_id+'"]').val();
     if(soluong==undefined){
       soluong = 1;
     }
@@ -293,27 +298,29 @@ $(document).ready(function() {
     return false;
   });
   $( "body" ).on( "click", ".dathang", function() {
-    if($('.size').length && $('.active_size').length==false)
+    $sp_id = $(this).attr('data-id');
+    console.log($sp_id);
+    if($('.size[data-id="'+$sp_id+'"]').length && $('.active_size[data-id="'+$sp_id+'"]').length==false)
     {
       alert(lang_chonsize);
       return false;
     }
-    if($('.active_size').length)
+    if($('.active_size[data-id="'+$sp_id+'"]').length)
     {
-      var size = $('.active_size').html();
+      var size = $('.active_size[data-id="'+$sp_id+'"]').html();
     }
     else
     {
       var size = '';
     }
-    if($('.mausac').length && $('.active_mausac').length==false)
+    if($('.mausac[data-id="'+$sp_id+'"]').length && $('.active_mausac[data-id="'+$sp_id+'"]').length==false)
     {
       alert(lang_chonmau);
       return false;
     }
-    if($('.active_mausac').length)
+    if($('.active_mausac[data-id="'+$sp_id+'"]').length)
     {
-      var mausac = $('.active_mausac').html();
+      var mausac = $('.active_mausac[data-id="'+$sp_id+'"]').html();
     }
     else
     {
@@ -321,7 +328,7 @@ $(document).ready(function() {
     }
     var act = "dathang";
     var id = $(this).data('id');
-    var soluong = $('.soluong').val();
+    var soluong = $('.soluong[data-id="'+$sp_id+'"]').val();
     if(soluong==undefined){
       soluong = 1;
     }
@@ -340,6 +347,7 @@ $(document).ready(function() {
         },
         success:function(kq){
           // add_popup(kq.thongbao);
+          $.fancybox.close();
           $('.giohang_fix span').html(kq.sl);
           $('.giohang-left-cont').html(kq.thongtin);
           $('.giohang-left-tit span').html(soluong);

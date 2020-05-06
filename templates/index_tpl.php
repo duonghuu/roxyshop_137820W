@@ -83,7 +83,7 @@ $spnoibat=get_result("select ten$lang as ten,tenkhongdau,id,type,gia,giakm,thumb
             <figure><img src="<?= $img ?>" alt="<?= $value["ten"] ?>"></figure>
             <h5><?= $value["ten"] ?></h5>
             <hr>
-            <p><?= catchuoi($value["mota"],150) ?><span class="dot">Xem thêm</span></p>
+            <p><?= catchuoi($value["mota"],200) ?><span class="dot">Xem thêm</span></p>
           </a></div>
       <?php } ?>
     </div>

@@ -17,7 +17,8 @@
     z-index: 5;
     
     .ft-top{
-        background-color: $bg-footer;
+        // background-color: $bg-footer;
+        background-size: cover;
     }
     .ft-flex {
         @include boxstyle($display: flex, $justify-content: space-between);

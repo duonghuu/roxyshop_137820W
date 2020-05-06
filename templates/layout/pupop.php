@@ -7,9 +7,11 @@
 			<a href="<?=$pupop['link']?>" title="Xem ngay" ><img src="<?=_upload_hinhanh_l.$pupop['photo']?>" alt="Popup" /></a>
 	</div>
 
+	<?php /* 
 	<script>
-		$(document).ready(function () {
-				$.fancybox.open($('#popup_box'));
-		});
-	</script>
+			$(document).ready(function () {
+					$.fancybox.open($('#popup_box'));
+			});
+		</script> 
+	*/?>
 <?php } ?>

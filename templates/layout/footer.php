@@ -1,5 +1,5 @@
 <footer id="footer">
-  <div class="ft-top ">
+  <div class="ft-top lazy" data-bg="url('<?= _upload_hinhanh_l.$ftlogo["photo"] ?>')">
     <div class="container">
       <div class="ft-flex">
         
@@ -49,11 +49,11 @@
       <p class="text">Copyright © 2020 <?= $company["ten"] ?>. Design by Nina</p>
       <ul class="ft-thongke">
         <li>Đang Online: <span><?php $count=count_online();echo $tong_xem=$count['dangxem'];?></span></li>
-        <li><?=_thongketuan?>: <span><?=$trongtuan;?></span></li>   
-        <li><?=_thongkethang?>: <span><?=$trongthang;?></span></li> 
         <li><?=_tongtruycap?>: <span><?php $count=count_online();echo $tong_xem=$count['daxem'];?></span></li>
       </ul>
              <?php /*  
+        <li><?=_thongketuan?>: <span><?=$trongtuan;?></span></li>   
+        <li><?=_thongkethang?>: <span><?=$trongthang;?></span></li> 
         <li><?=_ngayhomqua?>: <span><?=$homqua;?></span></li> 
 */?>
     </div>

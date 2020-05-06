@@ -22,7 +22,7 @@
 <?php /* <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="main.css"> */?>
 <link rel="stylesheet" type="text/css" href="main.css">
-<?php if($template == "product_detail"){ ?>
+<?php if($template == "product_detail" || $template == "product_detail2"){ ?>
 <link rel="stylesheet" media="screen" href="css/magiczoomplus/magiczoomplus.css">
 <?php } ?>
 <?php if($config['reponsive']==true) { ?>

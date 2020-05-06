@@ -757,3 +757,20 @@ $XL:   1200px;
     }
   }
 }
+@mixin p-el($el, $el-width: null, $el-height: null) {
+  @if $el == "before" or $el == "after" {
+    &:#{$el} {
+      @extend %pseudos;
+      @if $el-width != null {
+        width: $el-width;
+      }
+      @if $el-height != null {
+        height: $el-height;
+      }
+      @content;
+    }
+  }
+  @else {
+    @warn "`#{$el}` is not a valid pseudo-element.";
+  }
+}

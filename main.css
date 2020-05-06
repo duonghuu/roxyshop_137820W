@@ -100,53 +100,6 @@
 /*
 @include background-opacity(#000, $opacity: 0.3);
 */
-.img-fill, .megaMenuItem a figure img, .video-khac-main .video-khac a figure img, .spnoibat-bg .danhmuc-feature-img a img, .tinnb-main .tinnb-item a figure img, .themanh-item article figure img, .cart-info-product-list .product-image figure img, .pr-box article .imgsp img {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: fill; }
-
-.main-nav ul, .hd-top .hd-top-flex ul, #footer .ft-flex .ft-baiviet ul, #footer .copyright .ft-wrap ul.ft-thongke {
-  list-style-type: none;
-  margin-bottom: 0; }
-
-form#frm_dknt, .slider-flex, .main-nav, .main-nav > ul, .main-nav > ul > li, .main-nav > ul > li > a, .hd-top .hd-top-flex, .hd-top .hd-top-flex ul, .hd-bot .hd-bot-flex, #footer .ft-flex, #footer .ft-flex .ft-baiviet ul li a, #footer .copyright .ft-wrap, #footer .copyright .ft-wrap ul.ft-thongke, #footer .copyright .ft-wrap ul.ft-thongke li, #search .my-search, .mxh, .sliderma-main .slider-ma .ma-item, .spnoibat-bg .danhmuc-feature-img a span.feature-content, .themanh-item article, .dichvu-item a, .dichvu-item a figure, .news-tpl-grid .news-tpl-item a, .pr-box article .imgsp .sizepanel, .pr-box article .info p, div.wap_pro {
-  display: flex; }
-
-form#frm_dknt #submit_nhantin, .hd-hotline, .hd-top .hd-top-flex ul li, .hd-top-left, .hd-top-left .hd-name, .hd-top-left p, .hd-mid, .mxh a, .btn-idx, .pr-box article .imgsp .giam {
-  display: inline-flex; }
-
-.slider-flex, .main-nav > ul, .hd-top .hd-top-flex, .hd-bot .hd-bot-flex, #footer .ft-flex, #footer .copyright .ft-wrap, #search .my-search, .themanh-item article, .news-tpl-grid .news-tpl-item a, .pr-box article .imgsp .sizepanel, .pr-box article .info p, div.wap_pro {
-  justify-content: space-between; }
-
-form#frm_dknt #submit_nhantin, .main-nav, .main-nav > ul > li > a, .mxh a, .sliderma-main .slider-ma .ma-item, .spnoibat-bg .danhmuc-feature-img a span.feature-content, .pr-box article .imgsp .giam {
-  justify-content: center; }
-
-.hd-top .hd-top-flex ul, .hd-mid {
-  justify-content: flex-end; }
-
-form#frm_dknt, form#frm_dknt #submit_nhantin, .main-nav, .main-nav > ul, .main-nav > ul > li, .main-nav > ul > li > a, .hd-top .hd-top-flex, .hd-top .hd-top-flex ul, .hd-top .hd-top-flex ul li, .hd-top-left, .hd-top-left .hd-name, .hd-top-left p, .hd-bot .hd-bot-flex, .hd-mid, #footer .copyright .ft-wrap, #footer .copyright .ft-wrap ul.ft-thongke li, #search .my-search, .mxh, .mxh a, .sliderma-main .slider-ma .ma-item, .spnoibat-bg .danhmuc-feature-img a span.feature-content, .themanh-item article, .dichvu-item a, .dichvu-item a figure, .pr-box article .imgsp .giam, .pr-box article .imgsp .sizepanel {
-  align-items: center; }
-
-.pr-box article .info p {
-  align-items: flex-end; }
-
-#footer .ft-flex .ft-baiviet ul li a, .news-tpl-grid .news-tpl-item a {
-  align-items: flex-start; }
-
-.hd-hotline, .spnoibat-bg .danhmuc-feature-img a span.feature-content {
-  flex-direction: column; }
-
-.main-nav > ul > li > a, .pr-box article .info p {
-  flex-wrap: wrap; }
-
-form#frm_dknt {
-  flex-wrap: nowrap; }
-
 /*!
  * Font Awesome Free 5.9.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -7809,6 +7762,57 @@ body.compensate-for-scrollbar {
 .slick-slider:hover .slick-prev, .slick-slider:hover .slick-next {
   opacity: 1; }
 
+.img-fill, .mybs-carousel .carousel-indicators li figure img, .mybs-carousel .carousel-slider .carousel-item img, .megaMenuItem a figure img, .video-khac-main .video-khac a figure img, .spnoibat-bg .danhmuc-feature-img a img, .tinnb-main .tinnb-item a figure img, .themanh-item article figure img, .cart-info-product-list .product-image figure img, .pr-box article .imgsp img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill; }
+
+.pr-box article .info .tp_button a + a:before {
+  content: '';
+  position: absolute; }
+
+.main-nav ul, .hd-top .hd-top-flex ul, #footer .ft-flex .ft-baiviet ul, #footer .copyright .ft-wrap ul.ft-thongke {
+  list-style-type: none;
+  margin-bottom: 0; }
+
+form#frm_dknt, .slider-flex, .main-nav, .main-nav > ul, .main-nav > ul > li, .main-nav > ul > li > a, .hd-top .hd-top-flex, .hd-top .hd-top-flex ul, .hd-bot .hd-bot-flex, #footer .ft-flex, #footer .ft-flex .ft-baiviet ul li a, #footer .copyright .ft-wrap, #footer .copyright .ft-wrap ul.ft-thongke, #footer .copyright .ft-wrap ul.ft-thongke li, #search .my-search, .mxh, .sliderma-main .slider-ma .ma-item, .spnoibat-bg .danhmuc-feature-img a span.feature-content, .themanh-item article, .dichvu-item a, .dichvu-item a figure, .news-tpl-grid .news-tpl-item a, .pr-box article .imgsp .sizepanel, .pr-box article .info p, div.wap_pro {
+  display: flex; }
+
+form#frm_dknt #submit_nhantin, .hd-hotline, .hd-top .hd-top-flex ul li, .hd-top-left, .hd-top-left .hd-name, .hd-top-left p, .hd-mid, .mxh a, .btn-idx, .pr-box article .imgsp .giam {
+  display: inline-flex; }
+
+.slider-flex, .main-nav > ul, .hd-top .hd-top-flex, .hd-bot .hd-bot-flex, #footer .ft-flex, #footer .copyright .ft-wrap, #search .my-search, .themanh-item article, .news-tpl-grid .news-tpl-item a, .pr-box article .imgsp .sizepanel, .pr-box article .info p, div.wap_pro {
+  justify-content: space-between; }
+
+form#frm_dknt #submit_nhantin, .main-nav, .main-nav > ul > li > a, .mxh a, .sliderma-main .slider-ma .ma-item, .spnoibat-bg .danhmuc-feature-img a span.feature-content, .pr-box article .imgsp .giam {
+  justify-content: center; }
+
+.hd-top .hd-top-flex ul, .hd-mid {
+  justify-content: flex-end; }
+
+form#frm_dknt, form#frm_dknt #submit_nhantin, .main-nav, .main-nav > ul, .main-nav > ul > li, .main-nav > ul > li > a, .hd-top .hd-top-flex, .hd-top .hd-top-flex ul, .hd-top .hd-top-flex ul li, .hd-top-left, .hd-top-left .hd-name, .hd-top-left p, .hd-bot .hd-bot-flex, .hd-mid, #footer .copyright .ft-wrap, #footer .copyright .ft-wrap ul.ft-thongke li, #search .my-search, .mxh, .mxh a, .sliderma-main .slider-ma .ma-item, .spnoibat-bg .danhmuc-feature-img a span.feature-content, .themanh-item article, .dichvu-item a, .dichvu-item a figure, .pr-box article .imgsp .giam, .pr-box article .imgsp .sizepanel {
+  align-items: center; }
+
+.pr-box article .info p {
+  align-items: flex-end; }
+
+#footer .ft-flex .ft-baiviet ul li a, .news-tpl-grid .news-tpl-item a {
+  align-items: flex-start; }
+
+.hd-hotline, .spnoibat-bg .danhmuc-feature-img a span.feature-content {
+  flex-direction: column; }
+
+.main-nav > ul > li > a, .pr-box article .info p {
+  flex-wrap: wrap; }
+
+form#frm_dknt {
+  flex-wrap: nowrap; }
+
 .grecaptcha-badge {
   display: none !important; }
 
@@ -9530,6 +9534,44 @@ div.wap_item {
       .dm-sp .danhmuc-box ul li a:hover, .dm-sp .danhmuc-box ul li a.is--selected {
         color: #6d6d6d; }
 
+.mybs-carousel .carousel-indicators li figure img, .mybs-carousel .carousel-slider .carousel-item img {
+  object-position: top center;
+  object-fit: cover; }
+
+.mybs-carousel {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
+  .mybs-carousel .carousel-indicators {
+    width: 20%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    position: relative;
+    max-height: 680px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; }
+    .mybs-carousel .carousel-indicators li {
+      width: 100%;
+      height: auto;
+      margin-bottom: 5px;
+      border: 0; }
+      .mybs-carousel .carousel-indicators li figure {
+        position: relative;
+        padding-top: 133.333333333%;
+        margin-bottom: 0; }
+  .mybs-carousel .carousel-slider {
+    order: 1;
+    width: 78.6666666667%;
+    position: relative; }
+    .mybs-carousel .carousel-slider .carousel-item {
+      position: relative;
+      padding-top: 133.333333333%; }
+
 @-webkit-keyframes dropInDown {
   0% {
     opacity: 0;
@@ -9905,7 +9947,7 @@ div.wap_item {
   width: 100%;
   z-index: 5; }
   #footer .ft-top {
-    background-color: #131313; }
+    background-size: cover; }
   #footer .ft-flex {
     padding: 38px 0; }
     #footer .ft-flex .ft-info {
@@ -10351,7 +10393,7 @@ div.mxhft {
       .tinnb-main .tinnb-item a h5 {
         color: #333;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 700;
         margin-bottom: 5px;
         display: block;
         display: -webkit-box;
@@ -10475,6 +10517,9 @@ div.mxhft {
     transition: all 0.5s;
     top: -1000px;
     max-height: 90%; }
+    @media (max-width: 768px) {
+      #giohang .w-giohang {
+        max-width: 98%; } }
     #giohang .w-giohang .giohang-cl {
       position: absolute;
       top: -13px;
@@ -10490,6 +10535,10 @@ div.mxhft {
       float: left;
       width: 50%;
       border-right: 1px solid #e3e3e3; }
+      @media (max-width: 768px) {
+        #giohang .w-giohang .w-giohang-flex .giohang-left {
+          float: none;
+          width: 100%; } }
       #giohang .w-giohang .w-giohang-flex .giohang-left-tit {
         font-size: 18px;
         color: #06783d;
@@ -10541,6 +10590,10 @@ div.mxhft {
       padding: 15px 20px 10px;
       float: left;
       width: 50%; }
+      @media (max-width: 768px) {
+        #giohang .w-giohang .w-giohang-flex .giohang-right {
+          float: none;
+          width: 100%; } }
       #giohang .w-giohang .w-giohang-flex .giohang-right-tit {
         font-size: 18px;
         color: #292929;
@@ -10977,6 +11030,10 @@ div.mxhft {
       .othernews ul.khac li a:hover {
         color: #f00; }
 
+#article {
+  max-width: 1200px;
+  margin: 0 auto; }
+
 .product_info .li span.size:hover, .product_info .li span.mausac:hover, .product_info .li span.active_size, .product_info .li span.active_mausac {
   border: 1px solid #EE0000 !important; }
 
@@ -11026,8 +11083,7 @@ div.mxhft {
       display: block;
       overflow: hidden;
       position: relative;
-      padding-top: 133.00330033%;
-      margin-bottom: 10px; }
+      padding-top: 133.00330033%; }
       .pr-box article .imgsp .giam {
         position: absolute;
         top: 10px;
@@ -11057,12 +11113,59 @@ div.mxhft {
         bottom: 0; }
     .pr-box article .info {
       z-index: 6;
-      position: relative; }
+      position: relative;
+      padding-top: 10px; }
+      .pr-box article .info .tp_button {
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        min-height: 40px;
+        opacity: 0;
+        visibility: hidden;
+        background: #000;
+        background: rgba(0, 0, 0, 0.5);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        -webkit-transition: all 0.25s ease-in-out;
+        -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+        -o-transition: all 0.25s ease-in-out;
+        transition: all 0.25s ease-in-out;
+        width: 100%; }
+        .pr-box article .info .tp_button a {
+          color: #fff;
+          font-size: 12px;
+          font-weight: 400;
+          font-family: "Muli", sans-serif;
+          box-sizing: border-box;
+          display: inline-flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          -moz-box-flex: 1;
+          -moz-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          position: relative; }
+          .pr-box article .info .tp_button a i {
+            margin-right: 5px; }
+          .pr-box article .info .tp_button a + a:before {
+            width: 1px;
+            height: 12px;
+            background-color: #fff;
+            position: absolute;
+            left: 0px; }
       .pr-box article .info h3 {
         color: #333;
         font-size: 16px;
         font-weight: 400;
-        margin-bottom: 7px; }
+        margin-bottom: 7px;
+        text-align: center; }
         .pr-box article .info h3 a {
           color: #333; }
           .pr-box article .info h3 a:hover {
@@ -11083,6 +11186,10 @@ div.mxhft {
           color: #d8232a;
           font-size: 17px;
           font-weight: 700; }
+    .pr-box article:hover .info .tp_button, .pr-box article:active .info .tp_button, .pr-box article:focus .info .tp_button {
+      top: -40px;
+      opacity: 1;
+      visibility: visible; }
 
 /*end san pham*/
 .zoom_slick {
@@ -11391,6 +11498,9 @@ background: #fff;
 .muangay {
   width: 49%;
   background-color: #000; }
+
+.pr-quickview {
+  width: 80%; }
 
 /*========= COMMON ===============*/
 /*========= SLIDER ===============*/
